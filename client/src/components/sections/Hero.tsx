@@ -19,7 +19,7 @@ export default function Hero() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-800 mb-8">
-              I'm a researcher passionate about artificial intelligence and its applications.
+              I'm a researcher passionate about computational modeling and network science. This is a demo website. I am working on updating it to showcase my projects and research.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <motion.a
