@@ -71,7 +71,7 @@ The script will:
 - Push the build to GitHub Pages
 - Clean up and return to main branch
 
-Your changes will be live in 2-5 minutes at https://stefania11.github.io
+Your changes will be live in 2-5 minutes at https://zyunzy.github.io
 
 ### Full-Stack Deployment
 
