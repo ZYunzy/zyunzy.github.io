@@ -15,11 +15,11 @@ export default function Hero() {
             <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
               Hi, I'm{" "}
               <span className="bg-gradient-to-r from-[#FFD6E0] via-[#E0D6FF] to-[#C1F0DB] bg-clip-text text-transparent">
-                Stefania
+                Yun Zhuang
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-800 mb-8">
-              I am a Research Scientist at Sakana.ai, passionate about the intersection of AI, science, and education.
+              I'm a researcher passionate about artificial intelligence and its applications.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <motion.a

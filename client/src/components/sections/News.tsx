@@ -17,49 +17,13 @@ export default function News() {
 
   const newsItems: NewsItem[] = [
     {
-      id: 0,
-      title: "AI + Education: From Curiosity to Discovery: Building Multimodal AI for Education and Science",
-      date: "October 11, 2025",
-      description: "Inaugural Symposium Penn AI - Building Multimodal AI for Education and Science",
-      icon: <Sparkles className="w-5 h-5" />,
-      link: "https://ai.upenn.edu/",
-      color: "#C1F0DB"
-    },
-    {
       id: 1,
-      title: "Can we design AI to support human flourishing?",
-      date: "October 14-15, 2025",
-      description: "AHA Symposium MIT - Exploring AI's role in supporting human flourishing",
+      title: "My Research News",
+      date: "January 2024",
+      description: "Updates on my latest research in artificial intelligence",
       icon: <Sparkles className="w-5 h-5" />,
-      link: null,
-      color: "#E0D6FF"
-    },
-    {
-      id: 2,
-      title: "Keynote on AI for Science Discoveries and Applications",
-      date: "November 19, 2025",
-      description: "GAIF South Korea - Keynote on AI for Science Discoveries and Applications",
-      icon: <Sparkles className="w-5 h-5" />,
-      link: null,
+      link: "#",
       color: "#FFD6E0"
-    },
-    {
-      id: 3,
-      title: "Keynote on Multimodal AI for Education",
-      date: "December 10, 2025",
-      description: "AI_dev: Open Source GenAI & ML Summit Japan - Keynote on Multimodal AI for Education",
-      icon: <Sparkles className="w-5 h-5" />,
-      link: "https://events.linuxfoundation.org/ai-dev-japan/",
-      color: "#C1F0DB"
-    },
-    {
-      id: 4,
-      title: "Launched a new podcast series on AI literacy for parents",
-      date: "September 2025",
-      description: "New podcast series on AI literacy for parents - Turing Post",
-      icon: <Youtube className="w-5 h-5" />,
-      link: "https://www.turingpost.com/p/ailiteracy1",
-      color: "#E0D6FF"
     }
   ];
 

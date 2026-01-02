@@ -9,48 +9,14 @@ export default function Talks() {
   const talks = [
     {
       id: 1,
-      title: "Beyond Text: Real-World Applications of Multimodal AI",
-      venue: "Seoul Meta Week",
-      date: "June 26, 2025",
-      year: "2025",
+      title: "My Talk",
+      venue: "Conference",
+      date: "2024",
+      year: "2024",
       description:
-        "Keynote on the future of multimodal AI applications at Seoul Meta Week. Expect technical insights + live demos!",
-      image: seoulMetaWeekImage,
-      link: "https://seoulmetaweek.com/",
-    },
-    {
-      id: 2,
-      title: "Real-time Experiments with an AI Co-Scientist",
-      venue: "AI Engineer Summit",
-      date: "June 5, 2025 at 11:30 AM",
-      year: "2025",
-      description:
-        "Join me at the AI Engineer Summit to explore how AI can be used to perform real-time experiments with an AI co-scientist. I'll share insights on how to leverage AI and open-source hardware to perform real-time experiments with an AI co-scientist. Expect technical insights + live demos!",
+        "A talk about my research and work in artificial intelligence.",
       image: aiCoScientistImage,
-      link: "https://www.ai.engineer/schedule",
-    },
-    {
-      id: 3,
-      title: "Future of Multimodal Applications",
-      venue: "Infobip Shift Miami",
-      date: "May 6, 2025 at 10:00 AM",
-      year: "2025",
-      description:
-        'Excited to attend #InfobipShift Miami this year (May 5-7)! I\'ll be giving a keynote talk on "The Future of Multimodal AI Applications". Join me to explore AI that sees, hears & interacts in real-time. Expect technical insights + live demos! Slide deck now available online.',
-      image: multimodalLegoImage,
-      link: "https://shift.infobip.com/us/schedule/",
-      slidesLink: "https://stefania11.github.io/future_multimodal_ai/",
-    },
-    {
-      id: 4,
-      title: "Next-gen AI Engineers",
-      venue: "AI Engineer Summit",
-      date: "April 2023",
-      year: "2023",
-      description:
-        "My talk on the next generation of AI Engineers has reached over 38,000 views on YouTube. The session explores critical skills and mindsets needed for building the future of AI systems.",
-      image: aiEngineerImage,
-      link: "https://www.youtube.com/watch?v=ySYLsoAhXmg",
+      link: "#",
     },
   ];
 

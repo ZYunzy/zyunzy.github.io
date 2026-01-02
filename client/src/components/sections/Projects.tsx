@@ -10,45 +10,15 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Google Home Gemini Extension",
+      title: "My Project",
       description:
-        "Led the development of Google Home's Gemini Extension, bringing multimodal AI capabilities to smart home devices, enabling users to interact with their homes through natural language and visual inputs.",
+        "A personal project showcasing my work in technology and research.",
       image: geminiImage,
-      link: "https://support.google.com/googlenest/answer/12494697",
+      link: "#",
       tags: [
-        { name: "Gemini AI", color: "#C1F0DB" },
-        { name: "Smart Home", color: "#FFD6E0" },
-        { name: "Multimodal Interaction", color: "#E0D6FF" },
+        { name: "Technology", color: "#FFD6E0" },
       ],
-      gradient: "from-[#C1F0DB] via-[#FFD6E0] to-[#E0D6FF]",
-    },
-    {
-      id: 2,
-      title: "ChemBuddy: Multimodal AI Chemistry Assistant",
-      description:
-        "An AI-powered learning companion that combines computer vision, voice interaction, and sensor data to help students understand chemistry concepts through real-time experiment analysis.",
-      image: chembuddyImage,
-      link: "",
-      tags: [
-        { name: "Multimodal AI", color: "#FFD6E0" },
-        { name: "Computer Vision", color: "#E0D6FF" },
-        { name: "Education", color: "#C1F0DB" },
-      ],
-      gradient: "from-[#FFD6E0] via-[#E0D6FF] to-[#C1F0DB]",
-    },
-    {
-      id: 3,
-      title: "Cognimates",
-      description:
-        "AI education platform for children to train their own machine learning models. Users can also code smart games using their custom models.",
-      image: cognimatesImage,
-      link: "http://cognimatescopilot.com/",
-      tags: [
-        { name: "AI Education", color: "#FFD6E0" },
-        { name: "Creative Coding", color: "#E0D6FF" },
-        { name: "Child-Computer Interaction", color: "#C1F0DB" },
-      ],
-      gradient: "from-[#E0D6FF] via-[#C1F0DB] to-[#FFD6E0]",
+      gradient: "from-[#E0D6FF] to-[#FFD6E0]",
     },
   ];
 

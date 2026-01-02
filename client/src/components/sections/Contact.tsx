@@ -13,13 +13,13 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
-      text: "stefania [a] hackidemia dot com",
+      text: "yunzhuang@email.com",
       href: undefined,
       color: "#FFD6E0",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
-      text: "Tokyo, Japan",
+      text: "China",
       href: undefined,
       color: "#C1F0DB",
     },
@@ -28,22 +28,22 @@ export default function Contact() {
   const socialLinks = [
     {
       icon: <Twitter className="w-5 h-5" />,
-      href: "https://twitter.com/stefania_druga",
+      href: "https://twitter.com/yunzhuang",
       ariaLabel: "Twitter",
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      href: "https://linkedin.com/in/stefania-druga",
+      href: "https://linkedin.com/in/yunzhuang",
       ariaLabel: "LinkedIn",
     },
     {
       icon: <Github className="w-5 h-5" />,
-      href: "https://github.com/stefania11",
+      href: "https://github.com/ZYunzy",
       ariaLabel: "GitHub",
     },
     {
       icon: <BookOpen className="w-5 h-5" />,
-      href: "https://medium.com/@stefania_druga",
+      href: "https://medium.com/@yunzhuang",
       ariaLabel: "Medium",
     },
   ];

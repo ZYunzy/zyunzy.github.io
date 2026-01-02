@@ -8,21 +8,9 @@ export default function Publications() {
   const recentPublications = [
     {
       title:
-        "AI for Science: Building Open and Customizable Tools for Discovery",
-      venue: "CHI 2026",
-      authors: "Druga Stefania and contributors",
-    },
-    {
-      title:
-        'From "AI" to Probabilistic Automation: How Does Anthropomorphization of Technical Systems Descriptions Influence Trust?',
-      venue: "FAccT 2024",
-      authors: "Nanna Inia, Stefania Druga, Peter Zukerman, and Emily Bender",
-    },
-    {
-      title:
-        "A Benchmark for Math Misconceptions: Bridging Gaps in Middle School Algebra with AI-Supported Personalized Instruction",
-      venue: "JCHE 2024",
-      authors: "Nancy Otero, and Stefania Druga",
+        "My Research Paper on Artificial Intelligence",
+      venue: "Conference 2024",
+      authors: "Zhuang, Y.",
     }
   ];
 

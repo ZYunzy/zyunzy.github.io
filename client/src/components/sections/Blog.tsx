@@ -5,49 +5,16 @@ export default function Blog() {
   const featuredPosts = [
     {
       id: "post-1",
-      title: "Kids as Philosophers of AI",
-      date: "September 7, 2025",
+      title: "My Blog Post on AI Research",
+      date: "January 1, 2024",
       excerpt:
-        "Welcome to the 2nd Episode of our AI Literacy Series - exploring how children naturally become philosophers when questioning what machines really 'know'.",
+        "Exploring the latest developments in artificial intelligence and machine learning.",
       coverImage:
         "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1864&auto=format&fit=crop",
-      slug: "kids-philosophers-ai",
-      externalUrl:
-        "https://substack.com/home/post/p-173012527",
+      slug: "ai-research-post",
+      externalUrl: "#",
     },
-    {
-      id: "post-2",
-      title: "Who is in the Driving Seat?! Learning with AI",
-      date: "September 29, 2025",
-      excerpt:
-        "Use AI With Your Kids Like This - exploring the tension at the heart of learning with AI: who is in the driver's seat, the system or the learner?",
-      coverImage:
-        "https://images.unsplash.com/photo-1566837945700-30057527ade0?q=80&w=1740&auto=format&fit=crop",
-      slug: "driving-seat-learning-ai",
-      externalUrl:
-        "https://substack.com/home/post/p-174853715",
-    },
-    {
-      id: "post-3",
-      title: "AI in the Physical World: How to Build Real-Time Multimodal Apps",
-      date: "May 30, 2025",
-      excerpt:
-        "A guide to creating multimodal applications that bridge the digital and physical worlds with real-time capabilities.",
-      coverImage:
-        "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*xx1clm4XX5a4rC-Rnw3nOg.png",
-      slug: "ai-physical-world-multimodal-apps",
-      externalUrl:
-        "https://medium.com/@Stefania_druga/ai-in-the-physical-world-how-to-build-real-time-multimodal-apps-378c3d4f685d",
-    },
-    {
-      id: "post-4",
-      title:
-        "Supercharge Your Scratch Projects: Introducing Cognimates Copilot",
-      date: "February 20, 2024",
-      excerpt:
-        "An AI teammate for kids that helps children enhance their Scratch projects with artificial intelligence capabilities.",
-      coverImage:
-        "https://miro.medium.com/v2/resize:fit:2000/format:webp/1*cugpF125AeJd3ZYrJpHgkw.gif",
+  ];
       slug: "cognimates-copilot",
       externalUrl:
         "https://medium.com/bits-and-behavior/supercharge-your-scratch-projects-introducing-cognimates-copilot-an-ai-teammate-for-kids-52e616e4096e",
