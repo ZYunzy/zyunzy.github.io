@@ -8,21 +8,21 @@ export const content = {
         title: "Education",
         color: "#E0D6FF",
         items: [
-          "Master's Degree in Computer Science",
+          "B.Eng in Urban Planning",
         ],
       },
       {
         title: "Skills",
         color: "#C1F0DB",
         items: [
-          "AI/ML Research",
+          "Data Science & AI",
         ],
       },
       {
         title: "Interests",
         color: "#FFD6E0",
         items: [
-          "Artificial Intelligence",
+          "Urban systems",
         ],
       },
       {
