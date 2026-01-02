@@ -11,6 +11,7 @@ import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { content } from "@/data/content";
 
 export default function PublicationsPage() {
   const [_hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -144,394 +145,32 @@ export default function PublicationsPage() {
     }[];
   };
 
-  const publications: Publication[] = [
-    {
-      year: "2024",
-      categories: [
-        {
-          title: "",
-          items: [
-            {
-              id: "2024-1",
-              venue: "Conference '24",
-              title: "My Research Paper on Artificial Intelligence",
-              authors: "Zhuang, Y.",
-              year: "2024",
-              link: "#",
-            },
-          ],
-        },
-      ],
-    },
-  ];
+  const groupedPublications = content.publications.reduce((acc, pub) => {
+    const year = pub.year;
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(pub);
+    return acc;
+  }, {} as Record<string, typeof content.publications>);
+
+  const publications: Publication[] = Object.entries(groupedPublications).map(([year, items]) => ({
+    year,
+    categories: [{
+      title: "",
+      items: items.map(item => ({
+        venue: item.venue,
+        title: item.title,
+        authors: item.authors,
+        link: item.pdfLink || item.abstractLink,
+        year: item.year,
+        id: item.title,
+      }))
+    }]
+  }));
 
   return (
     <div className="min-h-screen flex flex-col">
-              title: "The Prompt Artists (Honorable Mention)",
-              authors:
-                "Minsuk Chang, Stefania Druga, Alex Fiannaca, Pedro Vergani, Chinmay Kulkarni, Carrie Cai, and Michael Terry",
-              year: "2023",
-              link: "https://arxiv.org/pdf/2303.12253",
-            },
-            {
-              venue: "Arxiv '23'",
-              title:
-                "AI Friends: Designing Creative Coding Assistants for Families",
-              authors: "Stefania Druga, and Amy J. Ko",
-              year: "2023",
-              link: "https://arxiv.org/pdf/2303.12253.pdf",
-            },
-            {
-              venue: "VL/HCC '23'",
-              title:
-                "Scratch Copilot Evaluation: Assessing AI-Assisted Creative Coding for Families",
-              authors: "Stefania Druga, and Nancy Otero",
-              year: "2023",
-              link: "http://arxiv.org/abs/2305.10417",
-            },
-            {
-              venue: "MAKE '23",
-              title:
-                "Generative AI for Makers: AI Has Truly Arrived — and It's Here to Help You Make and Craft",
-              authors: "Stefania Druga",
-              year: "2023",
-              link: "https://makezine.com/article/craft/fine-art/generative-ai-for-makers-ai-has-truly-arrived-and-its-here-to-help-you-make-and-craft/",
-            },
-            {
-              venue: "IDC '23",
-              title:
-                "Factors used by Children to Make Sense of Algorithmic Fairness",
-              authors:
-                "Jean Salac, Rotem Landesman, Stefania Druga, and Amy J. Ko",
-              year: "2023",
-              link: "/pdf/IDC2023_Children_Sensemaking_Algo_Fairness.pdf",
-            },
-            {
-              venue: "arXiv '23",
-              title:
-                "A Word is Worth a Thousand Pictures: Prompts as AI Design Material",
-              authors:
-                "Chinmay Kulkarni, Stefania Druga, Minsuk Chang, Alex Fiannaca, Carrie Cai, and Michael Terry",
-              year: "2023",
-              link: "https://arxiv.org/pdf/2303.12647.pdf",
-            },
-            {
-              venue: "UW '23'",
-              title: "PhD Thesis: Creative AI Literacies for Families",
-              authors: "Druga Stefania",
-              year: "2023",
-            },
-            {
-              venue: "MAKE '23",
-              title:
-                "Book: Creative AI, A Guide to Making and Tinkering with Artificial Intelligence",
-              authors: "Druga Stefania",
-              year: "2023",
-              link: "https://digital.lib.washington.edu/researchworks/items/03853bd4-b257-4fe8-8158-b08032c5efd8",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      year: "2022",
-      categories: [
-        {
-          title: "",
-          items: [
-            {
-              venue: "MIT PRESS '22",
-              title:
-                "The 4As: Ask, Adapt, Author, Analyze: AI Literacy Framework for Families",
-              authors:
-                "Druga Stefania, Yip Jason, Preston Michael, and Dillon Devin",
-              year: "2022",
-              link: "/pdf/MITP2022_4As_AI_Literacy_Framework_for_Families.pdf",
-            },
-            {
-              venue: "CHI '22",
-              title:
-                "Family as a Third Space for AI Literacies: How do children and parents learn about AI together?",
-              authors: "Stefania Druga, Fee Christoph, and Amy J. Ko",
-              year: "2022",
-              link: "/pdf/Druga2022FamilyAILiteracy.pdf",
-            },
-            {
-              venue: "IDC '22",
-              title:
-                "How families design and program games: a qualitative analysis of a 4-week online in-home study",
-              authors: "Stefania Druga, Thomas Ball, and Amy J. Ko",
-              year: "2022",
-              link: "/pdf/IDC_2022_TileCode_Families.pdf",
-            },
-            {
-              venue: "ITICSE '22",
-              title: "The Landscape of Teaching Resources for AI Education",
-              authors: "Stefania Druga, Nancy Otero, and Amy J. Ko",
-              year: "2022",
-              link: "/pdf/Final_ITICSE_Submission___Landscape_AI_ressources.pdf",
-            },
-            {
-              venue: "IJCCI '22",
-              title:
-                "Examining voice assistants in the context of children's speech",
-              authors:
-                "Min Kyong Kim, Stefania Druga, Shaghayegh Esmaeili, Julia Woodward, Alex Shaw, Ayushi Jain, Jaida Langham, Kristy Hollingshead, Silvia B Lovato, Erin Beneteau, and others",
-              year: "2022",
-              link: "/pdf/IJCCI_Examining_voice_assistants_in_the_context_of_children_speech.pdf",
-            },
-            {
-              venue: "UW '22",
-              title:
-                "Interest-Driven Creative Programming for Youth with AI Friends",
-              authors: "Druga Stefania",
-              year: "2022",
-              link: "/pdf/GE_2022_Interest_Driven_Creative_Programming_for_Youth.pdf",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      year: "2021",
-      categories: [
-        {
-          title: "",
-          items: [
-            {
-              venue: "IDC '21",
-              title:
-                "How do children's perceptions of machine intelligence change when training and coding smart programs?",
-              authors: "Stefania Druga, and Amy J. Ko",
-              year: "2021",
-              link: "/pdf/IDC_Machine_Intelligence_Perception_2021.pdf",
-            },
-            {
-              venue: "CLS '21",
-              title:
-                "Imagining Future Designs of Tools for Youth Data Literacies",
-              authors:
-                "Regina Cheng, Stefania Druga, Emilia Gan, Catherine D'Ignazio, Rahul Bhargava, Victor Lee, Camillia Matuk, Tamara Clegg, Andee Rubin, and Yasmin Kafai",
-              year: "2021",
-              link: "/pdf/CLS_Future_Data_Literacies_Workshop_at_Connected_Learning_Summit_July_2021.pdf",
-            },
-            {
-              venue: "KDD '21",
-              title:
-                "A Design Framework for Citizen-Science AI Platforms for Families",
-              authors: "Fangqing He*, Yifeng Wang*, and Stefania Druga",
-              year: "2021",
-              link: "/pdf/FEED_A_Design_Framework_for_Citizen_Science_AI_Platforms_for_Families_2021.pdf",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      year: "2020",
-      categories: [
-        {
-          title: "",
-          items: [
-            {
-              venue: "JoDS '20",
-              title:
-                "The 4As: Ask, Adapt, Author, Analyze AI Literacy Framework for Families",
-              authors:
-                "Druga Stefania, Yip Jason, Preston Michael, and Dillon Devin",
-              year: "2020",
-              link: "/pdf/JODS_Author_Draft_The_4As__Ask__Adapt__Author__Analyze___AI_Literacy_Framework_for_Families.pdf",
-            },
-            {
-              venue: "IDC '20",
-              title: "Research Toolkit for Future-Oriented Play with Families",
-              authors: "Michelson Rebecca Druga Stefania",
-              year: "2020",
-              link: "/pdf/INTERACT_Camera_Ready_Smart_Toys_Design.pdf",
-            },
-            {
-              venue: "IDC '20",
-              title:
-                '"Puffy and Sticking Out" CollaborativeImage Classification with Kids',
-              authors: "Druga Stefania Tian Yubing",
-              year: "2020",
-              link: "/pdf/IDC_Workshop_Puffy_sticking_out.pdf",
-            },
-            {
-              venue: "CACM '20",
-              title: "It Is Time for More Critical CS Education",
-              authors:
-                "Amy J. Ko, Alannah Oleson, Neil Ryan, Yim Register, Benjamin Xie, Mina Tari, Matthew Davidson, Stefania Druga, and Dastyni Loksa",
-              year: "2020",
-              link: "/pdf/CACM_Critical_CS_2020.pdf",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      year: "2019",
-      categories: [
-        {
-          title: "",
-          items: [
-            {
-              venue: "FABLEARN '19",
-              title: "Inclusive AI literacy for kids around the world",
-              authors:
-                "Druga Stefania, Vu Sarah T, Likhith Eesh, and Qiu Tammy",
-              year: "2019",
-              link: "/pdf/FABLEARN_Inclusive_AI_2019.pdf",
-            },
-            {
-              venue: "CHIPLAY '19",
-              title:
-                "Ballbit Adventure: A Physical Game for a Collaborative Racing",
-              authors: "Kuang Quincy, Zhang Jiaxin, and Druga Stefania",
-              year: "2019",
-              link: "/pdf/CHI_PLAY_Ballbit_Adventure_2019.pdf",
-            },
-            {
-              venue: "CHIPLAY '19",
-              title:
-                "The Humming Box: AI-powered Tangible Music Toy for Children",
-              authors:
-                "Chen Chunhan, Tang Yihan, Xie Tianyi, and Druga Stefania",
-              year: "2019",
-              link: "/pdf/CHI_PLAY_Humming_Box_2019.pdf",
-            },
-            {
-              venue: "CHIPLAY '19",
-              title: "Legoons: Inflatable Construction Kit for Children",
-              authors: "Yang Xuefei, and Druga Stefania",
-              year: "2019",
-              link: "/pdf/CHI_PLAY_Legoons_2019.pdf",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      year: "2018",
-      categories: [
-        {
-          title: "",
-          items: [
-            {
-              venue: "IDC '18",
-              title:
-                "How smart are the smart toys? children and parents' agent interaction and intelligence attribution",
-              authors:
-                "Druga Stefania, Williams Randi, Park Hae Won, and Breazeal Cynthia",
-              year: "2018",
-              link: "/pdf/IDC_How_smart_toys_2018.pdf",
-            },
-            {
-              venue: "IDC '18",
-              title:
-                "\" My doll says it's ok\" a study of children's conformity to a talking doll",
-              authors:
-                "Williams Randi, Machado Christian Vázquez, Druga Stefania, Breazeal Cynthia, and Maes Pattie",
-              year: "2018",
-              link: "/pdf/IDC_WIP_Doll_2018.pdf",
-            },
-            {
-              venue: "MIT '18",
-              title:
-                "Growing up with AI: Cognimates: from coding to teaching machines",
-              authors: "Druga Stefania",
-              year: "2018",
-              link: "/pdf/MIT_Thesis_Growin_up_with_AI_Stefania_Druga_2018.pdf",
-            },
-            {
-              venue: "MIT '18",
-              title: "Cognimates",
-              authors: "Druga Stefania, Vu Sarah, Likhith Eesh, and Qui Tammy",
-              year: "2018",
-              link: "https://www.cognimates.me",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      year: "2017",
-      categories: [
-        {
-          title: "",
-          items: [
-            {
-              venue: "CHI '17",
-              title:
-                "Embodied learning and play in sensorimotor augmentations for kids",
-              authors: "Druga Stefania",
-              year: "2017",
-              link: "/pdf/CHI_Workshop_Embodied_learning_2017.pdf",
-            },
-            {
-              venue: "IDC '17",
-              title:
-                '"Hey Google is it OK if I eat you?" Initial Explorations in Child-Agent Interaction',
-              authors:
-                "Druga Stefania, Williams Randi, Breazeal Cynthia, and Resnick Mitchel",
-              year: "2017",
-              link: "/pdf/IDC_WIP_Hey_Google_2017.pdf",
-            },
-            {
-              venue: "ISWC '18",
-              title:
-                "Motif: a wearable sonic cueing device for memory support and cognitive intervention",
-              authors: "Druga Stefania, Maes Pattie, and Rieger Alexandra",
-              year: "2017",
-              link: "/pdf/ISWC_WIP_Motif_2017.pdf",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      year: "2014",
-      categories: [
-        {
-          title: "",
-          items: [
-            {
-              venue: "SIGRAPH '14",
-              title:
-                "Open Source Hardware (OSHW) Supporting Interaction between Traditional Crafts and Emergent Science: Wayang Kulit over Microfluidic Interfaces",
-              authors:
-                "Ausareny Justyna, Kera Denisa, Druga Stefania, and Reshef Yair",
-              year: "2014",
-              link: "/pdf/SIGRAPH_Workshop_OSHW_2014.pdf",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      year: "2010",
-      categories: [
-        {
-          title: "",
-          items: [
-            {
-              venue: "EUROMIME '10",
-              title:
-                "Open Education Resources Practices and Copyrights for Teachers",
-              authors: "Druga Stefania",
-              year: "2010",
-              link: "/pdf/EUROMIME_Thesis_OER_2010.pdf",
-            },
-          ],
-        },
-      ],
-    },
-  ];
-
-  return (
-    <>
       <Header />
-      <div className="min-h-screen pt-32 pb-24 px-6 md:px-16 bg-gray-50">
+      <div className="flex-1 pt-32 pb-24 px-6 md:px-16 bg-gray-50">
         <div className="container mx-auto">
           <div className="mb-12">
             <Link href="/">
@@ -740,6 +379,6 @@ export default function PublicationsPage() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
