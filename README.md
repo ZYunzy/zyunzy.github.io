@@ -47,7 +47,7 @@ PORT=5003 npm run dev
 
 ### GitHub Pages (Static Site)
 
-This site is configured to deploy to GitHub Pages at https://stefania11.github.io
+This site is configured to deploy to GitHub Pages at https://zyunzy.github.io
 
 To deploy:
 
