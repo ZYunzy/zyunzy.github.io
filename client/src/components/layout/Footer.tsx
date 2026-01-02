@@ -60,7 +60,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-200 mt-4 pt-6 text-center text-gray-600">
           <p>
-            &copy; {new Date().getFullYear()} Stefania Druga. All rights
+            &copy; {new Date().getFullYear()} Yun Zhuang. All rights
             reserved.
           </p>
         </div>

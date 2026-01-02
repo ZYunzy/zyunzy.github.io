@@ -45,7 +45,7 @@ export default function Header() {
     >
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="text-xl font-bold">
-          <span className="font-bold">Stefania Druga</span>
+          <span className="font-bold">Yun Zhuang</span>
         </Link>
 
         {/* Mobile menu button */}
