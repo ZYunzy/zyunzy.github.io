@@ -26,168 +26,79 @@ export default function ResumePage() {
   };
 
   const qualificationsContent = [
-    "Multimodal AI",
-    "Large Language Models applications.",
-    "Program synthesis for computer-supported coding.",
-    "Research on Creative AI applications.",
-    "Extensive experience in building programming platforms for children.",
-    "Teaching classes about creative learning and prototyping with AI.",
+    "Artificial Intelligence Research",
+    "Machine Learning Applications",
+    "Data Analysis and Modeling",
+    "Research and Development",
   ];
 
   const awardsContent = [
-    "ASU GSV Summit's 2025 Leading Women in AI, 2025",
-    "O1 Extraordinary Abilities Visa, 2025",
-    "NSF FMitF Grant for End-User Programming project, 2021",
-    "Jacobs Foundation Grant for AI Literacy project, 2020",
-    "Weizenbaum Research Fellow in Criticality of AI-based Systems Lab in Berlin, 2019",
-    "Google Fellow, Google & NYU ITP, 2019",
-    "LEGO Papert Fellow, MIT MediaLab, 2018",
-    "Finalist of Ideas for Europe competition, EU, 2017",
-    "Women to Watch in Science, Women at the frontier, 2016",
+    "Outstanding Research Award, 2024",
+    "Academic Excellence Scholarship, 2023",
   ];
 
   const languagesContent = [
-    "Romanian",
-    "English",
-    "French",
-    "Spanish",
-    "Italian",
-    "Portuguese",
+    "Chinese (Native)",
+    "English (Fluent)",
   ];
 
   const passionsContent = [
-    "Trail running and Ashtanga yoga",
-    "Reading science fiction books",
+    "Reading and continuous learning",
+    "Technology and innovation",
   ];
 
   const researchContent = [
     {
-      title: "Research Scientist, Sakana AI",
-      period: "August 2025 - Present",
-      description: "Novel AI applications for science and education",
-      link: "https://sakana.ai",
+      title: "AI Research Assistant",
+      period: "2024 - Present",
+      description: "Working on artificial intelligence and machine learning research projects",
+      link: "#",
     },
     {
-      title: "Research Scientist, Google DeepMind",
-      period: "January 2024 - May 2025",
-      description: "Working on multimodal AI applications for Gemini",
-      link: "https://gemini.google.com",
-    },
-    {
-      title: "Principal Researcher, Center of Applied AI Research U. Chicago",
-      period: "July 2023 - January 2024",
-      description: "Working on LLM applications for social impact",
-      link: "https://www.chicagobooth.edu/research/center-for-applied-artificial-intelligence",
-    },
-    {
-      title: "Research Intern, HAX Microsoft Research",
-      period: "March 2023 - July 2023",
-      description: "Working on novel LLM applications",
-      link: "https://www.microsoft.com/en-us/research/group/hax-team",
-    },
-    {
-      title: "Product Engineer, Fixie.ai",
-      period: "December 2022 - March 2023",
-      description: [
-        "Help prototype new LLM platform for distributed specialized LLM agents",
-        "Designed and ran user-studies to evaluate the platform",
-        "Organized large-scale community events for prototyping and building LLM Agents",
-      ],
-      link: "https://fixie.ai",
-    },
-    {
-      title: "AI Research Resident, X Moonshot Factory",
-      period: "March 2022 – October 2022",
-      description: "Build future developper tools with AI.",
-      link: "https://x.company/",
+      title: "Graduate Research",
+      period: "2023 - 2024",
+      description: "Conducting research in AI applications and data analysis",
+      link: "#",
     },
   ];
 
   const activeProjectsContent = [
     {
-      title: "ChemBuddy: Multimodal AI Chemistry Assistant",
+      title: "My AI Research Project",
       description:
-        "An AI-powered learning companion that combines computer vision, voice interaction, and sensor data to help students understand chemistry concepts through real-time experiment analysis.",
-    },
-    {
-      title: "MathMind Platform",
-      description:
-        "An interactive multimodal AI system designed to detect algebraic misconceptions directly from images of student work, provide targeted conceptual feedback, and generate personalized practice exercises enhanced with visual representations.",
-    },
-    {
-      title: "Cognimates",
-      description:
-        "AI education platform for children to train their own machine learning models. Users can also code smart games using their custom models.",
-      link: "http://cognimatescopilot.com/",
-    },
-    {
-      title: "AI Literacy Playground",
-      description:
-        "Playground for AI explainability allowing users to classify custom datasets. Users may also identify anchors in images to support algorithms interpretability.",
-      link: "http://aiplayground.me/",
-    },
-    {
-      title: "TileCode",
-      description:
-        "TileCode is an app for designing, coding, and playing video games directly on low-cost arcade gaming handhelds. Our starting point are retro video games to be created via a set of visual rules.",
-      link: "https://microsoft.github.io/tilecode/",
+        "A research project focused on artificial intelligence and machine learning applications.",
+      link: "#",
     },
   ];
 
   const educationContent = [
     {
-      degree: "Ph.D. ­Information School",
-      major: "Informatics",
-      institution: "University of Washington",
-      year: "2023",
-      gpa: "3.9/4",
+      degree: "Master's Degree",
+      major: "Computer Science",
+      institution: "Your University",
+      year: "2024",
+      gpa: "3.8/4.0",
     },
     {
-      degree: "Master of Science",
-      major: "Media Arts and Science",
-      institution: "Massachusetts Institute of Technology",
-      year: "2018",
-      gpa: "5/5",
-    },
-    {
-      degree: "Master of Science",
-      major: "Instructional Design",
-      institution:
-        "Technical University of Lisbon, Poitiers University, UNED Madrid",
-      year: "2008",
-      gpa: "5/5",
-    },
-    {
-      degree: "Bachelor of Communication",
-      major: "Public Relations & Communication",
-      institution: "Polytechnic University of Timisoara",
-      year: "2005",
-      gpa: "5/5",
+      degree: "Bachelor's Degree",
+      major: "Computer Science",
+      institution: "Your University",
+      year: "2022",
+      gpa: "3.7/4.0",
     },
   ];
 
   const professionalExperienceContent = [
     {
-      title: "Creative AI Track Lead, MIT MediaLab Berlin",
-      location: "Berlin, Germany",
-      period: "Jun. 2018 – Jul. 2018",
+      title: "Research Assistant",
+      location: "University",
+      period: "2023 - Present",
       description: [
-        "Designed and ran the machine learning for creative AI track, selected 10 participants from 300 applications.",
-        "Organized a series of lectures, talks, and site­visits to partner organizations.",
-        "Mentored students on their projects, documented and published final results.",
+        "Conducting research in artificial intelligence and machine learning.",
+        "Developing and testing AI models and algorithms.",
+        "Collaborating with team members on research projects.",
       ],
-      link: "http://berlin.media.mit.edu",
-    },
-    {
-      title: "Co-founder, HacKIDemia",
-      location: "Global",
-      period: "Jan. 2012 – Nov. 2020",
-      description: [
-        "Overseeing HacKIDemia, a global organization for children STEM education.",
-        "We are designing a 21st century curriculum by using latest technologies and scientific inventions.",
-        "We trained local teams in 40 countries with 600 mentors and 10.000 children involved to date.",
-      ],
-      link: "https://hackidemia.com",
+      link: "#",
     },
   ];
 
@@ -244,22 +155,22 @@ export default function ResumePage() {
               {/* Header with name and contact info */}
               <header className="text-center mb-8 print:mb-4">
                 <h1 className="text-4xl md:text-5xl font-bold mb-3">
-                  Stefania Druga
+                  Yun Zhuang
                 </h1>
                 <div className="flex justify-center items-center flex-wrap gap-3 text-gray-600">
                   <div className="flex items-center">
                     <Mail className="h-4 w-4 mr-1" />
-                    <span>stefania@hackidemia.com</span>
+                    <span>yunzhuang@email.com</span>
                   </div>
                   <div className="flex items-center">
                     <Globe className="h-4 w-4 mr-1" />
                     <a
-                      href="https://stefania11.github.io"
+                      href="https://zyunzy.github.io"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:underline"
                     >
-                      stefania11.github.io
+                      zyunzy.github.io
                     </a>
                   </div>
                 </div>

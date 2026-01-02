@@ -15,7 +15,7 @@ export default function HomePage() {
 
   useEffect(() => {
     // Set title
-    document.title = "Stefania Druga | Portfolio";
+    document.title = "Yun Zhuang | Portfolio";
 
     // Scroll to top when component mounts
     window.scrollTo(0, 0);

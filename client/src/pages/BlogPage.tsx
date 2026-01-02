@@ -92,123 +92,16 @@ export default function BlogPage() {
   const blogPosts: BlogPost[] = [
     {
       id: "post-1",
-      title: "Kids as Philosophers of AI",
-      date: "September 7, 2025",
-      author: "Stefania Druga",
+      title: "My First Blog Post",
+      date: "January 1, 2024",
+      author: "Yun Zhuang",
       excerpt:
-        "Welcome to the 2nd Episode of our AI Literacy Series - exploring how children naturally become philosophers when questioning what machines really 'know'.",
+        "Welcome to my blog where I share insights about artificial intelligence and technology.",
       coverImage:
         "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1864&auto=format&fit=crop",
-      tags: ["AI Education", "Family Learning"],
-      slug: "kids-philosophers-ai",
-      externalUrl:
-        "https://substack.com/home/post/p-173012527",
-    },
-    {
-      id: "post-2",
-      title: "Who is in the Driving Seat?! Learning with AI",
-      date: "September 29, 2025",
-      author: "Stefania Druga",
-      excerpt:
-        "Use AI With Your Kids Like This - exploring the tension at the heart of learning with AI: who is in the driver's seat, the system or the learner?",
-      coverImage:
-        "https://images.unsplash.com/photo-1566837945700-30057527ade0?q=80&w=1740&auto=format&fit=crop",
-      tags: ["AI Education", "Family Learning"],
-      slug: "driving-seat-learning-ai",
-      externalUrl:
-        "https://substack.com/home/post/p-174853715",
-    },
-    {
-      id: "post-3",
-      title: "AI in the Physical World: How to Build Real-Time Multimodal Apps",
-      date: "May 30, 2025",
-      author: "Stefania Druga",
-      excerpt:
-        "A guide to creating multimodal applications that bridge the digital and physical worlds with real-time capabilities.",
-      coverImage:
-        "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*xx1clm4XX5a4rC-Rnw3nOg.png",
-      tags: ["Multimodal AI", "AI Research"],
-      slug: "ai-physical-world-multimodal-apps",
-      externalUrl:
-        "https://medium.com/@Stefania_druga/ai-in-the-physical-world-how-to-build-real-time-multimodal-apps-378c3d4f685d",
-    },
-    {
-      id: "post-4",
-      title:
-        "Supercharge Your Scratch Projects: Introducing Cognimates Copilot",
-      date: "February 20, 2024",
-      author: "Stefania Druga",
-      excerpt:
-        "An AI teammate for kids that helps children enhance their Scratch projects with artificial intelligence capabilities.",
-      coverImage:
-        "https://miro.medium.com/v2/resize:fit:2000/format:webp/1*cugpF125AeJd3ZYrJpHgkw.gif",
-      tags: ["AI Education", "Family Learning"],
-      slug: "cognimates-copilot",
-      externalUrl:
-        "https://medium.com/bits-and-behavior/supercharge-your-scratch-projects-introducing-cognimates-copilot-an-ai-teammate-for-kids-52e616e4096e",
-    },
-    {
-      id: "post-5",
-      title:
-        "Empowering kids for a Future They'll Help Build: A Parents Handbook",
-      date: "January 15, 2024",
-      author: "Stefania Druga",
-      excerpt:
-        "A guide for parents on how to prepare children for a future where they'll actively participate in shaping technology and society.",
-      coverImage:
-        "https://miro.medium.com/v2/resize:fit:2000/format:webp/1*RgP4s7rea4cXZ5PEUJ50Eg.gif",
-      tags: ["Family Learning", "AI Education"],
-      slug: "parents-handbook",
-      externalUrl:
-        "https://medium.com/@Stefania_druga/empowering-kids-for-a-future-theyll-help-build-a-parents-handbook-f1f01ae38718",
-    },
-    {
-      id: "post-6",
-      title: "Multimodal AI: A Powerful Tool for Social Good",
-      date: "April 19, 2024",
-      author: "Stefania Druga",
-      excerpt:
-        "Summary of my presentation at the Innovation Exchange on how multimodal AI can be leveraged for social impact and addressing real-world challenges.",
-      coverImage:
-        "https://images.unsplash.com/photo-1591453089816-0fbb971b454c?q=80&w=1740&auto=format&fit=crop",
-      tags: ["Multimodal AI", "AI Research"],
-      slug: "multimodal-ai-social-good",
-    },
-    {
-      id: "post-7",
-      title: "Creativity is dead! Long live creativity.",
-      date: "October 10, 2023",
-      author: "Stefania Druga",
-      excerpt:
-        "Musings from Creative Summit 2023 in Sweden on how generative AI is changing creative ecosystems and what this means for human creativity.",
-      coverImage:
-        "https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?q=80&w=1664&auto=format&fit=crop",
-      tags: ["Creativity", "Generative AI"],
-      slug: "creativity-generative-ai",
-    },
-    {
-      id: "post-8",
-      title: "How do children and parents learn about AI together?",
-      date: "August 15, 2023",
-      author: "Stefania Druga",
-      excerpt:
-        "Exploring family as a Third Space for AI Literacies and how parents and children can collaboratively develop understanding of AI technologies.",
-      coverImage:
-        "https://images.unsplash.com/photo-1566837945700-30057527ade0?q=80&w=1740&auto=format&fit=crop",
-      tags: ["Family Learning", "AI Education"],
-      slug: "family-ai-learning",
-    },
-    {
-      id: "post-9",
-      title: "So you think you can Agent?",
-      date: "July 5, 2023",
-      author: "Stefania Druga",
-      excerpt:
-        "Highlights and lessons from the first Fixie Hackathon in Seattle, exploring the capabilities and limitations of AI agent technologies.",
-      coverImage:
-        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
-      tags: ["AI Research", "Generative AI"],
-      slug: "ai-agent-hackathon",
+      tags: ["AI Research"],
+      slug: "my-first-blog-post",
+      externalUrl: "#",
     },
   ];
 

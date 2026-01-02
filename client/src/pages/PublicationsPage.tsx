@@ -146,92 +146,27 @@ export default function PublicationsPage() {
 
   const publications: Publication[] = [
     {
-      year: "2025",
-      categories: [
-        {
-          title: "",
-          items: [
-            {
-              id: "2025-0",
-              venue: "CHI '26",
-              title:
-                "AI for Science: Building Open and Customizable Tools for Discovery",
-              authors: "Druga Stefania and contributors",
-              year: "2026",
-            },
-            {
-              id: "2025-1",
-              venue: "IDC '25",
-              title:
-                "Scratch Copilot: Supporting Children's Creative AI Learning and Coding",
-              authors: "Druga Stefania and Amy J. Ko",
-              year: "2025",
-              link: "https://arxiv.org/abs/2505.03867",
-            },
-            {
-              id: "2025-2",
-              venue: "Proceedings'25",
-              title:
-                "ChemBuddy: An AI-Powered Multimodal Chemistry Lab Assistant Addressing Misconceptions in Middle-School Science",
-              authors: "Stefania Druga",
-              year: "2025",
-            },
-            {
-              id: "2025-3",
-              venue: "Proceedings '25",
-              title:
-                "MathMind: AI-Powered Misconception Detection for Middle School Algebra Learning",
-              authors: "Stefania Druga",
-              year: "2025",
-            },
-          ],
-        },
-      ],
-    },
-    {
       year: "2024",
       categories: [
         {
           title: "",
           items: [
             {
-              venue: "FACCT '24",
-              title:
-                'From "AI" to Probabilistic Automation: How Does Anthropomorphization of Technical Systems Descriptions Influence Trust?',
-              authors:
-                "Nanna Inia, Stefania Druga, Peter Zukerman, and Emily Bender",
+              id: "2024-1",
+              venue: "Conference '24",
+              title: "My Research Paper on Artificial Intelligence",
+              authors: "Zhuang, Y.",
               year: "2024",
-              link: "https://faculty.washington.edu/ebender/papers/From_AI_to_Probabilistic_Automation_PREPRINT.pdf",
-            },
-            {
-              venue: "JCHE '24",
-              title:
-                "A Benchmark for Math Misconceptions: Bridging Gaps in Middle School Algebra with AI-Supported Personalized Instruction",
-              authors: "Nancy Otero, and Stefania Druga",
-              year: "2024",
-              link: "https://arxiv.org/abs/2412.03765",
+              link: "#",
             },
           ],
         },
       ],
     },
-    {
-      year: "2023",
-      categories: [
-        {
-          title: "",
-          items: [
-            {
-              venue: "FAccT '23",
-              title:
-                "Language Models and Society: Bridging Research and Policy",
-              authors:
-                "Stefania Druga, Ioana Baldini, Mihaela Vorvoreanu, and Rishi Bommasani",
-              year: "2023",
-              link: "/pdf/FAccT_2023_Language_Models_Society.pdf",
-            },
-            {
-              venue: "C&C'23",
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col">
               title: "The Prompt Artists (Honorable Mention)",
               authors:
                 "Minsuk Chang, Stefania Druga, Alex Fiannaca, Pedro Vergani, Chinmay Kulkarni, Carrie Cai, and Michael Terry",
