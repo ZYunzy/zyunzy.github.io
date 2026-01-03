@@ -13,13 +13,13 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
-      text: "yunzhuang@email.com",
+      text: "zyunn55[at]outlook.com",
       href: undefined,
-      color: "#FFD6E0",
+      color: "#221a1cff",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
-      text: "China",
+      text: "Guangzhou, Guangdong, China & Kowloon, Hong Kong SAR",
       href: undefined,
       color: "#C1F0DB",
     },
