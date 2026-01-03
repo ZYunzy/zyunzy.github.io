@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import {
   Mail,
   MapPin,
@@ -15,7 +16,7 @@ export default function Contact() {
       icon: <Mail className="h-5 w-5" />,
       text: "zyunn55[at]outlook.com",
       href: undefined,
-      color: "#221a1cff",
+      color: "#eb96abff",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
@@ -48,6 +49,39 @@ export default function Contact() {
     },
   ];
 
+  useEffect(() => {
+    // Load Clustrmaps script
+    const script = document.createElement('script');
+    script.src = '//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900';
+    script.id = 'clustrmaps';
+    script.type = 'text/javascript';
+    document.body.appendChild(script);
+
+    // Move the map to the container after it loads
+    const moveMap = () => {
+      const mapWidget = document.getElementById('clustrmaps-widget');
+      const container = document.getElementById('clustrmaps-container');
+      if (mapWidget && container && !container.contains(mapWidget)) {
+        container.innerHTML = '';
+        container.appendChild(mapWidget);
+        // Adjust styles if needed
+        mapWidget.style.width = '100%';
+        mapWidget.style.height = '100%';
+      }
+    };
+
+    // Check immediately and after a delay
+    moveMap();
+    setTimeout(moveMap, 2000); // Wait for script to load
+
+    return () => {
+      const existingScript = document.getElementById('clustrmaps');
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, []);
+
   return (
     <div className="py-20 px-6 md:px-16">
       <div className="container mx-auto">
@@ -56,52 +90,63 @@ export default function Contact() {
           <span className="absolute -bottom-2 left-0 w-24 h-1 bg-[#E0D6FF]"></span>
         </h2>
 
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white p-8 rounded-xl shadow-sm">
-            <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
-            <p className="text-lg mb-8">
-              I'm always interested in new research collaborations, speaking
-              opportunities, or discussions about AI education and family
-              learning.
-            </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* contract at left */}
+            <div className="bg-white p-8 rounded-xl shadow-sm">
+              <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
+              <p className="text-lg mb-8">
+                I'm always interested in new research collaborations, speaking
+                opportunities, or discussions about AI education and family
+                learning.
+              </p>
 
-            <div className="space-y-6 mb-8">
-              {contactInfo.map((item, index) => (
-                <div key={index} className="flex items-center">
-                  <div
-                    className={`w-12 h-12 rounded-full bg-[${item.color}] flex items-center justify-center mr-5`}
-                  >
-                    {item.icon}
+              <div className="space-y-6 mb-8">
+                {contactInfo.map((item, index) => (
+                  <div key={index} className="flex items-center">
+                    <div
+                      className={`w-12 h-12 rounded-full bg-[${item.color}] flex items-center justify-center mr-5`}
+                    >
+                      {item.icon}
+                    </div>
+                    {item.href ? (
+                      <a href={item.href} className="hover:underline text-lg">
+                        {item.text}
+                      </a>
+                    ) : (
+                      <span className="text-lg">{item.text}</span>
+                    )}
                   </div>
-                  {item.href ? (
-                    <a href={item.href} className="hover:underline text-lg">
-                      {item.text}
-                    </a>
-                  ) : (
-                    <span className="text-lg">{item.text}</span>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
+
+              <div className="flex space-x-5 mt-10">
+                {socialLinks.map((link, index) => (
+                  <motion.a
+                    key={index}
+                    href={link.href}
+                    aria-label={link.ariaLabel}
+                    className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center hover:bg-[#FFD6E0] transition-colors duration-300"
+                    whileHover={{ y: -5 }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.icon}
+                  </motion.a>
+                ))}
+              </div>
             </div>
 
-            <div className="flex space-x-5 mt-10">
-              {socialLinks.map((link, index) => (
-                <motion.a
-                  key={index}
-                  href={link.href}
-                  aria-label={link.ariaLabel}
-                  className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center hover:bg-[#FFD6E0] transition-colors duration-300"
-                  whileHover={{ y: -5 }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {link.icon}
-                </motion.a>
-              ))}
+            {/* map at right */}
+            <div className="bg-white p-8 rounded-xl shadow-sm">
+              <h3 className="text-2xl font-bold mb-6">Visitor Map</h3>
+              <div id="clustrmaps-container" className="w-full h-64 bg-gray-100 rounded-lg overflow-hidden">
+                <p className="text-gray-500">Loading visitor map...</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+}  
