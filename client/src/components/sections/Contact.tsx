@@ -61,13 +61,21 @@ export default function Contact() {
     const moveMap = () => {
       const mapWidget = document.querySelector('div[id*="clustrmaps"]') as HTMLElement;
       const container = document.getElementById('clustrmaps-container');
-      if (mapWidget && container && !container.contains(mapWidget)) {
-        container.innerHTML = '';
-        container.appendChild(mapWidget);
-        mapWidget.style.width = '100%';
-        mapWidget.style.height = '100%';
-        mapWidget.style.borderRadius = '8px';
-        mapWidget.style.overflow = 'hidden';
+      
+      if (mapWidget) {
+        if (container && !container.contains(mapWidget)) {
+          // Move to container
+          container.innerHTML = '';
+          container.appendChild(mapWidget);
+          mapWidget.style.width = '100%';
+          mapWidget.style.height = '100%';
+          mapWidget.style.borderRadius = '8px';
+          mapWidget.style.overflow = 'hidden';
+          mapWidget.style.display = 'block';
+        } else if (!container) {
+          // Hide if container doesn't exist (other pages)
+          mapWidget.style.display = 'none';
+        }
       }
     };
 
