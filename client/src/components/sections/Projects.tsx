@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { content } from "@/data/content";
 
 export default function Projects() {
-  const projects = content.projects;
+  const [location] = useLocation();
+  const isHomePage = location === "/";
+  const projects = isHomePage ? content.projects.slice(0, 2) : content.projects; // Show only first 2 on homepage
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   return (
@@ -73,6 +75,17 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
+
+        {isHomePage && (
+          <div className="text-center mt-12">
+            <Link
+              href="/projects"
+              className="inline-block bg-[#E0D6FF] text-gray-800 px-6 py-3 rounded-full font-medium hover:bg-[#D0C6EF] transition-colors"
+            >
+              View All Projects →
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
