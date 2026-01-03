@@ -50,61 +50,28 @@ export default function Contact() {
   ];
     
   useEffect(() => {
-    // Load Clustrmaps script
+    // Load Clustrmaps script only when Contact section is mounted
+    const container = document.getElementById('clustrmaps-container');
+    if (!container) return;
+
     const script = document.createElement('script');
     script.src = '//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900';
-    script.id = 'clustrmaps';
+    script.id = 'clustrmaps-script';
     script.type = 'text/javascript';
-    document.body.appendChild(script);
-
-    // Move the map to the container after it loads
-    const moveMap = () => {
-      const mapWidget = document.querySelector('div[id*="clustrmaps"]') as HTMLElement;
-      const container = document.getElementById('clustrmaps-container');
-      
-      if (mapWidget) {
-        if (container && !container.contains(mapWidget)) {
-          // Move to container
-          container.innerHTML = '';
-          container.appendChild(mapWidget);
-          mapWidget.style.width = '100%';
-          mapWidget.style.height = '100%';
-          mapWidget.style.borderRadius = '8px';
-          mapWidget.style.overflow = 'hidden';
-          mapWidget.style.display = 'block';
-        } else if (!container) {
-          // Hide if container doesn't exist (other pages)
-          mapWidget.style.display = 'none';
-        }
-      }
-    };
-
-    // Use MutationObserver to watch for DOM changes
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'childList') {
-          moveMap();
-        }
-      });
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    // Check with delays
-    setTimeout(moveMap, 1000);
-    setTimeout(moveMap, 3000);
-    setTimeout(moveMap, 5000);
+    script.async = true;
+    
+    // Append script to the container instead of body
+    container.appendChild(script);
 
     return () => {
-      observer.disconnect();
-      // Remove the map when component unmounts
-      const mapWidget = document.querySelector('div[id*="clustrmaps"]');
-      if (mapWidget) {
-        mapWidget.remove();
-      }
-      const existingScript = document.getElementById('clustrmaps');
+      // Clean up on unmount
+      const existingScript = document.getElementById('clustrmaps-script');
       if (existingScript) {
-        document.body.removeChild(existingScript);
+        existingScript.remove();
       }
+      // Also remove any map widgets
+      const mapWidgets = document.querySelectorAll('[id*="clustrmaps"]');
+      mapWidgets.forEach(widget => widget.remove());
     };
   }, []);
 
@@ -166,8 +133,8 @@ export default function Contact() {
             {/* map at right */}
             <div className="bg-white p-8 rounded-xl shadow-sm">
               <h3 className="text-2xl font-bold mb-6">Visitor Map</h3>
-              <div id="clustrmaps-container" className="w-full h-64 bg-gray-100 rounded-lg overflow-hidden">
-                <p className="text-gray-500">Loading visitor map...</p>
+              <div id="clustrmaps-container" className="w-full min-h-[300px] bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center">
+                {/* Clustrmaps script will inject the map here */}
               </div>
             </div>
           </div>
