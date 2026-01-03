@@ -4,7 +4,7 @@ import { Calendar, ArrowRight, ExternalLink, MapPin } from "lucide-react";
 
 export default function Gallery() {
   const [activeTab, setActiveTab] = useState<"artworks" | "design">("artworks");
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const artworks = [
     {
@@ -39,6 +39,20 @@ export default function Gallery() {
       link: "#",
     },
   ];
+
+  const currentItems = activeTab === "artworks" ? artworks : design;
+
+  const nextImage = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % currentItems.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex - 1 + currentItems.length) % currentItems.length);
+    }
+  };
 
   return (
     <div className="py-20 px-6 md:px-16 bg-gray-50" id="gallery">
@@ -84,7 +98,7 @@ export default function Gallery() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                onClick={() => setSelectedImage(art.image)}
+                onClick={() => setSelectedIndex(index)}
               >
                 <div className="aspect-video bg-gray-100 relative overflow-hidden">
                   <img
@@ -118,50 +132,80 @@ export default function Gallery() {
         )}
 
         {activeTab === "design" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {design.map((designItem, index) => (
               <motion.div
                 key={designItem.id}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+                className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                onClick={() => setSelectedIndex(index)}
               >
-                <div className="aspect-video bg-gray-100 mb-4 rounded-lg overflow-hidden">
+                <div className="aspect-video bg-gray-100 relative overflow-hidden">
                   <img
                     src={designItem.image}
                     alt={designItem.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    loading="lazy"
                   />
                 </div>
-                <div className="flex items-center text-sm text-gray-500 mb-2">
-                  <Calendar className="w-4 h-4 mr-1" />
-                  <span>{designItem.date}</span>
-                  <span className="ml-4">{designItem.venue}</span>
+                <div className="p-6">
+                  <div className="flex items-center text-sm text-gray-500 mb-2">
+                    <Calendar className="w-4 h-4 mr-1" />
+                    <span>{designItem.date}</span>
+                    <span className="ml-4">{designItem.venue}</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{designItem.title}</h3>
+                  <p className="text-gray-600 mb-4">{designItem.description}</p>
+                  <a
+                    href={designItem.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 inline-flex items-center text-sm font-medium hover:text-blue-800"
+                  >
+                    View Details
+                    <ArrowRight className="ml-1 w-4 h-4" />
+                  </a>
                 </div>
-                <h3 className="text-xl font-bold mb-2">{designItem.title}</h3>
-                <p className="text-gray-600 mb-4">{designItem.description}</p>
-                <a
-                  href={designItem.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 inline-flex items-center text-sm font-medium hover:text-blue-800"
-                >
-                  View Design
-                  <ExternalLink className="ml-1 w-4 h-4" />
-                </a>
               </motion.div>
             ))}
           </div>
         )}
 
         {/* Image Modal */}
-        {selectedImage && (
-          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={() => setSelectedImage(null)}>
-            <div className="max-w-4xl max-h-full p-4">
-              <img src={selectedImage} alt="Selected artwork" className="max-w-full max-h-full object-contain" />
+        {selectedIndex !== null && (
+          <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-gray-300 transition"
+            >
+              ‹
+            </button>
+            <div className="max-w-4xl max-h-full p-4 relative">
+              <img
+                src={currentItems[selectedIndex].image}
+                alt={currentItems[selectedIndex].title}
+                className="max-w-full max-h-full object-contain"
+              />
+              <div className="absolute bottom-4 left-4 right-4 bg-black bg-opacity-50 text-white p-4 rounded">
+                <h3 className="text-xl font-bold mb-2">{currentItems[selectedIndex].title}</h3>
+                <p className="text-sm">{currentItems[selectedIndex].description}</p>
+              </div>
             </div>
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-gray-300 transition"
+            >
+              ›
+            </button>
+            <button
+              onClick={() => setSelectedIndex(null)}
+              className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 transition"
+            >
+              ×
+            </button>
           </div>
         )}
       </div>
