@@ -4,6 +4,7 @@ import ResumePage from "@/pages/ResumePage";
 import PublicationsPage from "@/pages/PublicationsPage";
 import BlogPage from "@/pages/BlogPage";
 import BlogPostPage from "@/pages/BlogPostPage";
+import GalleryPage from "@/pages/GalleryPage";
 import NotFound from "@/pages/not-found";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route path="/publications" component={PublicationsPage} />
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/:slug" component={BlogPostPage} />
+      <Route path="/gallery" component={GalleryPage} />
       <Route component={NotFound} />
     </Switch>
   );

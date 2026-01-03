@@ -35,8 +35,9 @@ export default function Header() {
     { id: "news", label: "News" },
     { id: "about", label: "About" },
     { id: "projects", label: "Projects" },
-    { id: "talks", label: "Talks" },
-    { id: "blog", label: "Blog", isPage: true },
+    // { id: "talks", label: "Talks" },
+    // { id: "blog", label: "Blog", isPage: true },
+    { id: "gallery", label: "Gallery", isPage: true },
   ];
 
   return (

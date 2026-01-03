@@ -36,7 +36,7 @@ export default function HomePage() {
         <section id="projects" ref={registerSection} className="section-fade">
           <Projects />
         </section>
-        <section id="talks" ref={registerSection} className="section-fade">
+        <section id="gallery" ref={registerSection} className="section-fade">
           <Talks />
         </section>
         <section id="contact" ref={registerSection} className="section-fade">
