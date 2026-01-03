@@ -16,7 +16,7 @@ export default function Contact() {
       icon: <Mail className="h-5 w-5" />,
       text: "zyunn55[at]outlook.com",
       href: undefined,
-      color: "#eb96abff",
+      color: "#f0c1d8ff",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
@@ -59,7 +59,6 @@ export default function Contact() {
 
     // Move the map to the container after it loads
     const moveMap = () => {
-      // Clustrmaps usually creates a div with id containing 'clustrmaps'
       const mapWidget = document.querySelector('div[id*="clustrmaps"]') as HTMLElement;
       const container = document.getElementById('clustrmaps-container');
       if (mapWidget && container && !container.contains(mapWidget)) {
@@ -82,13 +81,18 @@ export default function Contact() {
     });
     observer.observe(document.body, { childList: true, subtree: true });
 
-    // Also check with delays
+    // Check with delays
     setTimeout(moveMap, 1000);
     setTimeout(moveMap, 3000);
     setTimeout(moveMap, 5000);
 
     return () => {
       observer.disconnect();
+      // Remove the map when component unmounts
+      const mapWidget = document.querySelector('div[id*="clustrmaps"]');
+      if (mapWidget) {
+        mapWidget.remove();
+      }
       const existingScript = document.getElementById('clustrmaps');
       if (existingScript) {
         document.body.removeChild(existingScript);
