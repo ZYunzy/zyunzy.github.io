@@ -50,28 +50,35 @@ export default function Contact() {
   ];
     
   useEffect(() => {
-    // Load Clustrmaps script only when Contact section is mounted
-    const container = document.getElementById('clustrmaps-container');
+    // Render Clustrmaps inside an isolated iframe so it won't append to body
+    const container = document.getElementById("clustrmaps-container");
     if (!container) return;
 
-    const script = document.createElement('script');
-    script.src = '//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900';
-    script.id = 'clustrmaps-script';
-    script.type = 'text/javascript';
-    script.async = true;
-    
-    // Append script to the container instead of body
-    container.appendChild(script);
+    const iframe = document.createElement("iframe");
+    iframe.title = "Visitor map";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "0";
+    iframe.setAttribute("loading", "lazy");
+
+    container.innerHTML = "";
+    container.appendChild(iframe);
+
+    const doc = iframe.contentDocument;
+    if (!doc) return;
+
+    doc.open();
+    doc.write(`<!doctype html><html><head><style>
+      html, body { margin: 0; padding: 0; width: 100%; height: 100%; }
+      #map { width: 100%; height: 100%; }
+    </style></head><body>
+      <div id="map"></div>
+      <script type="text/javascript" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900"></script>
+    </body></html>`);
+    doc.close();
 
     return () => {
-      // Clean up on unmount
-      const existingScript = document.getElementById('clustrmaps-script');
-      if (existingScript) {
-        existingScript.remove();
-      }
-      // Also remove any map widgets
-      const mapWidgets = document.querySelectorAll('[id*="clustrmaps"]');
-      mapWidgets.forEach(widget => widget.remove());
+      container.innerHTML = "";
     };
   }, []);
 
