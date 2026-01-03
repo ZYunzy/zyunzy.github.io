@@ -73,7 +73,7 @@ export default function Contact() {
       #map { width: 100%; height: 100%; }
     </style></head><body>
       <div id="map"></div>
-      <script type="text/javascript" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900"></script>
+      <script type="text/javascript" src="https://clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900"></script>
     </body></html>`);
     doc.close();
 
