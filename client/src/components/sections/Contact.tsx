@@ -48,7 +48,7 @@ export default function Contact() {
       ariaLabel: "Medium",
     },
   ];
-
+    
   useEffect(() => {
     // Load Clustrmaps script
     const script = document.createElement('script');
@@ -59,22 +59,36 @@ export default function Contact() {
 
     // Move the map to the container after it loads
     const moveMap = () => {
-      const mapWidget = document.getElementById('clustrmaps-widget');
+      // Use more general selector for Clustrmaps widget
+      const mapWidget = document.querySelector('[id*="clustrmaps"]') as HTMLElement || document.querySelector('.clustrmaps') as HTMLElement;
       const container = document.getElementById('clustrmaps-container');
       if (mapWidget && container && !container.contains(mapWidget)) {
         container.innerHTML = '';
         container.appendChild(mapWidget);
-        // Adjust styles if needed
+        // Adjust styles
         mapWidget.style.width = '100%';
         mapWidget.style.height = '100%';
+        mapWidget.style.borderRadius = '8px';
       }
     };
 
-    // Check immediately and after a delay
-    moveMap();
-    setTimeout(moveMap, 2000); // Wait for script to load
+    // Use MutationObserver to watch for DOM changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'childList') {
+          moveMap();
+        }
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Also check with delays
+    setTimeout(moveMap, 1000);
+    setTimeout(moveMap, 3000);
+    setTimeout(moveMap, 5000);
 
     return () => {
+      observer.disconnect();
       const existingScript = document.getElementById('clustrmaps');
       if (existingScript) {
         document.body.removeChild(existingScript);
