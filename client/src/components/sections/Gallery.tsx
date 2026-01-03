@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Calendar, ArrowRight, ExternalLink, MapPin } from "lucide-react";
 
 export default function Gallery() {
-  const [activeTab, setActiveTab] = useState<"artworks" | "talks">("artworks");
+  const [activeTab, setActiveTab] = useState<"artworks" | "design">("artworks");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const artworks = [
@@ -27,7 +27,7 @@ export default function Gallery() {
     },
   ];
 
-  const talks = [
+  const design = [
     {
       id: 1,
       title: "My Talk",
@@ -62,14 +62,14 @@ export default function Gallery() {
               Artworks
             </button>
             <button
-              onClick={() => setActiveTab("talks")}
+              onClick={() => setActiveTab("design")}
               className={`px-6 py-2 rounded-full font-medium transition ${
-                activeTab === "talks"
+                activeTab === "design"
                   ? "bg-[#FFD6E0] text-white"
                   : "text-gray-600 hover:text-gray-800"
               }`}
             >
-              Talks
+              Design
             </button>
           </div>
         </div>
@@ -117,11 +117,11 @@ export default function Gallery() {
           </div>
         )}
 
-        {activeTab === "talks" && (
+        {activeTab === "design" && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {talks.map((talk, index) => (
+            {design.map((designItem, index) => (
               <motion.div
-                key={talk.id}
+                key={designItem.id}
                 className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -130,25 +130,25 @@ export default function Gallery() {
               >
                 <div className="aspect-video bg-gray-100 mb-4 rounded-lg overflow-hidden">
                   <img
-                    src={talk.image}
-                    alt={talk.title}
+                    src={designItem.image}
+                    alt={designItem.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="flex items-center text-sm text-gray-500 mb-2">
                   <Calendar className="w-4 h-4 mr-1" />
-                  <span>{talk.date}</span>
-                  <span className="ml-4">{talk.venue}</span>
+                  <span>{designItem.date}</span>
+                  <span className="ml-4">{designItem.venue}</span>
                 </div>
-                <h3 className="text-xl font-bold mb-2">{talk.title}</h3>
-                <p className="text-gray-600 mb-4">{talk.description}</p>
+                <h3 className="text-xl font-bold mb-2">{designItem.title}</h3>
+                <p className="text-gray-600 mb-4">{designItem.description}</p>
                 <a
-                  href={talk.link}
+                  href={designItem.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 inline-flex items-center text-sm font-medium hover:text-blue-800"
                 >
-                  View Talk
+                  View Design
                   <ExternalLink className="ml-1 w-4 h-4" />
                 </a>
               </motion.div>

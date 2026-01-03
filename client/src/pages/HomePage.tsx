@@ -9,6 +9,7 @@ import Talks from "@/components/sections/Talks";
 import Contact from "@/components/sections/Contact";
 import CursorFollower from "@/components/ui/cursor-follower";
 import { useSectionVisibility } from "@/hooks/use-section-visibility";
+import Gallery from "@/components/sections/Gallery";
 
 export default function HomePage() {
   const { registerSection } = useSectionVisibility();
@@ -37,7 +38,7 @@ export default function HomePage() {
           <Projects />
         </section>
         <section id="gallery" ref={registerSection} className="section-fade">
-          <Talks />
+          <Gallery />
         </section>
         <section id="contact" ref={registerSection} className="section-fade">
           <Contact />
