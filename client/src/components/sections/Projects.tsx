@@ -17,20 +17,16 @@ export default function Projects() {
           <span className="absolute -bottom-2 left-0 w-24 h-1 bg-[#E0D6FF]"></span>
         </h2>
 
-        <div className="space-y-12">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-              onHoverStart={() => setHoveredProject(index)}
-              onHoverEnd={() => setHoveredProject(null)}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <Link href={`/project/${project.id}`} className="block">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                  <div className="p-8 flex flex-col justify-center">
+        <div className={isHomePage ? "space-y-20" : "space-y-12"}>
+          {projects.map((project, index) => {
+            if (isHomePage) {
+              // Original alternating layout for homepage
+              return (
+                <div
+                  key={project.id}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+                >
+                  <div className={index % 2 === 0 ? "order-2 md:order-1" : ""}>
                     <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
                     <p className="text-lg text-gray-800 mb-6">
                       {project.description}
@@ -46,34 +42,104 @@ export default function Projects() {
                         </span>
                       ))}
                     </div>
-                    <div className="text-blue-600 hover:underline font-medium">
-                      Read More →
-                    </div>
+                    <Link
+                      href={`/project/${project.id}`}
+                      className="inline-block bg-gray-300 text-gray-700 px-4 py-1.5 rounded-full transform transition text-sm hover:bg-gray-400"
+                    >
+                      Read More
+                    </Link>
                   </div>
 
-                  <div className="relative">
-                    <motion.div
-                      className="absolute inset-0"
-                      style={{
-                        backgroundImage: `linear-gradient(to right, ${project.gradient
-                          .split(" ")
-                          .join(", ")
-                          .replace(/from-\[|\]|via-\[|to-\[/g, "")})`,
-                      }}
-                      animate={{
-                        opacity: hoveredProject === index ? 0.1 : 0.05,
-                      }}
-                    />
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-64 md:h-full object-cover"
-                    />
-                  </div>
+                  <motion.div
+                    className={`group ${index % 2 === 0 ? "order-1 md:order-2" : ""}`}
+                    onHoverStart={() => setHoveredProject(index)}
+                    onHoverEnd={() => setHoveredProject(null)}
+                  >
+                    <div className="relative">
+                      <motion.div
+                        className="absolute -inset-1 rounded-lg blur-md opacity-50 transition duration-1000"
+                        style={{
+                          backgroundImage: `linear-gradient(to right, ${project.gradient
+                            .split(" ")
+                            .join(", ")
+                            .replace(/from-\[|\]|via-\[|to-\[/g, "")})`,
+                        }}
+                        animate={{
+                          opacity: hoveredProject === index ? 0.8 : 0.5,
+                        }}
+                      />
+                      <div className="relative rounded-lg overflow-hidden h-[300px] flex items-center justify-center bg-white">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className={`max-w-full max-h-full object-contain ${index === 0 ? "w-[85%]" : ""}`}
+                          style={{ maxHeight: "280px" }}
+                        />
+                      </div>
+                    </div>
+                  </motion.div>
                 </div>
-              </Link>
-            </motion.div>
-          ))}
+              );
+            } else {
+              // Card layout for projects page
+              return (
+                <motion.div
+                  key={project.id}
+                  className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                  onHoverStart={() => setHoveredProject(index)}
+                  onHoverEnd={() => setHoveredProject(null)}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link href={`/project/${project.id}`} className="block">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                      <div className="p-8 flex flex-col justify-center">
+                        <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+                        <p className="text-lg text-gray-800 mb-6">
+                          {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {project.tags.map((tag, tagIndex) => (
+                            <span
+                              key={tagIndex}
+                              className="px-3 py-1 rounded-full text-sm font-medium"
+                              style={{ backgroundColor: tag.color }}
+                            >
+                              {tag.name}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="text-blue-600 hover:underline font-medium">
+                          Read More →
+                        </div>
+                      </div>
+
+                      <div className="relative">
+                        <motion.div
+                          className="absolute inset-0"
+                          style={{
+                            backgroundImage: `linear-gradient(to right, ${project.gradient
+                              .split(" ")
+                              .join(", ")
+                              .replace(/from-\[|\]|via-\[|to-\[/g, "")})`,
+                          }}
+                          animate={{
+                            opacity: hoveredProject === index ? 0.1 : 0.05,
+                          }}
+                        />
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-64 md:h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            }
+          })}
         </div>
 
         {isHomePage && (
