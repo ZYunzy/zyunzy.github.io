@@ -48,6 +48,7 @@ export const content = {
   },
   projects: [
     {
+      id: "my-project",
       title: "My Project",
       description:
         "A personal project showcasing my work in technology and research.",
@@ -58,6 +59,22 @@ export const content = {
       tags: [
         { name: "Technology", color: "#FFD6E0" },
       ],
+      content: "This is the detailed content for My Project. It includes more information about the project, its development process, challenges faced, and outcomes achieved. This section can be expanded with images, code snippets, or any other relevant details to make it look like an article.",
+    },
+    {
+      id: "research-project",
+      title: "Research Project",
+      description:
+        "An academic research project exploring new methodologies in AI.",
+      image:
+        "https://images.unsplash.com/photo-1581092921461-7717a5f1ecf9?auto=format&fit=crop&w=800&h=600",
+      link: "#",
+      gradient: "from-[#C1F0DB] to-[#E0D6FF]",
+      tags: [
+        { name: "AI", color: "#C1F0DB" },
+        { name: "Research", color: "#FFD6E0" },
+      ],
+      content: "Detailed description of the research project. This includes the problem statement, methodology, results, and implications. As an article-style page, it can include sections like Introduction, Methods, Results, Discussion, and Conclusion.",
     },
   ],
   talks: [
