@@ -59,16 +59,16 @@ export default function Contact() {
 
     // Move the map to the container after it loads
     const moveMap = () => {
-      // Use more general selector for Clustrmaps widget
-      const mapWidget = document.querySelector('[id*="clustrmaps"]') as HTMLElement || document.querySelector('.clustrmaps') as HTMLElement;
+      // Clustrmaps usually creates a div with id containing 'clustrmaps'
+      const mapWidget = document.querySelector('div[id*="clustrmaps"]') as HTMLElement;
       const container = document.getElementById('clustrmaps-container');
       if (mapWidget && container && !container.contains(mapWidget)) {
         container.innerHTML = '';
         container.appendChild(mapWidget);
-        // Adjust styles
         mapWidget.style.width = '100%';
         mapWidget.style.height = '100%';
         mapWidget.style.borderRadius = '8px';
+        mapWidget.style.overflow = 'hidden';
       }
     };
 

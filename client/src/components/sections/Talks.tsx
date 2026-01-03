@@ -6,7 +6,19 @@ import aiEngineerImage from "../../assets/ai_engineer_talk.png";
 import seoulMetaWeekImage from "../../assets/swe_korea.png";
 
 export default function Talks() {
-  const talks = [
+  interface Talk {
+    id: number;
+    title: string;
+    venue: string;
+    date: string;
+    year: string;
+    description: string;
+    image: string;
+    link: string;
+    slidesLink?: string;
+  }
+
+  const talks: Talk[] = [
     {
       id: 1,
       title: "My Talk",
