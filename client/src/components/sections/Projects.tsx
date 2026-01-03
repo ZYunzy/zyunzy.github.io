@@ -7,7 +7,7 @@ export default function Projects() {
   const [location] = useLocation();
   const isHomePage = location === "/";
   const projects = isHomePage ? content.projects.slice(0, 2) : content.projects; // Show only first 2 on homepage
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   return (
     <div className="py-20 px-6 md:px-16 bg-gray-50">
@@ -42,17 +42,31 @@ export default function Projects() {
                         </span>
                       ))}
                     </div>
-                    <Link
-                      href={`/project/${project.id}`}
-                      className="inline-block bg-gray-300 text-gray-700 px-4 py-1.5 rounded-full transform transition text-sm hover:bg-gray-400"
-                    >
-                      Read More
-                    </Link>
+                    {project.link && project.link !== "#" && (
+                      <motion.a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-gray-300 text-gray-700 px-4 py-1.5 rounded-full transform transition text-sm"
+                        whileHover={{ y: -3 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        Visit Project
+                      </motion.a>
+                    )}
+                    {(!project.link || project.link === "#") && (
+                      <Link
+                        href={`/project/${project.id}`}
+                        className="inline-block bg-gray-300 text-gray-700 px-4 py-1.5 rounded-full transform transition text-sm hover:bg-gray-400"
+                      >
+                        Read More
+                      </Link>
+                    )}
                   </div>
 
                   <motion.div
                     className={`group ${index % 2 === 0 ? "order-1 md:order-2" : ""}`}
-                    onHoverStart={() => setHoveredProject(index)}
+                    onHoverStart={() => setHoveredProject(project.id)}
                     onHoverEnd={() => setHoveredProject(null)}
                   >
                     <div className="relative">
@@ -65,7 +79,7 @@ export default function Projects() {
                             .replace(/from-\[|\]|via-\[|to-\[/g, "")})`,
                         }}
                         animate={{
-                          opacity: hoveredProject === index ? 0.8 : 0.5,
+                          opacity: hoveredProject === project.id ? 0.8 : 0.5,
                         }}
                       />
                       <div className="relative rounded-lg overflow-hidden h-[300px] flex items-center justify-center bg-white">
@@ -86,7 +100,7 @@ export default function Projects() {
                 <motion.div
                   key={project.id}
                   className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-                  onHoverStart={() => setHoveredProject(index)}
+                  onHoverStart={() => setHoveredProject(project.id)}
                   onHoverEnd={() => setHoveredProject(null)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -125,7 +139,7 @@ export default function Projects() {
                               .replace(/from-\[|\]|via-\[|to-\[/g, "")})`,
                           }}
                           animate={{
-                            opacity: hoveredProject === index ? 0.1 : 0.05,
+                            opacity: hoveredProject === project.id ? 0.1 : 0.05,
                           }}
                         />
                         <img
