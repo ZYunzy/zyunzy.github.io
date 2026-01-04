@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import {
   Mail,
   MapPin,
@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 export default function Contact() {
+  const containerRef = useRef<HTMLDivElement>(null);
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
@@ -49,86 +50,55 @@ export default function Contact() {
     },
   ];
     
-  // useEffect(() => {
-  //   // Render Clustrmaps inside an isolated iframe so it won't append to body
-  //   const container = document.getElementById("clustrmaps-container");
-  //   if (!container) return;
-
-  //   const iframe = document.createElement("iframe");
-  //   iframe.title = "Visitor map";
-  //   iframe.style.width = "100%";
-  //   iframe.style.height = "100%";
-  //   iframe.style.border = "0";
-  //   iframe.setAttribute("loading", "lazy");
-
-  //   container.innerHTML = "";
-  //   container.appendChild(iframe);
-
-  //   const doc = iframe.contentDocument;
-  //   if (!doc) return;
-
-  //   doc.open();
-  //   doc.write(`<!doctype html><html><head><style>
-  //     html, body { margin: 0; padding: 0; width: 100%; height: 100%; }
-  //     #map { width: 100%; height: 100%; }
-  //   </style></head><body>
-  //     <div id="map"></div>
-  //     <script type="text/javascript" src="https://clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900"></script>
-  //   </body></html>`);
-  //   doc.close();
-
-  //   return () => {
-  //     container.innerHTML = "";
-  //   };
-  // }, []);
-
   useEffect(() => {
-    const container = document.getElementById("clustrmaps-container");
-    if (!container) return;
+    const scriptId = 'clustrmaps-script';
+    
+    // 检查是否已存在脚本，避免重复加载
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.src = 'https://clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900';
+      script.async = true;
+      document.head.appendChild(script);
+    }
 
-    // 确保脚本只加载一次
-    const ensureScript = () => {
-      let script = document.getElementById("clustrmaps-script") as HTMLScriptElement | null;
-      if (!script) {
-        script = document.createElement("script");
-        script.id = "clustrmaps-script";
-        script.src =
-          "https://clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900";
-        script.async = true;
-        document.body.appendChild(script);
-      }
-      return script;
-    };
+    // MutationObserver：监听DOM变化，立刻移动widget到容器
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.addedNodes.length) {
+          // 尝试多种可能的选择器
+          const widget = 
+            document.getElementById('clustrmaps-widget-v2') || 
+            document.getElementById('clustrmaps-widget') ||
+            document.querySelector('.clustrmaps-container') ||
+            document.querySelector('div[id*="clustrmaps"]');
+          
+          if (widget && containerRef.current && !containerRef.current.contains(widget)) {
+            containerRef.current.innerHTML = '';
+            containerRef.current.appendChild(widget);
+            
+            // 强制样式
+            if (widget instanceof HTMLElement) {
+              widget.style.width = '100%';
+              widget.style.height = '100%';
+              widget.style.display = 'block';
+            }
+          }
+        }
+      });
+    });
 
-    const moveMap = () => {
-      const mapNode = document.querySelector('div[id*="clustrmaps"]');
-      if (mapNode instanceof HTMLElement && !container.contains(mapNode)) {
-        container.innerHTML = "";
-        container.appendChild(mapNode);
-        mapNode.style.width = "100%";
-        mapNode.style.height = "100%";
-        mapNode.style.display = "block";
-        mapNode.style.borderRadius = "8px";
-        mapNode.style.overflow = "hidden";
-      }
-    };
-
-    // move
-    const observer = new MutationObserver(() => moveMap());
     observer.observe(document.body, { childList: true, subtree: true });
-
-    ensureScript();
-    moveMap();
-    setTimeout(moveMap, 1000);
-    setTimeout(moveMap, 3000);
-    setTimeout(moveMap, 5000);
 
     return () => {
       observer.disconnect();
-      if (container) container.innerHTML = "";
-      const mapNode = document.querySelector('div[id*="clustrmaps"]');
-      if (mapNode) mapNode.remove();
-      const script = document.getElementById("clustrmaps-script");
+      // 清理：移除widget和脚本
+      if (containerRef.current) {
+        containerRef.current.innerHTML = '';
+      }
+      const widget = document.querySelector('div[id*="clustrmaps"]');
+      if (widget) widget.remove();
+      const script = document.getElementById(scriptId);
       if (script) script.remove();
     };
   }, []);
