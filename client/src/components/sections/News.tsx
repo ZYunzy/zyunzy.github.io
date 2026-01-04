@@ -18,8 +18,8 @@ export default function News() {
   const newsItems: NewsItem[] = [
     {
       id: 1,
-      title: "My Research News",
-      date: "January 2024",
+      title: "NewYear News",
+      date: "January 2026",
       description: "Updates on my latest research in artificial intelligence",
       icon: <Sparkles className="w-5 h-5" />,
       link: "#",

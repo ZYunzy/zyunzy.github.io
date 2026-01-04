@@ -35,7 +35,7 @@ export default function Hero() {
                 Get in touch
               </motion.a>
               <motion.a
-                href="/publications"
+                href="/projects"
                 className="border border-black px-8 py-3 rounded-full transition"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.98 }}

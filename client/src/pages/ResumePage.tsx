@@ -33,8 +33,11 @@ export default function ResumePage() {
     "Research and Development",
   ];
 
-  const awardsContent = [
+  const honorsContent = [
     "Outstanding Research Award, 2024",
+  ];
+
+  const awardsContent = [
     "Academic Excellence Scholarship, 2023",
   ];
 
@@ -378,7 +381,7 @@ export default function ResumePage() {
                 </div>
               </motion.section>
 
-              {/* Awards Section - Moved to the top */}
+              {/* Honors and Awards Section */}
               <motion.section
                 id="awards"
                 variants={sectionVariants}
@@ -387,25 +390,50 @@ export default function ResumePage() {
                 className="mb-16 print:mb-8 print:break-inside-avoid"
               >
                 <h2 className="text-2xl font-bold mb-6 relative inline-block">
-                  Awards
+                  Honors and Awards
                   <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#C1F0DB]"></span>
                 </h2>
-                <ul className="space-y-3 mt-6">
-                  {awardsContent.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-start"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <span className="inline-block w-6 h-6 rounded-full bg-[#C1F0DB] flex-shrink-0 mr-3 flex items-center justify-center">
-                        <Award className="h-3 w-3 text-gray-700" />
-                      </span>
-                      <span className="text-lg">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
+                <div className="space-y-8 mt-6">
+                  <h3 className="text-xl font-semibold mb-4">
+                    Honors
+                  </h3>
+                  <ul className="space-y-3">
+                    {honorsContent.map((item, index) => (
+                      <motion.li
+                        key={`honors-${index}`}
+                        className="flex items-start"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <span className="inline-block w-6 h-6 rounded-full bg-[#C1F0DB] flex-shrink-0 mr-3 flex items-center justify-center">
+                          <Award className="h-3 w-3 text-gray-700" />
+                        </span>
+                        <span className="text-lg">{item}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+
+                  <h3 className="text-xl font-semibold mb-4 mt-12">
+                    Awards
+                  </h3>
+                  <ul className="space-y-3">
+                    {awardsContent.map((item, index) => (
+                      <motion.li
+                        key={`awards-${index}`}
+                        className="flex items-start"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <span className="inline-block w-6 h-6 rounded-full bg-[#C1F0DB] flex-shrink-0 mr-3 flex items-center justify-center">
+                          <Award className="h-3 w-3 text-gray-700" />
+                        </span>
+                        <span className="text-lg">{item}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
               </motion.section>
 
 
