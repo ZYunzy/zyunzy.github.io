@@ -109,10 +109,10 @@ export default function ResumePage() {
       alt: "SCUT Logo",
     },
     {
-      degree: "M.Eng in Urban Planning with Minor Program in Sustainable Development",
+      degree: "M.Eng in Urban Planning, (Minor in Sustainable Development)",
       institution: "Tongji University",
       location: "2023",
-      field: "Urban Planning, Sustainable Development, Infrastructure and Transportation, etc",
+      field: "Spatial Planning, Sustainable Development, Infrastructure and Transportation, etc",
       logo: "/client/src/assets/tongji_logo.png",
       alt: "Tongji Logo",
     },
@@ -630,7 +630,7 @@ export default function ResumePage() {
                           </svg>
                         )}
                       </span>
-                      <span className="text-lg">{item}</span>  // 统一显示文本，无超链接
+                      <span className="text-lg">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
