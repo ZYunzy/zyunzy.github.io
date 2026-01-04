@@ -2,20 +2,39 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "wouter";
 import { content } from "@/data/content";
+import { Check, X } from "lucide-react";
 
 export default function Projects() {
   const [location] = useLocation();
   const isHomePage = location === "/";
-  const projects = isHomePage ? content.projects.slice(0, 2) : content.projects; // Show only first 2 on homepage
+  const allProjects = content.projects;
+  const projects = isHomePage ? allProjects.slice(0, 2) : allProjects; // Show only first 2 on homepage
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const [activeTag, setActiveTag] = useState<string | null>(null);
 
-  // Collect all unique tags for the projects page
-  const allTags = isHomePage ? [] : Array.from(
-    new Set(projects.flatMap(project => project.tags.map(tag => tag.name)))
+  // Collect all unique tags
+  const allTags = Array.from(
+    new Set(allProjects.flatMap(project => project.tags.map(tag => tag.name)))
   ).map(tagName => {
-    const tag = projects.flatMap(p => p.tags).find(t => t.name === tagName);
+    const tag = allProjects.flatMap(p => p.tags).find(t => t.name === tagName);
     return tag;
   }).filter(Boolean);
+
+  // Filter projects based on active tag
+  const filteredProjects = activeTag
+    ? projects.filter(project =>
+        project.tags.some(tag => tag.name === activeTag)
+      )
+    : projects;
+
+  // Handle tag click
+  const handleTagClick = (tagName: string) => {
+    if (activeTag === tagName) {
+      setActiveTag(null); // Clicking active tag removes the filter
+    } else {
+      setActiveTag(tagName);
+    }
+  };
 
   return (
     <div className="py-20 px-6 md:px-16 bg-gray-50">
@@ -32,20 +51,49 @@ export default function Projects() {
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-12 pb-2">
               {allTags.map((tag, index) => (
-                <button
+                <motion.button
                   key={index}
-                  className="px-4 py-2 rounded-full hover:shadow-md transition-colors whitespace-nowrap flex items-center"
-                  style={{ backgroundColor: `${tag.color}80` }}
+                  onClick={() => handleTagClick(tag.name)}
+                  className={`px-4 py-2 rounded-full hover:shadow-md transition-colors whitespace-nowrap flex items-center ${activeTag === tag.name ? "ring-2 ring-offset-2 ring-gray-900" : ""}`}
+                  style={{ backgroundColor: tag.color }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   {tag.name}
-                </button>
+                  {activeTag === tag.name && <Check className="ml-2 h-4 w-4" />}
+                </motion.button>
               ))}
+              {activeTag && (
+                <motion.button
+                  onClick={() => setActiveTag(null)}
+                  className="px-4 py-2 rounded-full hover:shadow-md transition-colors whitespace-nowrap flex items-center bg-gray-200"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                >
+                  Clear Filter <X className="ml-2 h-4 w-4" />
+                </motion.button>
+              )}
             </div>
+            {activeTag && (
+              <motion.div
+                className="text-center mb-8"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <p className="text-lg">
+                  Showing projects tagged with{" "}
+                  <span className="font-semibold">{activeTag}</span>
+                </p>
+              </motion.div>
+            )}
           </div>
         )}
 
         <div className={isHomePage ? "space-y-20" : "space-y-12"}>
-          {projects.map((project, index) => {
+          {filteredProjects.map((project, index) => {
             if (isHomePage) {
               // Original alternating layout for homepage
               return (
