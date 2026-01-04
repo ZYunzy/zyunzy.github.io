@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { content } from "@/data/content";
 import { motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -66,15 +67,8 @@ export default function ResumePage() {
     },
   ];
 
-  const activeProjectsContent = [
-    {
-      id: 1,  // 添加id
-      title: "My AI Research Project",
-      description: "A research project focused on artificial intelligence and machine learning applications.",
-      link: "#",  // 可保留或移除
-    },
-    // 添加更多项目...
-  ];
+  // 直接使用 content.projects，取前2个项目
+  const activeProjectsContent = content.projects.slice(0, 2);
 
   const educationContent = [
     {
@@ -160,7 +154,7 @@ export default function ResumePage() {
                 <div className="flex justify-center items-center flex-wrap gap-3 text-gray-600">
                   <div className="flex items-center">
                     <Mail className="h-4 w-4 mr-1" />
-                    <span>yunzhuang@email.com</span>
+                    <span>zyunn55[at]outlook.com</span>
                   </div>
                   <div className="flex items-center">
                     <Globe className="h-4 w-4 mr-1" />
@@ -574,10 +568,20 @@ export default function ResumePage() {
                           <span className="inline-block w-3 h-3 rounded-full bg-[#FFD6E0] mr-2"></span>
                           {project.title}
                         </h3>
-                        <p className="mb-4">{project.description}</p>
-                        <span className="inline-flex items-center bg-gray-300 text-gray-700 px-3 py-1.5 rounded-full text-sm print:bg-white print:text-black print:border print:border-black">
-                          View Details
-                          <Globe className="ml-2 h-3 w-3" />
+                        <p className="mb-2">{project.description}</p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {project.tags.map((tag, tagIndex) => (
+                            <span
+                              key={tagIndex}
+                              className="px-2 py-1 rounded-full text-xs font-medium"
+                              style={{ backgroundColor: tag.color }}
+                            >
+                              {tag.name}
+                            </span>
+                          ))}
+                        </div>
+                        <span className="inline-flex items-center text-blue-600 text-sm font-medium print:text-black">
+                          View Details →
                         </span>
                       </motion.div>
                     </Link>
