@@ -13,12 +13,14 @@ export default function Projects() {
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
   // Collect all unique tags
-  const allTags = Array.from(
-    new Set(allProjects.flatMap(project => project.tags.map(tag => tag.name)))
-  ).map(tagName => {
-    const tag = allProjects.flatMap(p => p.tags).find(t => t.name === tagName);
-    return tag;
-  }).filter(Boolean);
+    const allTags = Array.from(
+      new Set(allProjects.flatMap(project => project.tags.map(tag => tag.name)))
+    )
+      .map(tagName => {
+        const tag = allProjects.flatMap(p => p.tags).find(t => t.name === tagName);
+        return tag;
+      })
+      .filter((t): t is typeof allProjects[number]["tags"][number] => Boolean(t));
 
   // Filter projects based on active tag
   const filteredProjects = activeTag

@@ -6,7 +6,7 @@ export const content = {
     infoBoxes: [
       {
         title: "Education",
-        color: "#E0D6FF",
+        color: "#87CEEB",
         items: [
           "B.Eng in Urban Planning",
           "M.Eng in Urban Planning",
@@ -16,7 +16,7 @@ export const content = {
       },
       {
         title: "Skills",
-        color: "#C1F0DB",
+        color: "#32CD32",
         items: [
           "Data Science & AI",
           "Computational Modeling",
@@ -25,7 +25,7 @@ export const content = {
       },
       {
         title: "Interests",
-        color: "#FFD6E0",
+        color: "#00BFFF",
         items: [
           "Urban Systems",
           "Complex Networks",
@@ -35,7 +35,7 @@ export const content = {
       },
       {
         title: "Languages",
-        color: "#E0D6FF",
+        color: "#00FF7F",
         items: [
           "Mandarin",
           "English",
@@ -67,11 +67,11 @@ export const content = {
       image:
         "https://images.unsplash.com/photo-1535572290543-960a8046f5af?auto=format&fit=crop&w=800&h=600",
       link: "https://support.google.com/googlenest/answer/12494697",
-      gradient: "from-[#C1F0DB] via-[#FFD6E0] to-[#E0D6FF]",
+      gradient: "from-[#32CD32] via-[#00BFFF] to-[#87CEEB]",
       tags: [
-        { name: "Gemini AI", color: "#C1F0DB" },
-        { name: "Smart Home", color: "#FFD6E0" },
-        { name: "Multimodal Interaction", color: "#E0D6FF" },
+        { name: "Gemini AI", color: "#32CD32" },
+        { name: "Smart Home", color: "#00BFFF" },
+        { name: "Multimodal Interaction", color: "#87CEEB" },
       ],
       content: "Detailed information about the Google Home Gemini Extension project. This multimodal AI integration brought advanced conversational capabilities to smart home devices, allowing users to control their homes through natural language and visual inputs. The project involved close collaboration with Google's AI teams and required extensive testing across various smart home ecosystems.",
     },
@@ -83,11 +83,11 @@ export const content = {
       image:
         "https://images.unsplash.com/photo-1581092921461-7717a5f1ecf9?auto=format&fit=crop&w=800&h=600",
       link: "",
-      gradient: "from-[#FFD6E0] via-[#E0D6FF] to-[#C1F0DB]",
+      gradient: "from-[#00BFFF] via-[#87CEEB] to-[#32CD32]",
       tags: [
-        { name: "Multimodal AI", color: "#FFD6E0" },
-        { name: "Computer Vision", color: "#E0D6FF" },
-        { name: "Education", color: "#C1F0DB" },
+        { name: "Multimodal AI", color: "#00BFFF" },
+        { name: "Computer Vision", color: "#87CEEB" },
+        { name: "Education", color: "#32CD32" },
       ],
       content: "ChemBuddy is an innovative AI-powered chemistry learning assistant that integrates multiple sensory inputs. The system uses computer vision to analyze chemical reactions in real-time, voice interaction for natural communication, and sensor data for precise measurements. This multimodal approach helps students better understand complex chemistry concepts through hands-on experimentation.",
     },
@@ -99,11 +99,11 @@ export const content = {
       image:
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&h=600",
       link: "http://cognimatescopilot.com/",
-      gradient: "from-[#E0D6FF] via-[#C1F0DB] to-[#FFD6E0]",
+      gradient: "from-[#87CEEB] via-[#32CD32] to-[#00BFFF]",
       tags: [
-        { name: "AI Education", color: "#FFD6E0" },
-        { name: "Creative Coding", color: "#E0D6FF" },
-        { name: "Child-Computer Interaction", color: "#C1F0DB" },
+        { name: "AI Education", color: "#00BFFF" },
+        { name: "Creative Coding", color: "#87CEEB" },
+        { name: "Child-Computer Interaction", color: "#32CD32" },
       ],
       content: "Cognimates is a pioneering AI education platform designed specifically for children. The platform allows young users to train their own machine learning models through an intuitive interface, then use these models to create interactive games and applications. This hands-on approach makes AI concepts accessible and engaging for the next generation of innovators.",
     },
@@ -127,7 +127,7 @@ export const content = {
       year: "2024",
       authors: "Zhuang, Y.",
       tags: [
-        { name: "AI Research", color: "#E0D6FF" },
+        { name: "AI Research", color: "#87CEEB" },
       ],
       abstractLink: "#",
       pdfLink: "#",
