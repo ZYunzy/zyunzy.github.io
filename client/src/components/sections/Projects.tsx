@@ -9,6 +9,14 @@ export default function Projects() {
   const projects = isHomePage ? content.projects.slice(0, 2) : content.projects; // Show only first 2 on homepage
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
+  // Collect all unique tags for the projects page
+  const allTags = isHomePage ? [] : Array.from(
+    new Set(projects.flatMap(project => project.tags.map(tag => tag.name)))
+  ).map(tagName => {
+    const tag = projects.flatMap(p => p.tags).find(t => t.name === tagName);
+    return tag;
+  }).filter(Boolean);
+
   return (
     <div className="py-20 px-6 md:px-16 bg-gray-50">
       <div className="container mx-auto">
@@ -16,6 +24,25 @@ export default function Projects() {
           Projects
           <span className="absolute -bottom-2 left-0 w-24 h-1 bg-[#E0D6FF]"></span>
         </h2>
+
+        {!isHomePage && (
+          <div className="mb-12">
+            <p className="text-xl text-gray-700 max-w-3xl mb-8">
+              My projects explore artificial intelligence applications, sustainable urban systems, and innovative solutions across various domains.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 mb-12 pb-2">
+              {allTags.map((tag, index) => (
+                <button
+                  key={index}
+                  className="px-4 py-2 rounded-full hover:shadow-md transition-colors whitespace-nowrap flex items-center"
+                  style={{ backgroundColor: `${tag.color}80` }}
+                >
+                  {tag.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className={isHomePage ? "space-y-20" : "space-y-12"}>
           {projects.map((project, index) => {
