@@ -24,8 +24,7 @@ export default function Publications() {
               <span className="absolute -bottom-2 left-0 w-24 h-1 bg-[#C1F0DB]"></span>
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl">
-              My research explores how people learn with and about artificial
-              intelligence and computational making.
+              My research explores the human-infrastructure-environment interactions within urban systems.
             </p>
           </div>
           <Link href="/publications">

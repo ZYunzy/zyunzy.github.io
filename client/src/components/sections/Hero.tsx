@@ -19,8 +19,7 @@ export default function Hero() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-800 mb-8">
-              I'm a researcher passionate about collaborating across disciplines to propose transformative solutions for sustainable urban systems through design and engineering. I believe system science, combined with inter- and
-transdisciplinary methods, is critical in transitioning cities towards resilient, adaptive, and sustainable futures to face uncertain challenges. This is a demo website. I am working on updating it to showcase my projects and research.
+              I'm a researcher passionate about collaborating across disciplines to propose transformative solutions for sustainable urban systems through design and engineering. I believe system science, combined with inter- and transdisciplinary methods, is critical in transitioning cities towards resilient, adaptive, and sustainable futures to face uncertain challenges. This is a demo website. I am working on updating it to showcase my projects and research.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <motion.a
