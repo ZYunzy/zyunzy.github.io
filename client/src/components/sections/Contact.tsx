@@ -49,36 +49,87 @@ export default function Contact() {
     },
   ];
     
+  // useEffect(() => {
+  //   // Render Clustrmaps inside an isolated iframe so it won't append to body
+  //   const container = document.getElementById("clustrmaps-container");
+  //   if (!container) return;
+
+  //   const iframe = document.createElement("iframe");
+  //   iframe.title = "Visitor map";
+  //   iframe.style.width = "100%";
+  //   iframe.style.height = "100%";
+  //   iframe.style.border = "0";
+  //   iframe.setAttribute("loading", "lazy");
+
+  //   container.innerHTML = "";
+  //   container.appendChild(iframe);
+
+  //   const doc = iframe.contentDocument;
+  //   if (!doc) return;
+
+  //   doc.open();
+  //   doc.write(`<!doctype html><html><head><style>
+  //     html, body { margin: 0; padding: 0; width: 100%; height: 100%; }
+  //     #map { width: 100%; height: 100%; }
+  //   </style></head><body>
+  //     <div id="map"></div>
+  //     <script type="text/javascript" src="https://clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900"></script>
+  //   </body></html>`);
+  //   doc.close();
+
+  //   return () => {
+  //     container.innerHTML = "";
+  //   };
+  // }, []);
+
   useEffect(() => {
-    // Render Clustrmaps inside an isolated iframe so it won't append to body
     const container = document.getElementById("clustrmaps-container");
     if (!container) return;
 
-    const iframe = document.createElement("iframe");
-    iframe.title = "Visitor map";
-    iframe.style.width = "100%";
-    iframe.style.height = "100%";
-    iframe.style.border = "0";
-    iframe.setAttribute("loading", "lazy");
+    // 确保脚本只加载一次
+    const ensureScript = () => {
+      let script = document.getElementById("clustrmaps-script") as HTMLScriptElement | null;
+      if (!script) {
+        script = document.createElement("script");
+        script.id = "clustrmaps-script";
+        script.src =
+          "https://clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900";
+        script.async = true;
+        document.body.appendChild(script);
+      }
+      return script;
+    };
 
-    container.innerHTML = "";
-    container.appendChild(iframe);
+    const moveMap = () => {
+      const mapNode = document.querySelector('div[id*="clustrmaps"]');
+      if (mapNode instanceof HTMLElement && !container.contains(mapNode)) {
+        container.innerHTML = "";
+        container.appendChild(mapNode);
+        mapNode.style.width = "100%";
+        mapNode.style.height = "100%";
+        mapNode.style.display = "block";
+        mapNode.style.borderRadius = "8px";
+        mapNode.style.overflow = "hidden";
+      }
+    };
 
-    const doc = iframe.contentDocument;
-    if (!doc) return;
+    // move
+    const observer = new MutationObserver(() => moveMap());
+    observer.observe(document.body, { childList: true, subtree: true });
 
-    doc.open();
-    doc.write(`<!doctype html><html><head><style>
-      html, body { margin: 0; padding: 0; width: 100%; height: 100%; }
-      #map { width: 100%; height: 100%; }
-    </style></head><body>
-      <div id="map"></div>
-      <script type="text/javascript" src="https://clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900"></script>
-    </body></html>`);
-    doc.close();
+    ensureScript();
+    moveMap();
+    setTimeout(moveMap, 1000);
+    setTimeout(moveMap, 3000);
+    setTimeout(moveMap, 5000);
 
     return () => {
-      container.innerHTML = "";
+      observer.disconnect();
+      if (container) container.innerHTML = "";
+      const mapNode = document.querySelector('div[id*="clustrmaps"]');
+      if (mapNode) mapNode.remove();
+      const script = document.getElementById("clustrmaps-script");
+      if (script) script.remove();
     };
   }, []);
 
