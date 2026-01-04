@@ -26,7 +26,7 @@ export default function ResumePage() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  const qualificationsContent = [
+  const researchInterestContent = [
     "Artificial Intelligence Research",
     "Machine Learning Applications",
     "Data Analysis and Modeling",
@@ -220,8 +220,8 @@ export default function ResumePage() {
                 <div className="flex flex-wrap justify-center gap-2 max-w-4xl">
                   {[
                     {
-                      id: "qualifications",
-                      label: "Qualifications",
+                      id: "research-interest",
+                      label: "Research Interest",
                       icon: <Briefcase className="h-4 w-4 mr-2" />,
                       color: "rgba(255, 214, 224, 0.5)",
                     },
@@ -277,20 +277,20 @@ export default function ResumePage() {
                 </div>
               </div>
 
-              {/* Qualifications Section */}
+              {/* Research Interest Section */}
               <motion.section
-                id="qualifications"
+                id="research-interest"
                 variants={sectionVariants}
                 initial="hidden"
                 animate="visible"
                 className="mb-16 print:mb-8 print:break-inside-avoid"
               >
                 <h2 className="text-2xl font-bold mb-6 relative inline-block">
-                  Qualifications Summary
+                  Research Interest
                   <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#FFD6E0]"></span>
                 </h2>
                 <ul className="space-y-3 mt-6">
-                  {qualificationsContent.map((item, index) => (
+                  {researchInterestContent.map((item, index) => (
                     <motion.li
                       key={index}
                       className="flex items-start"
