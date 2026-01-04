@@ -52,54 +52,75 @@ export default function Contact() {
     
   useEffect(() => {
     const scriptId = 'clustrmaps-script';
-    
-    // 检查是否已存在脚本，避免重复加载
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
+    // 定义查找 widget 的函数，方便复用
+    const findWidget = () => 
+      document.getElementById('clustrmaps-widget-v2') || 
+      document.querySelector('.clustrmaps-container') || 
+      document.querySelector('div[id*="clustrmaps"]');
+
+    // 1. 核心处理函数：移动并修正样式
+    const moveWidget = (widget: HTMLElement) => {
+      if (containerRef.current && !containerRef.current.contains(widget)) {
+        // 先清空容器，防止重复添加（虽然 appendChild 会自动移动节点，但为了保险）
+        containerRef.current.innerHTML = ''; 
+        containerRef.current.appendChild(widget);
+        
+        // 【关键优化】强制重置样式，覆盖官方脚本的 !important 或内联样式
+        widget.style.setProperty('width', '100%', 'important');
+        widget.style.setProperty('height', '100%', 'important');
+        widget.style.setProperty('display', 'block', 'important');
+        // 如果官方脚本设置了 max-width，也需要重置
+        widget.style.setProperty('max-width', 'none', 'important'); 
+      }
+    };
+
+    // 2. 检查脚本是否已存在（处理 React StrictMode 或快速路由切换）
+    let script = document.getElementById(scriptId) as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
       script.id = scriptId;
       script.src = 'https://clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=lSzZfQ2Us9dYiV01T5GNc3tqK2pNAxQX2Mbse6RV51s&co=9dc4e0&cmo=5390ff&cmn=ff4900';
-      script.async = true;
+      // 这里的 async 很重要，防止阻塞页面加载
+      script.async = true; 
       document.head.appendChild(script);
     }
 
-    // MutationObserver：监听DOM变化，立刻移动widget到容器
+    // 3. 初始检查：如果组件挂载时 Widget 已经存在（例如从缓存恢复），直接移动
+    const existingWidget = findWidget();
+    if (existingWidget && existingWidget instanceof HTMLElement) {
+      moveWidget(existingWidget);
+    }
+
+    // 4. MutationObserver 监听：这是为了捕获异步生成的 Widget
     const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
+      for (const mutation of mutations) {
         if (mutation.addedNodes.length) {
-          // 尝试多种可能的选择器
-          const widget = 
-            document.getElementById('clustrmaps-widget-v2') || 
-            document.getElementById('clustrmaps-widget') ||
-            document.querySelector('.clustrmaps-container') ||
-            document.querySelector('div[id*="clustrmaps"]');
-          
-          if (widget && containerRef.current && !containerRef.current.contains(widget)) {
-            containerRef.current.innerHTML = '';
-            containerRef.current.appendChild(widget);
-            
-            // 强制样式
-            if (widget instanceof HTMLElement) {
-              widget.style.width = '100%';
-              widget.style.height = '100%';
-              widget.style.display = 'block';
-            }
+          const widget = findWidget();
+          if (widget && widget instanceof HTMLElement) {
+            moveWidget(widget);
+            // 【关键优化】一旦找到并移动了 widget，立即停止监听！
+            // 避免持续监听 body 变化导致严重的性能损耗
+            observer.disconnect(); 
+            return; // 结束循环
           }
         }
-      });
+      }
     });
 
+    // 监听整个 body 的子节点变化（因为我们不知道它会插在哪里）
     observer.observe(document.body, { childList: true, subtree: true });
 
+    // 5. 清理函数
     return () => {
-      observer.disconnect();
-      // 清理：移除widget和脚本
-      if (containerRef.current) {
-        containerRef.current.innerHTML = '';
-      }
-      const widget = document.querySelector('div[id*="clustrmaps"]');
-      if (widget) widget.remove();
-      const script = document.getElementById(scriptId);
+      observer.disconnect(); // 组件卸载时确保停止监听
+      
+      // 可选：是否要在组件卸载时删除脚本？
+      // 建议删除，因为 Response Header 显示 cache-control: no-store
+      // 意味着每次都应该重新请求，且防止污染全局
       if (script) script.remove();
+      
+      const widget = findWidget();
+      if (widget) widget.remove();
     };
   }, []);
 
