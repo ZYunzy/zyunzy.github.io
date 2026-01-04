@@ -31,28 +31,21 @@ export default function Gallery() {
     {
       id: 1,
       title: "Icon Design",
-      venue: "Software",
-      date: "June",
+      venue: "Software, Conference",
+      date: "June - August, 2024",
       year: "2024",
       description: "An icon design for software GeoMarX.",
-      image: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767529134/geomarxpng_t7hlmy.png",
+      image: [
+        "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767529134/geomarxpng_t7hlmy.png",
+        "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767529134/icsc_f5vb5b.png"
+      ],
       link: "https://www.youtube.com/watch?v=74q38nKdkd0",
     },
     {
       id: 2,
-      title: "Icon Design",
-      venue: "Conference",
-      date: "August",
-      year: "2024",
-      description: "An icon design for 2024 International Conference of Social Computing (ICSC 2024).",
-      image: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767529134/icsc_f5vb5b.png",
-      link: "#",
-    },
-    {
-      id: 3,
       title: "Poster Design",
       venue: "Seminar",
-      date: "September - November",
+      date: "September - November, 2024",
       year: "2024",
       description: "Poster design for Seminar.",
       image: [
@@ -62,10 +55,10 @@ export default function Gallery() {
       link: "#",
     },
     {
-      id: 4,
+      id: 3,
       title: "UI Design",
       venue: "Navigation App",
-      date: "April",
+      date: "April, 2023",
       year: "2023",
       description: "UI design for Navigation App.",
       image: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767529135/appui_tr8nov.svg",
