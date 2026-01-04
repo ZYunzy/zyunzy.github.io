@@ -30,12 +30,12 @@ export default function Contact() {
   const socialLinks = [
     {
       icon: <Twitter className="w-5 h-5" />,
-      href: "https://twitter.com/yunzhuang",
+      href: "https://x.com/ZYunn_kk",
       ariaLabel: "Twitter",
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      href: "https://linkedin.com/in/yunzhuang",
+      href: "https://www.linkedin.com/in/yun-zhuang-83833819a",
       ariaLabel: "LinkedIn",
     },
     {
@@ -45,8 +45,8 @@ export default function Contact() {
     },
     {
       icon: <BookOpen className="w-5 h-5" />,
-      href: "https://medium.com/@yunzhuang",
-      ariaLabel: "Medium",
+      href: "https://orcid.org/0009-0007-5273-0231",
+      ariaLabel: "ORCID",
     },
   ];
     

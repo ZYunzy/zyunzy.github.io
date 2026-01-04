@@ -18,9 +18,9 @@ export default function News() {
   const newsItems: NewsItem[] = [
     {
       id: 1,
-      title: "NewYear News",
+      title: "Happy New Year 2026!",
       date: "January 2026",
-      description: "Updates on my latest research in artificial intelligence",
+      description: "Happy New Year! Welcome to Zhuang Yun's new website. Wishing you a year filled with joy, success, and exciting opportunities.",
       icon: <Sparkles className="w-5 h-5" />,
       link: "#",
       color: "#FFD6E0"

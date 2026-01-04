@@ -34,11 +34,26 @@ export default function ResumePage() {
   ];
 
   const honorsContent = [
-    "Outstanding Research Award, 2024",
+    "International PolyU Research Postgraduate Summer School Scholarship (50/20000), 2022",
+    "National Postgraduate Scholarship, 2020-2022",
+    "University First Class of Pengshi Architecture Scholarship (10/800), 2019",
+    "University He-Jingtang Technology Innovation Prize, 2019",
+    "University Enterprise Scholarship (20/800), 2019",
+    "University First Class Scholarship (30/800), 2018",
+    "National Scholarship (Twice: Top 3 ‰), 2016 & 2017",
+    "Excellent Student Cadre (Twice), Merit Student (Four times), Excellent Volunteer, 2016–2019",
   ];
 
   const awardsContent = [
-    "Academic Excellence Scholarship, 2023",
+    "Second Place of Outstanding Poster Award in UGOD Urban AI Symposium, 2025",
+    "Third Prize of CAMPUS Asia Summer School Program on Sustainable Urban and Building Environment, 2021",
+    "Grand Prize of Guangdong Province Challenge-cup Extracurricular Academic Contest, 2019",
+    "First Prize of the University Challenge-Cup Extracurricular Academic Competition, 2019",
+    "Honorable Award of Southern Guangdong Village (Renovation) Planning and Design Competition, 2018",
+    "Champion of International Solar Decathlon Competition, 2018",
+    "Excellent Report of National College Student Innovation and Entrepreneurship Training Program, 2018",
+    "Best Award of University Student Prefabricated Building Design Competition,2017",
+    "Second Prize of National College Student Advanced Mapping Technology and Product Information Modeling Innovation Competition,2015",
   ];
 
   const languagesContent = [
@@ -51,6 +66,9 @@ export default function ResumePage() {
   ];
 
   const passionsContent = [
+    "Towards sustainable urban systems",
+    "AI for social good",
+    "Computational modeling and network science",
     "Reading and continuous learning",
     "Technology and innovation",
   ];
@@ -263,84 +281,6 @@ export default function ResumePage() {
                 </ul>
               </motion.section>
 
-              {/* Education Section - Moved right after Qualifications */}
-              {/* <motion.section
-                id="education"
-                variants={sectionVariants}
-                initial="hidden"
-                animate="visible"
-                className="mb-16 print:mb-8 print:break-inside-avoid"
-              >
-                <h2 className="text-2xl font-bold mb-6 relative inline-block">
-                  Education
-                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#C1F0DB]"></span>
-                </h2>
-                <div className="overflow-x-auto mt-6">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50">
-                      <tr>
-                        <th
-                          scope="col"
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                        >
-                          Degree
-                        </th>
-                        <th
-                          scope="col"
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                        >
-                          Major
-                        </th>
-                        <th
-                          scope="col"
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                        >
-                          Institution
-                        </th>
-                        <th
-                          scope="col"
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                        >
-                          Year
-                        </th>
-                        <th
-                          scope="col"
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                        >
-                          GPA
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                      {educationContent.map((edu, index) => (
-                        <motion.tr
-                          key={index}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: index * 0.1 }}
-                        >
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                            {edu.degree}
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            {edu.major}
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            {edu.institution}
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            {edu.year}
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            {edu.gpa}
-                          </td>
-                        </motion.tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </motion.section> */}
-
               {/* Education Section */}
               <motion.section
                 id="education"
@@ -528,47 +468,6 @@ export default function ResumePage() {
                   ))}
                 </div>
               </motion.section>
-
-              {/* Active Projects Section */}
-              {/* <motion.section
-                id="projects"
-                variants={sectionVariants}
-                initial="hidden"
-                animate="visible"
-                className="mb-16 print:mb-8 print:break-inside-avoid"
-              >
-                <h2 className="text-2xl font-bold mb-6 relative inline-block">
-                  Active Projects
-                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#FFD6E0]"></span>
-                </h2>
-                <div className="grid gap-6 mt-6">
-                  {activeProjectsContent.map((project, index) => (
-                    <motion.div
-                      key={index}
-                      className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow print:border-0 print:shadow-none print:p-3"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      whileHover={{ y: -5 }}
-                    >
-                      <h3 className="text-xl font-bold mb-2 flex items-center">
-                        <span className="inline-block w-3 h-3 rounded-full bg-[#FFD6E0] mr-2"></span>
-                        {project.title}
-                      </h3>
-                      <p className="mb-4">{project.description}</p>
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`inline-flex items-center bg-gray-300 text-gray-700 px-3 py-1.5 rounded-full text-sm print:bg-white print:text-black print:border print:border-black ${!project.link && "hidden"}`}
-                      >
-                        Visit Project
-                        <Globe className="ml-2 h-3 w-3" />
-                      </a>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.section> */}
 
               {/* Active Projects Section */}
               <motion.section

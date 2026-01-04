@@ -1,7 +1,7 @@
 export const content = {
   about: {
     paragraphs: [
-      "I'm Yun Zhuang, a researcher passionate about artificial intelligence and its applications.",
+      "I'm Yun Zhuang, a researcher passionate about sustainable urban systems.",
     ],
     infoBoxes: [
       {
@@ -9,6 +9,9 @@ export const content = {
         color: "#E0D6FF",
         items: [
           "B.Eng in Urban Planning",
+          "M.Eng in Urban Planning",
+          "M.Sc in Geomatics (GIS)",
+          "B.Sc in Data Science & AI (ongoing)",
         ],
       },
       {
@@ -16,6 +19,9 @@ export const content = {
         color: "#C1F0DB",
         items: [
           "Data Science & AI",
+          "Computational modeling",
+          "Network science",
+          "Programming (Python, R, Java, C++, JavaScript)",
         ],
       },
       {
@@ -23,13 +29,20 @@ export const content = {
         color: "#FFD6E0",
         items: [
           "Urban systems",
+          "Complex networks",
+          "Infrastructure and Transportation",
+          "Sustainability and Resilience",
         ],
       },
       {
         title: "Languages",
         color: "#E0D6FF",
         items: [
-          "Chinese",
+          "Mandarin",
+          "English",
+          "Cantonese",
+          "Teochew",
+          "Japanese",
         ],
       },
     ],
