@@ -68,11 +68,12 @@ export default function ResumePage() {
 
   const activeProjectsContent = [
     {
+      id: 1,  // 添加id
       title: "My AI Research Project",
-      description:
-        "A research project focused on artificial intelligence and machine learning applications.",
-      link: "#",
+      description: "A research project focused on artificial intelligence and machine learning applications.",
+      link: "#",  // 可保留或移除
     },
+    // 添加更多项目...
   ];
 
   const educationContent = [
@@ -89,9 +90,9 @@ export default function ResumePage() {
 
   const professionalExperienceContent = [
     {
-      title: "Research Assistant",
+      title: "Technician Intern/ Research Assistant",
       location: "University",
-      period: "2023 - Present",
+      period: "2024 - Present",
       description: [
         "Conducting research in artificial intelligence and machine learning.",
         "Developing and testing AI models and algorithms.",
@@ -507,7 +508,7 @@ export default function ResumePage() {
               </motion.section>
 
               {/* Active Projects Section */}
-              <motion.section
+              {/* <motion.section
                 id="projects"
                 variants={sectionVariants}
                 initial="hidden"
@@ -543,6 +544,43 @@ export default function ResumePage() {
                         <Globe className="ml-2 h-3 w-3" />
                       </a>
                     </motion.div>
+                  ))}
+                </div>
+              </motion.section> */}
+
+              {/* Active Projects Section */}
+              <motion.section
+                id="projects"
+                variants={sectionVariants}
+                initial="hidden"
+                animate="visible"
+                className="mb-16 print:mb-8 print:break-inside-avoid"
+              >
+                <h2 className="text-2xl font-bold mb-6 relative inline-block">
+                  Active Projects
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#FFD6E0]"></span>
+                </h2>
+                <div className="grid gap-6 mt-6">
+                  {activeProjectsContent.map((project, index) => (
+                    <Link key={index} href={`/project/${project.id}`}>
+                      <motion.div
+                        className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow print:border-0 print:shadow-none print:p-3 cursor-pointer"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        whileHover={{ y: -5 }}
+                      >
+                        <h3 className="text-xl font-bold mb-2 flex items-center">
+                          <span className="inline-block w-3 h-3 rounded-full bg-[#FFD6E0] mr-2"></span>
+                          {project.title}
+                        </h3>
+                        <p className="mb-4">{project.description}</p>
+                        <span className="inline-flex items-center bg-gray-300 text-gray-700 px-3 py-1.5 rounded-full text-sm print:bg-white print:text-black print:border print:border-black">
+                          View Details
+                          <Globe className="ml-2 h-3 w-3" />
+                        </span>
+                      </motion.div>
+                    </Link>
                   ))}
                 </div>
               </motion.section>

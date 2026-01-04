@@ -57,8 +57,8 @@ export default function Hero() {
                 className="w-full h-full relative after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-r after:from-[#FFD6E0]/10 after:via-transparent after:to-[#C1F0DB]/10"
               >
                 <img 
-                  src="/blossom_headshot.jpg" 
-                  alt="Stefania Druga with cherry blossoms" 
+                  src="/photo.jpg" 
+                  alt="photo" 
                   className="w-full h-full object-cover"
                   style={{ 
                     filter: "contrast(1.1) brightness(1.05)",
