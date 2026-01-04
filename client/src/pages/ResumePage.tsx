@@ -52,8 +52,8 @@ export default function ResumePage() {
     "Honorable Award of Southern Guangdong Village (Renovation) Planning and Design Competition, 2018",
     "Champion of International Solar Decathlon Competition, 2018",
     "Excellent Report of National College Student Innovation and Entrepreneurship Training Program, 2018",
-    "Best Award of University Student Prefabricated Building Design Competition,2017",
-    "Second Prize of National College Student Advanced Mapping Technology and Product Information Modeling Innovation Competition,2015",
+    "Best Award of University Student Prefabricated Building Design Competition, 2017",
+    "Second Prize of National College Student Advanced Mapping Technology and Product Information Modeling Innovation Competition, 2015",
   ];
 
   const languagesContent = [
@@ -94,11 +94,35 @@ export default function ResumePage() {
   const educationContent = [
     {
       degree: "B.Sc in Data Science and Artificial Intelligence",
-      institution: "IITG",
+      institution: "Indian Institute of Technology, Guwahati (IITG)",
       location: "Online",
       field: "Data Science, Programming, Machine Learning, etc.",
       logo: "/client/src/assets/iitg_logo.png",
       alt: "IITG Logo",
+    },
+    {
+      degree: "B.Eng in Urban Planning",
+      institution: "South China University of Technology",
+      location: "2020",
+      field: "Urban Planning, Architecture, Civil Engineering, Mechanical Engineering, Industrial Design, HCI, etc.",
+      logo: "/client/src/assets/scut_logo.png",
+      alt: "SCUT Logo",
+    },
+    {
+      degree: "M.Eng in Urban Planning with Minor Program in Sustainable Development",
+      institution: "Tongji University",
+      location: "2023",
+      field: "Urban Planning, Sustainable Development, Infrastructure and Transportation, etc",
+      logo: "/client/src/assets/tongji_logo.png",
+      alt: "Tongji Logo",
+    },
+    {
+      degree: "M.Sc in Geomatics (GIS)",
+      institution: "The Hong Kong Polytechnic University",
+      location: "2024",
+      field: "GIS, Geodesy, Remote Sensing, Photogrammetry, etc.",
+      logo: "/client/src/assets/polyu_logo.png",
+      alt: "PolyU Logo",
     },
     // add more...
   ];
@@ -606,20 +630,7 @@ export default function ResumePage() {
                           </svg>
                         )}
                       </span>
-                      {index === 1 ? (
-                        <span className="text-lg">
-                          <a
-                            href="https://www.goodreads.com/user/show/10667897-stefania"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline flex items-center print:text-black"
-                          >
-                            {item}
-                          </a>
-                        </span>
-                      ) : (
-                        <span className="text-lg">{item}</span>
-                      )}
+                      <span className="text-lg">{item}</span>  // 统一显示文本，无超链接
                     </motion.li>
                   ))}
                 </ul>

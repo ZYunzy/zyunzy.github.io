@@ -19,8 +19,7 @@ export const content = {
         color: "#C1F0DB",
         items: [
           "Data Science & AI",
-          "Computational modeling",
-          "Network science",
+          "Computational Modeling",
           "Programming (Python, R, Java, C++, JavaScript)",
         ],
       },
@@ -28,8 +27,8 @@ export const content = {
         title: "Interests",
         color: "#FFD6E0",
         items: [
-          "Urban systems",
-          "Complex networks",
+          "Urban Systems",
+          "Complex Networks",
           "Infrastructure and Transportation",
           "Sustainability and Resilience",
         ],
