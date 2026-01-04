@@ -27,7 +27,7 @@ export default function ResumePage() {
   };
 
   const researchInterestContent = [
-    "Sustainable Urban Systems: Explore human-infrastructure-environment interactions at multiple scales, advancing fundamental science, interdisciplinary urban-systems science, multi-infrastructure design and science-policy linkages to develop resilient, sustainable, healthy, livable and equitable urban futures.",
+    "Sustainable Urban Systems: Explore human-infrastructure-environment interactions at multiple scales by studying fundamental science, interdisciplinary urban-systems science, multi-infrastructure design and science-policy linkages to develop resilient, sustainable, healthy, livable and equitable urban futures.",
     "System Engineer and Policy analysis: Contribute to zero-carbon, resilient, equitable cities through infrastructure innovations and systems analysis to bridge gap between theoretical and computational modeling to decision-making and practical implementation.",
     "Urban Modeling and Digital Twins: Construct urban models using multi-source data to build comprehensive databases for long-term observation, risk early warning, emerging urban issues identification, and uncertainty modeling. Develop urban digital twin systems with AI technologies to enhance human-centric smart city operations and inform policy decision-making.",
     "System Reasoning and Optimization Computing: Investigate the controllability of different components of urban systems using advanced methods and optimize systematic performance under various scenarios by developing computational models to enhance sustainable and resilient urban systems.",
