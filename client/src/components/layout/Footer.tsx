@@ -5,29 +5,29 @@ export default function Footer() {
   const socialLinks = [
     {
       icon: <Twitter className="w-5 h-5" />,
-      href: "https://x.com/Stefania_druga",
+      href: "https://x.com/ZYunn_kk",
       ariaLabel: "X",
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      href: "https://www.linkedin.com/in/drugastefania/",
+      href: "https://www.linkedin.com/in/yun-zhuang-83833819a/",
       ariaLabel: "LinkedIn",
     },
     {
       icon: <Github className="w-5 h-5" />,
-      href: "https://github.com/stefania11",
+      href: "https://github.com/ZYunzy",
       ariaLabel: "GitHub",
     },
-    {
-      icon: <BookOpen className="w-5 h-5" />,
-      href: "https://medium.com/@Stefania_druga",
-      ariaLabel: "Medium",
-    },
-    {
-      icon: <SiSubstack className="w-5 h-5" />,
-      href: "https://stefaniadruga.substack.com/",
-      ariaLabel: "Substack",
-    },
+    // {
+    //   icon: <BookOpen className="w-5 h-5" />,
+    //   href: "https://medium.com/@Stefania_druga",
+    //   ariaLabel: "Medium",
+    // },
+    // {
+    //   icon: <SiSubstack className="w-5 h-5" />,
+    //   href: "https://stefaniadruga.substack.com/",
+    //   ariaLabel: "Substack",
+    // },
   ];
 
   return (

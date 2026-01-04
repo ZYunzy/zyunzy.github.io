@@ -40,6 +40,10 @@ export default function ResumePage() {
   const languagesContent = [
     "Chinese (Native)",
     "English (Fluent)",
+    "Contanese (Fluent)",
+    "Teochew (Fluent)",
+    "Japanese (Very Basic)",
+    "German (Very Beginning)",
   ];
 
   const passionsContent = [
@@ -73,19 +77,14 @@ export default function ResumePage() {
 
   const educationContent = [
     {
-      degree: "Master's Degree",
-      major: "Computer Science",
-      institution: "Your University",
-      year: "2024",
-      gpa: "3.8/4.0",
+      degree: "B.Sc in Data Science and Artificial Intelligence",
+      institution: "IITG",
+      location: "Online",
+      field: "Data Science, Programming, Machine Learning, etc.",
+      logo: "/client/src/assets/iitg_logo.png",
+      alt: "IITG Logo",
     },
-    {
-      degree: "Bachelor's Degree",
-      major: "Computer Science",
-      institution: "Your University",
-      year: "2022",
-      gpa: "3.7/4.0",
-    },
+    // add more...
   ];
 
   const professionalExperienceContent = [
@@ -238,36 +237,6 @@ export default function ResumePage() {
                 </div>
               </div>
 
-              {/* Awards Section - Moved to the top */}
-              <motion.section
-                id="awards"
-                variants={sectionVariants}
-                initial="hidden"
-                animate="visible"
-                className="mb-16 print:mb-8 print:break-inside-avoid"
-              >
-                <h2 className="text-2xl font-bold mb-6 relative inline-block">
-                  Awards
-                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#C1F0DB]"></span>
-                </h2>
-                <ul className="space-y-3 mt-6">
-                  {awardsContent.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-start"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <span className="inline-block w-6 h-6 rounded-full bg-[#C1F0DB] flex-shrink-0 mr-3 flex items-center justify-center">
-                        <Award className="h-3 w-3 text-gray-700" />
-                      </span>
-                      <span className="text-lg">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.section>
-
               {/* Qualifications Section */}
               <motion.section
                 id="qualifications"
@@ -297,7 +266,7 @@ export default function ResumePage() {
               </motion.section>
 
               {/* Education Section - Moved right after Qualifications */}
-              <motion.section
+              {/* <motion.section
                 id="education"
                 variants={sectionVariants}
                 initial="hidden"
@@ -372,7 +341,78 @@ export default function ResumePage() {
                     </tbody>
                   </table>
                 </div>
+              </motion.section> */}
+
+              {/* Education Section */}
+              <motion.section
+                id="education"
+                variants={sectionVariants}
+                initial="hidden"
+                animate="visible"
+                className="mb-16 print:mb-8 print:break-inside-avoid"
+              >
+                <h2 className="text-2xl font-bold mb-6 relative inline-block">
+                  Education
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#C1F0DB]"></span>
+                </h2>
+                <div className="space-y-6 mt-6">
+                  {educationContent.map((edu, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex items-start bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow print:border-0 print:shadow-none print:p-3"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <img
+                        src={edu.logo}
+                        alt={edu.alt}
+                        className="w-16 h-16 rounded-full mr-6 flex-shrink-0"
+                      />
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold mb-2">{edu.degree}</h3>
+                        <p className="text-gray-600 mb-1">
+                          <strong>{edu.institution}</strong> | {edu.location}
+                        </p>
+                        <p className="text-gray-600">
+                          Field <em>{edu.field}</em>
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.section>
+
+              {/* Awards Section - Moved to the top */}
+              <motion.section
+                id="awards"
+                variants={sectionVariants}
+                initial="hidden"
+                animate="visible"
+                className="mb-16 print:mb-8 print:break-inside-avoid"
+              >
+                <h2 className="text-2xl font-bold mb-6 relative inline-block">
+                  Awards
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#C1F0DB]"></span>
+                </h2>
+                <ul className="space-y-3 mt-6">
+                  {awardsContent.map((item, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-start"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <span className="inline-block w-6 h-6 rounded-full bg-[#C1F0DB] flex-shrink-0 mr-3 flex items-center justify-center">
+                        <Award className="h-3 w-3 text-gray-700" />
+                      </span>
+                      <span className="text-lg">{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.section>
+
 
               {/* Experience Section (Combined Research and Professional) */}
               <motion.section
