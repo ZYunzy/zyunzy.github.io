@@ -35,7 +35,7 @@ export default function Gallery() {
       date: "June",
       year: "2024",
       description: "An icon design for software GeoMarX.",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1864&auto=format&fit=crop",
+      image: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767529134/geomarxpng_t7hlmy.png",
       link: "https://www.youtube.com/watch?v=74q38nKdkd0",
     },
     {
@@ -45,7 +45,7 @@ export default function Gallery() {
       date: "August",
       year: "2024",
       description: "An icon design for 2024 International Conference of Social Computing (ICSC 2024).",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1864&auto=format&fit=crop",
+      image: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767529134/icsc_f5vb5b.png",
       link: "#",
     },
     {
@@ -55,7 +55,10 @@ export default function Gallery() {
       date: "September - November",
       year: "2024",
       description: "Poster design for Seminar.",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1864&auto=format&fit=crop",
+      image: [
+        "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767528950/461725524306_.pic_hd_tt4tti.jpg",
+        "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767528921/2471732193081_.pic_hd_vlbh6f.jpg"
+      ],
       link: "#",
     },
     {
@@ -65,7 +68,7 @@ export default function Gallery() {
       date: "April",
       year: "2023",
       description: "UI design for Navigation App.",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1864&auto=format&fit=crop",
+      image: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767529135/appui_tr8nov.svg",
       link: "#",
     },
   ];
@@ -175,7 +178,7 @@ export default function Gallery() {
               >
                 <div className="aspect-video bg-gray-100 relative overflow-hidden">
                   <img
-                    src={designItem.image}
+                    src={Array.isArray(designItem.image) ? designItem.image[0] : designItem.image}
                     alt={designItem.title}
                     className="w-full h-full object-cover hover:scale-105 transition-transform"
                     loading="lazy"
@@ -214,11 +217,14 @@ export default function Gallery() {
               ‹
             </button>
             <div className="max-w-4xl max-h-full p-4 relative">
-              <img
-                src={currentItems[selectedIndex].image}
-                alt={currentItems[selectedIndex].title}
-                className="max-w-full max-h-full object-contain"
-              />
+              {/* multi image */}
+              {Array.isArray(currentItems[selectedIndex].image) ? (
+                currentItems[selectedIndex].image.map((img, idx) => (
+                  <img key={idx} src={img} alt={`${currentItems[selectedIndex].title} ${idx + 1}`} className="max-w-full max-h-full object-contain mb-4" />
+                ))
+              ) : (
+                <img src={currentItems[selectedIndex].image} alt={currentItems[selectedIndex].title} className="max-w-full max-h-full object-contain" />
+              )}
               <div className="absolute bottom-4 left-4 right-4 bg-black bg-opacity-50 text-white p-4 rounded">
                 <h3 className="text-xl font-bold mb-2">{currentItems[selectedIndex].title}</h3>
                 <p className="text-sm">{currentItems[selectedIndex].description}</p>
