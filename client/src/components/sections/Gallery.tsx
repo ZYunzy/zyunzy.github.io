@@ -34,7 +34,7 @@ export default function Gallery() {
       venue: "Software, Conference",
       date: "June - August, 2024",
       year: "2024",
-      description: "An icon design for software GeoMarX.",
+      description: "Icon design for software GeoMarX and International Conference of Social Computing 2024.",
       image: [
         "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767529134/geomarxpng_t7hlmy.png",
         "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767529134/icsc_f5vb5b.png"
