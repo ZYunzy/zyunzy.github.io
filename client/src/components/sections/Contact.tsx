@@ -17,7 +17,7 @@ export default function Contact() {
       icon: <Mail className="h-5 w-5" />,
       text: "zyunn55[at]outlook.com",
       href: undefined,
-      color: "#96cba8ff",
+      color: "#C1F0DB",
     },
     {
       icon: <MapPin className="h-5 w-5" />,

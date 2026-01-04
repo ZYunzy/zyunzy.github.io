@@ -44,7 +44,7 @@ export default function Gallery() {
       venue: "Conference",
       date: "2024",
       year: "2024",
-      description: "An icon design for conference.",
+      description: "An icon design for 2024 International Conference of Social Computing (ICSC 2024).",
       image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1864&auto=format&fit=crop",
       link: "#",
     },

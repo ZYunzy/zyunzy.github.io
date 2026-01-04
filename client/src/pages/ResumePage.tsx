@@ -66,8 +66,8 @@ export default function ResumePage() {
   ];
 
   const passionsContent = [
-    "Towards sustainable urban systems",
     "AI for social good",
+    "Towards sustainable urban systems",
     "Computational modeling and network science",
     "Reading and continuous learning",
     "Technology and innovation",
@@ -109,7 +109,7 @@ export default function ResumePage() {
       alt: "SCUT Logo",
     },
     {
-      degree: "M.Eng in Urban Planning, (Minor in Sustainable Development)",
+      degree: "M.Eng in Urban Planning (Minor in Sustainable Development)",
       institution: "Tongji University",
       location: "2023",
       field: "Spatial Planning, Sustainable Development, Infrastructure and Transportation, etc",

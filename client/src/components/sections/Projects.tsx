@@ -27,11 +27,7 @@ export default function Projects() {
                   className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
                 >
                   <div className={index % 2 === 0 ? "order-2 md:order-1" : ""}>
-                    <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                    <p className="text-lg text-gray-800 mb-6">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
@@ -42,6 +38,10 @@ export default function Projects() {
                         </span>
                       ))}
                     </div>
+                    <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+                    <p className="text-lg text-gray-800 mb-6">
+                      {project.description}
+                    </p>
                     {project.link && project.link !== "#" && (
                       <motion.a
                         href={project.link}
@@ -109,11 +109,7 @@ export default function Projects() {
                   <Link href={`/project/${project.id}`} className="block">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                       <div className="p-8 flex flex-col justify-center">
-                        <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                        <p className="text-lg text-gray-800 mb-6">
-                          {project.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2 mb-6">
+                        <div className="flex flex-wrap gap-2 mb-4">
                           {project.tags.map((tag, tagIndex) => (
                             <span
                               key={tagIndex}
@@ -124,6 +120,10 @@ export default function Projects() {
                             </span>
                           ))}
                         </div>
+                        <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+                        <p className="text-lg text-gray-800 mb-6">
+                          {project.description}
+                        </p>
                         <div className="text-blue-600 hover:underline font-medium">
                           Read More →
                         </div>
