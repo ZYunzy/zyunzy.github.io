@@ -17,82 +17,23 @@ export default function PublicationsPage() {
   const [_hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
-  // Define publication tags/categories
-  const tags = [
-    {
-      name: "Urban Systems",
-      color: "rgba(255, 214, 224, 0.5)",
-    },
-    {
-      name: "Transportation and Mobility",
-      color: "rgba(224, 214, 255, 0.5)",
-    },
-    {
-      name: "Regional Studies",
-      color: "rgba(193, 240, 219, 0.5)",
-    },
-    {
-      name: "Infrastructure",
-      color: "rgba(255, 224, 176, 0.5)",
-    },
-    {
-      name: "SDG (Sustainable Development Goals)",
-      color: "rgba(176, 224, 255, 0.5)",
-    },
-    {
-      name: "Urban Data Science",
-      color: "rgba(255, 224, 176, 0.5)",
-    },
-  ];
-
-  // Map publications to tags (this would be better directly in the data model)
-  const publicationTags: Record<string, string[]> = {
-    "2025-0": ["AI Science"],
-    "2025-1": ["AI Education", "Creative Computing"],
-    "2025-2": ["Multimodal AI", "AI Education", "AI Science"],
-    "2025-3": ["AI Education", "Multimodal AI"],
-    // 2024 publications
-    "FACCT '24": ["AI Literacy"],
-    "JCHE '24": ["AI Education", "Multimodal AI"],
-    // 2023 publications
-    "FAccT '23": ["AI Literacy"],
-    "C&C'23": ["Creative Computing", "AI Literacy"],
-    "Arxiv '23'": ["AI Education", "Creative Computing"],
-    "VL/HCC '23'": ["Creative Computing", "AI Education"],
-    "MAKE '23": ["Creative Computing", "AI Education"],
-    "IDC '23": ["Child-AI Interaction", "AI Literacy"],
-    "arXiv '23": ["Creative Computing", "AI Literacy"],
-    "UW '23'": ["AI Education", "AI Literacy", "Child-AI Interaction"],
-    // 2022 publications
-    "MIT PRESS '22": ["AI Literacy"],
-    "CHI '22": ["AI Education", "AI Literacy", "Child-AI Interaction"],
-    "IDC '22": ["Creative Computing", "Child-AI Interaction"],
-    "ITICSE '22": ["AI Education"],
-    "IJCCI '22": ["Child-AI Interaction"],
-    "UW '22": ["AI Education", "Creative Computing"],
-    // 2021 publications
-    "IDC '21": ["Child-AI Interaction", "AI Education"],
-    "CLS '21": ["AI Education"],
-    "KDD '21": ["AI Literacy", "Child-AI Interaction"],
-    // 2020 publications
-    "JoDS '20": ["AI Literacy"],
-    "IDC '20": ["Child-AI Interaction", "Creative Computing"],
-    "CACM '20": ["AI Education"],
-    // 2019 publications
-    "FABLEARN '19": ["AI Education", "AI Literacy"],
-    "CHIPLAY '19": ["Creative Computing", "Child-AI Interaction"],
-    // 2018 publications
-    "IDC '18": ["Child-AI Interaction"],
-    "MIT '18": ["AI Education", "Creative Computing", "Child-AI Interaction"],
-    // 2017 publications
-    "CHI '17": ["Child-AI Interaction"],
-    "IDC '17": ["Child-AI Interaction"],
-    "ISWC '18": ["Multimodal AI"],
-    // 2014 publications
-    "SIGRAPH '14": ["Creative Computing"],
-    // 2010 publications
-    "EUROMIME '10": ["AI Education"],
-  };
+  // Dynamically extract unique tags from content.publications
+  const tags = Array.from(
+    new Set(
+      content.publications.flatMap(pub => 
+        pub.tags ? pub.tags.map(tag => tag.name) : []
+      )
+    )
+  ).map(tagName => {
+    // Find the first tag with this name to get its color
+    const tag = content.publications
+      .flatMap(pub => pub.tags || [])
+      .find(t => t.name === tagName);
+    return {
+      name: tagName,
+      color: tag?.color || "rgba(224, 214, 255, 0.5)", // Default color
+    };
+  });
 
   interface PublicationItem {
     id?: string;
@@ -100,18 +41,16 @@ export default function PublicationsPage() {
     title?: string;
     authors?: string;
     link?: string;
+    tags?: { name: string; color: string }[];
   }
 
   // Function to check if a publication belongs to the active tag
   const publicationMatchesActiveTag = (pub: PublicationItem) => {
     if (!activeTag) return true; // Show all if no tag selected
 
-    // Get publication identifier - either id or venue
-    const pubId = pub.id || pub.venue;
-
-    // Check if this publication has tags mapped
-    if (publicationTags[pubId]) {
-      return publicationTags[pubId].includes(activeTag);
+    // Check if this publication has tags that match the active tag
+    if (pub.tags) {
+      return pub.tags.some(tag => tag.name === activeTag);
     }
     return false;
   };
@@ -206,8 +145,7 @@ export default function PublicationsPage() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              My research explores human-AI collaboration, multimodal systems,
-              and how people learn with artificial intelligence.
+              My research explores the human-infrastructure-environment interactions within urban systems. Here are some of my publications.
             </motion.p>
           </div>
 
