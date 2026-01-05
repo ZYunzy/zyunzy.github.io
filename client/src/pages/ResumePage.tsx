@@ -101,7 +101,7 @@ export default function ResumePage() {
   ];
 
   // 直接使用 content.projects，取前2个项目
-  const activeProjectsContent = content.projects.slice(0, 2);
+  const activeProjectsContent = content.projects.slice(0, 3);
 
   const educationContent = [
     {
@@ -167,10 +167,10 @@ export default function ResumePage() {
       location: "World Wide fund for Nature (WWF), Beijing Office",
       period: "2021",
       description: [
-        "The internship is sponsored by Shanghai Municipal Education Commission",
-        "Collecting panel data and building a database for the Greening 'the Belt and Road Initiative' Program", 
-        "compiling an operation manual of WWF-SIGHT on spatial data visilization and management",
-        "Providing spatial analysis support for assessing the environmental impact of linear infrastructure and renewable energy infrastructure",  
+        "The internship is sponsored by Shanghai Municipal Education Commission.",
+        "Collecting panel data and building a database for the Greening 'the Belt and Road Initiative' Program.", 
+        "Compiling an operation manual of WWF-SIGHT on spatial data visualization and management.",
+        "Providing spatial analysis support for assessing the environmental impact of linear infrastructure and renewable energy infrastructure.",  
         // "Collaborating with team members on research projects.",
       ],
       link: "#",
