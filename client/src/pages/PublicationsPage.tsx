@@ -102,6 +102,7 @@ export default function PublicationsPage() {
         link: item.abstractLink || item.pdfLink ,
         year: item.year,
         id: item.title,
+        tags: item.tags,  // 添加tags字段
       }))
     }]
   }));
