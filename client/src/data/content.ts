@@ -79,22 +79,22 @@ export const content = {
       id: "mobility",
       title: "Mobility, Infrastructure, and Urban Spatial Structure",
       description:
-        "An AI-powered learning companion that combines computer vision, voice interaction, and sensor data to help students understand chemistry concepts through real-time experiment analysis.",
+        "This research project examines the intricate relationships between individual mobility behavior, urban street environments, and transportation infrastructure in shaping sustainable and resilient urban spatial structures. By investigating how people's travel patterns interact with the built environment, we analyze the role of emerging transportation modes—such as shared mobility, electric vehicles, and micro-mobility—in advancing transportation decarbonization and reducing urban carbon footprints. The project conceptualizes transportation infrastructure as the 'skeleton' and land use as the 'flesh' of urban systems, exploring how optimizing land use patterns, mixed-use development, transit-oriented design, and spatial connectivity can enhance the sustainability and resilience of transportation networks. Through computational modeling, spatial analysis, and scenario planning, we investigate strategies to improve infrastructure performance under various uncertainties, including climate risks, demographic shifts, and technological disruptions. This research contributes to creating low-carbon, adaptable urban systems that integrate sustainable mobility solutions with resilient spatial planning, ultimately fostering equitable access, environmental sustainability, and urban livability in the face of future challenges.",
       image:
         "https://images.unsplash.com/photo-1581092921461-7717a5f1ecf9?auto=format&fit=crop&w=800&h=600",
       link: "",
       gradient: "from-[#FFD6E0] via-[#E0D6FF] to-[#C1F0DB]",
       tags: [
         { name: "SDGs (Sustainable Development Goals)", color: "#D2E2FEFF" },
-        { name: "Multimodal AI", color: "#FFD6E0" },
-        { name: "Computer Vision", color: "#E0D6FF" },
-        { name: "Education", color: "#C1F0DB" },
+        { name: "Transportation and mobility", color: "#FFD6E0" },
+        { name: "Urban Systems", color: "#FFE4B5" },
+        // { name: "Education", color: "#C1F0DB" },
       ],
-      content: "ChemBuddy is an innovative AI-powered chemistry learning assistant that integrates multiple sensory inputs. The system uses computer vision to analyze chemical reactions in real-time, voice interaction for natural communication, and sensor data for precise measurements. This multimodal approach helps students better understand complex chemistry concepts through hands-on experimentation.",
+      content: "Mobility behavior is closely linked to urban spatial structure and the built environment, which together shape transportation demand, infrastructure performance, and sustainability outcomes. Understanding these interactions is critical for designing resilient and low-carbon urban systems that can adapt to future uncertainties.",
     },
     {
       id: "green-blue-infrastructure",
-      title: "Urban Green-Blue Infrastructure in Sustainable and Resilient Cities",
+      title: "Green-Blue Infrastructure in Sustainable and Resilient Cities",
       description:
         "Urban green-blue infrastructure (GBI) represents a nature-based solution that integrates green spaces (parks, urban forests, green roofs) and blue elements (rivers, wetlands, retention ponds) into urban systems to address multiple sustainability challenges. This research project investigates the role of GBI in enhancing urban resilience through carbon reduction, heat mitigation, and water-sensitive urban design. By combining remote sensing technologies, climate modeling, and hydrological analysis, we quantify the cooling effects of urban vegetation and water bodies, assess their capacity for carbon sequestration, and evaluate their performance in stormwater management and flood mitigation. The project employs spatial analysis and scenario planning to identify optimal locations and configurations for GBI interventions that maximize co-benefits across environmental, social, and economic dimensions. Through case studies in rapidly urbanizing cities facing climate risks, we develop evidence-based guidelines for integrating GBI into urban planning and design processes. This research contributes to creating cooler, carbon-neutral, and water-sensitive cities that enhance quality of life while building resilience to climate change impacts such as urban heat islands, flooding, and water scarcity.",
       image:
@@ -103,10 +103,26 @@ export const content = {
       gradient: "from-[#E0D6FF] via-[#C1F0DB] to-[#FFD6E0]",
       tags: [
         { name: "SDGs (Sustainable Development Goals)", color: "#D2E2FEFF" },
-        { name: "Ba", color: "#E0D6FF" },
+        { name: "Resilient Infrastructure", color: "#E0D6FF" },
         { name: "Nature-based Solutions", color: "#C1F0DB" },
       ],
-      content: "Cognimates is a pioneering AI education platform designed specifically for children. The platform allows young users to train their own machine learning models through an intuitive interface, then use these models to create interactive games and applications. This hands-on approach makes AI concepts accessible and engaging for the next generation of innovators.",
+      content: "Urban green-blue infrastructure (GBI) offers a multifaceted approach to enhancing urban sustainability and resilience by leveraging natural systems to provide ecosystem services such as carbon sequestration, heat mitigation, and water management.",
+    },
+    {
+      id: "urban-networks",
+      title: "Urban Networks in Metropolitan Regions",
+      description:
+        "Metropolitan regions are characterized by complex networks of interconnected cities, towns, and communities that form polycentric urban systems. This research project investigates the structure, dynamics, and evolution of urban networks within metropolitan regions, examining how different types of flows—including economic transactions, population mobility, information exchange, and infrastructure connectivity—shape regional development patterns. By applying network science methods, spatial analysis, and multi-layer network modeling, we analyze the hierarchical relationships, functional complementarities, and competitive dynamics among cities within metropolitan areas. The project explores how network centrality, clustering patterns, and accessibility influence regional economic performance, innovation diffusion, and sustainable development. Through comparative studies of major metropolitan regions globally, we investigate strategies for optimizing network configurations to enhance regional competitiveness, promote balanced development, and improve resilience to economic shocks and environmental challenges. This research contributes to understanding polycentric metropolitan governance, infrastructure planning, and policies that foster collaborative rather than purely competitive relationships among cities, ultimately supporting more integrated, efficient, and equitable regional development.",
+      image:
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&h=600",
+      link: "http://cognimatescopilot.com/",
+      gradient: "from-[#E0D6FF] via-[#C1F0DB] to-[#FFD6E0]",
+      tags: [
+        { name: "SDGs (Sustainable Development Goals)", color: "#D2E2FEFF" },
+        { name: "Urban Systems", color: "#FFE4B5" },
+        { name: "Regional Studies", color: "#E0D6FF" },
+      ],
+      content: "Metropolitan regions function as complex multi-layer networks where cities are interconnected through various economic, social, and infrastructure linkages. Understanding these network structures and their evolution is crucial for regional planning, infrastructure investment, and governance strategies that promote sustainable and balanced metropolitan development.",
     },
   ],
   talks: [
