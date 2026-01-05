@@ -99,7 +99,7 @@ export default function PublicationsPage() {
         venue: item.venue,
         title: item.title,
         authors: item.authors,
-        link: item.pdfLink || item.abstractLink,
+        link: item.abstractLink || item.pdfLink ,
         year: item.year,
         id: item.title,
       }))
