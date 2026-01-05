@@ -65,7 +65,7 @@ export const content = {
       description:
         "Informal settlements (IS) present a complex system of social, economic, and ecological interactions that arise spontaneously and unplanned in urban areas and require a forward-looking and comprehensive approach to address their socio-ecological interactions. Moreover, an IS is conceptually considered a sub-system within a broader urban system, interacting with and influenced by internal and external factors.",
       image:
-        "https://i.pinimg.com/1200x/0b/7b/8f/0b7b8f0f2c3e343dd9535bc6e0116ead.jpg",
+        "https://i0.wp.com/www.mediapolisjournal.com/wp-content/uploads/2019/11/Mumbai.png?resize=1050%2C588&ssl=1",
       link: "#",
       gradient: "from-[#C1F0DB] via-[#FFD6E0] to-[#E0D6FF]",
       tags: [
@@ -81,7 +81,7 @@ export const content = {
       description:
         "Mobility behavior is closely linked to urban spatial structure and the built environment, which together shape transportation demand, infrastructure performance, and sustainability outcomes. Understanding these interactions is critical for designing resilient and low-carbon urban systems that can adapt to future uncertainties.",
       image:
-        "https://images.unsplash.com/photo-1581092921461-7717a5f1ecf9?auto=format&fit=crop&w=800&h=600",
+        "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767618454/1804bf8e7e35b774ab1b9ff814e76e04_feq7en.jpg",
       link: "#",
       gradient: "from-[#FFD6E0] via-[#E0D6FF] to-[#C1F0DB]",
       tags: [
