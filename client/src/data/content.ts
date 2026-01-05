@@ -65,7 +65,7 @@ export const content = {
       description:
         "Urban informal settlements, often referred to as slums or shantytowns, are home to over one billion people in the Global South, representing one of the most pressing urban challenges of our time. This research project examines the complex dynamics of informal settlements through a multidisciplinary lens, combining spatial analysis, social science, and sustainable development frameworks. By leveraging GIS technologies, remote sensing data, and community-based research methods, we investigate the spatial patterns, infrastructure deficits, and socio-economic characteristics of informal settlements across cities in Africa, Asia, and Latin America. The project aims to identify pathways toward inclusive urbanization that respect the agency of informal settlement residents while addressing critical needs in housing, sanitation, transportation, and access to services. Through comparative analysis and stakeholder engagement, we develop evidence-based recommendations for policy interventions that promote equitable urban development, enhance resilience to climate risks, and advance the Sustainable Development Goals. This research contributes to global efforts in understanding and addressing urban poverty, inequality, and the right to adequate housing in rapidly urbanizing regions of the Global South.",
       image:
-        "https://unsplash.com/photos/white-and-brown-concrete-buildings-during-daytime-Gk2wag_XpVY",
+        "https://i.pinimg.com/1200x/0b/7b/8f/0b7b8f0f2c3e343dd9535bc6e0116ead.jpg",
       link: "#",
       gradient: "from-[#C1F0DB] via-[#FFD6E0] to-[#E0D6FF]",
       tags: [
