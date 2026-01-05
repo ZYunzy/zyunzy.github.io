@@ -70,7 +70,7 @@ export const content = {
       gradient: "from-[#C1F0DB] via-[#FFD6E0] to-[#E0D6FF]",
       tags: [
         { name: "SDGs (Sustainable Development Goals)", color: "#D2E2FEFF" },
-        { name: "Equality and Wellbeing", color: "#DDA0DD" },
+        { name: "Equality and Wellbeing", color: "#ECC2ECFF" },
         { name: "Regional Studies", color: "#B0E0FF" },
       ],
       content: "Informal settlements (IS) present a complex system of social, economic, and ecological interactions that arise spontaneously and unplanned in urban areas and require a forward-looking and comprehensive approach to address their socio-ecological interactions. Moreover, an IS is conceptually considered a sub-system within a broader urban system, interacting with and influenced by internal and external factors.",
