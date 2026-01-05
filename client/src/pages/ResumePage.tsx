@@ -75,15 +75,27 @@ export default function ResumePage() {
 
   const researchContent = [
     {
-      title: "AI Research Assistant",
+      title: "Research Assistant",
       period: "2024 - Present",
       description: "Working on artificial intelligence and machine learning research projects",
       link: "#",
     },
     {
       title: "Graduate Research",
-      period: "2023 - 2024",
-      description: "Conducting research in AI applications and data analysis",
+      period: "2020 - 2023",
+      description: "Conducting research in urban regional studies and complex networks",
+      link: "#",
+    },
+    {
+      title: "Undergraduate Research",
+      period: "2019 - 2020",
+      description: "Conducting research in resilent infrastructure and sustainable urban systems",
+      link: "#",
+    },
+    {
+      title: "Technical Team Member",
+      period: "2017 - 2018",
+      description: "Conducting research in passive building design and building environment optimization",
       link: "#",
     },
   ];
@@ -130,12 +142,36 @@ export default function ResumePage() {
   const professionalExperienceContent = [
     {
       title: "Technician Intern/ Research Assistant",
-      location: "University",
+      location: "Hong Kong University of Science and Technology (GZ)",
       period: "2024 - Present",
       description: [
-        "Conducting research in artificial intelligence and machine learning.",
-        "Developing and testing AI models and algorithms.",
+        "Conducting research in urban informal settlements.",
+        "Developing and testing machine learning models and algorithms.",
         "Collaborating with team members on research projects.",
+      ],
+      link: "#",
+    },
+    {
+      title: "Student Editor",
+      location: "International Journal of Urban Informatics",
+      period: "2022 - Present",
+      description: [
+        "Promoting the journal and managing social media accounts.",
+        "Paper review editor.",
+        // "Collaborating with team members on research projects.",
+      ],
+      link: "#",
+    },
+    {
+      title: "Voluntary Intern",
+      location: "World Wide fund for Nature (WWF), Beijing Office",
+      period: "2021",
+      description: [
+        "The internship is sponsored by Shanghai Municipal Education Commission",
+        "Collecting panel data and building a database for the Greening 'the Belt and Road Initiative' Program", 
+        "compiling an operation manual of WWF-SIGHT on spatial data visilization and management",
+        "Providing spatial analysis support for assessing the environmental impact of linear infrastructure and renewable energy infrastructure",  
+        // "Collaborating with team members on research projects.",
       ],
       link: "#",
     },

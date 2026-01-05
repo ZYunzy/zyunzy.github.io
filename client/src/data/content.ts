@@ -201,7 +201,7 @@ export const content = {
         // { name: "Transporation and Mobility", color: "#FFE4B5"},
         { name: "Urban Environment", color: "#C1F0DB" },
         { name: "Resilient Infrastructure", color: "#DDA0DD" },
-        { name: "SDGs (Sustainable Development Goals)", color: "#9DC1FEFF" },
+        { name: "SDGs (Sustainable Development Goals)", color: "#D2E2FEFF" },
       ],
       abstractLink: "#",
       pdfLink: "#",
