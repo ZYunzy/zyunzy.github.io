@@ -51,7 +51,7 @@ export const content = {
       {
         title: "My Research Project",
         description:
-          "Research project focused on artificial intelligence and machine learning applications.",
+          "Research project focused on computaional modelling and spatial statistics to study the human-infrastructure-environment interactions within urban systems..",
         image:
           "https://images.unsplash.com/photo-1581092921461-7717a5f1ecf9?auto=format&fit=crop&w=600&h=300",
         link: "#",
@@ -71,7 +71,7 @@ export const content = {
       tags: [
         { name: "Gemini AI", color: "#C1F0DB" },
         { name: "Smart Home", color: "#FFD6E0" },
-        { name: "Multimodal Interaction", color: "#E0D6FF" },
+        { name: "Regional Studies", color: "#E0D6FF" },
       ],
       content: "Detailed information about the Google Home Gemini Extension project. This multimodal AI integration brought advanced conversational capabilities to smart home devices, allowing users to control their homes through natural language and visual inputs. The project involved close collaboration with Google's AI teams and required extensive testing across various smart home ecosystems.",
     },
@@ -186,6 +186,7 @@ export const content = {
         { name: "Urban Systems", color: "#B0E0FF" },
         // { name: "Transporation and Mobility", color: "#E0D6FF" },
         { name: "Complex Networks", color: "#FFD6E0" },
+        { name: "Urban Networks", color: "#C1F0DB" },
       ],
       abstractLink: "#",
       pdfLink: "#",
@@ -215,6 +216,7 @@ export const content = {
         { name: "Regional Studies", color: "#FFD6E0" },
         { name: "Urban Systems", color: "#B0E0FF" },
         { name: "Complex Networks", color: "#FFD6E0" },
+        { name: "Urban Networks", color: "#C1F0DB" },
       ],
       abstractLink: "#",
       pdfLink: "#",

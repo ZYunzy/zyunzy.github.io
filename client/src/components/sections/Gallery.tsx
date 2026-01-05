@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Calendar, ArrowRight, ExternalLink, MapPin } from "lucide-react";
 
 export default function Gallery() {
-  const [activeTab, setActiveTab] = useState<"artworks" | "design">("artworks");
+  const [activeTab, setActiveTab] = useState<"artworks" | "design">("design");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const artworks = [
@@ -92,16 +92,6 @@ export default function Gallery() {
         <div className="flex justify-center mb-12">
           <div className="bg-white rounded-full p-1 shadow-sm">
             <button
-              onClick={() => setActiveTab("artworks")}
-              className={`px-6 py-2 rounded-full font-medium transition ${
-                activeTab === "artworks"
-                  ? "bg-[#FFD6E0] text-white"
-                  : "text-gray-600 hover:text-gray-800"
-              }`}
-            >
-              Artworks
-            </button>
-            <button
               onClick={() => setActiveTab("design")}
               className={`px-6 py-2 rounded-full font-medium transition ${
                 activeTab === "design"
@@ -110,6 +100,16 @@ export default function Gallery() {
               }`}
             >
               Design
+            </button>
+            <button
+              onClick={() => setActiveTab("artworks")}
+              className={`px-6 py-2 rounded-full font-medium transition ${
+                activeTab === "artworks"
+                  ? "bg-[#FFD6E0] text-white"
+                  : "text-gray-600 hover:text-gray-800"
+              }`}
+            >
+              Artworks
             </button>
           </div>
         </div>

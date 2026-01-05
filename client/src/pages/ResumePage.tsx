@@ -157,7 +157,7 @@ export default function ResumePage() {
       period: "2022 - Present",
       description: [
         "Promoting the journal and managing social media accounts.",
-        "Paper review editor.",
+        "Paper review.",
         // "Collaborating with team members on research projects.",
       ],
       link: "#",
