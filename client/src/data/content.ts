@@ -72,6 +72,7 @@ export const content = {
         { name: "SDGs (Sustainable Development Goals)", color: "#D2E2FEFF" },
         { name: "Equality and Wellbeing", color: "#ECC2ECFF" },
         { name: "Regional Studies", color: "#B0E0FF" },
+        { name: "Urban Systems", color: "#FFE4B5" },
       ],
       content: "Urban informal settlements, often referred to as slums or shantytowns, are home to over one billion people in the Global South, representing one of the most pressing urban challenges of our time. This research project examines the complex dynamics of informal settlements through a multidisciplinary lens, combining spatial analysis, social science, and sustainable development frameworks. By leveraging GIS technologies, remote sensing data, and community-based research methods, we investigate the spatial patterns, infrastructure deficits, and socio-economic characteristics of informal settlements across cities in Africa, Asia, and Latin America. The project aims to identify pathways toward inclusive urbanization that respect the agency of informal settlement residents while addressing critical needs in housing, sanitation, transportation, and access to services. Through comparative analysis and stakeholder engagement, we develop evidence-based recommendations for policy interventions that promote equitable urban development, enhance resilience to climate risks, and advance the Sustainable Development Goals. This research contributes to global efforts in understanding and addressing urban poverty, inequality, and the right to adequate housing in rapidly urbanizing regions of the Global South.",
     },
@@ -87,6 +88,7 @@ export const content = {
       tags: [
         { name: "SDGs (Sustainable Development Goals)", color: "#D2E2FEFF" },
         { name: "Transportation and mobility", color: "#FFD6E0" },
+        { name: "Resilient Infrastructure", color: "#E0D6FF" },
         { name: "Urban Systems", color: "#FFE4B5" },
         // { name: "Education", color: "#C1F0DB" },
       ],
@@ -105,6 +107,7 @@ export const content = {
         { name: "SDGs (Sustainable Development Goals)", color: "#D2E2FEFF" },
         { name: "Resilient Infrastructure", color: "#E0D6FF" },
         { name: "Nature-based Solutions", color: "#C1F0DB" },
+        { name: "Urban Systems", color: "#FFE4B5" },
       ],
       content: "Urban green-blue infrastructure (GBI) represents a nature-based solution that integrates green spaces (parks, urban forests, green roofs) and blue elements (rivers, wetlands, retention ponds) into urban systems to address multiple sustainability challenges. This research project investigates the role of GBI in enhancing urban resilience through carbon reduction, heat mitigation, and water-sensitive urban design. By combining remote sensing technologies, climate modeling, and hydrological analysis, we quantify the cooling effects of urban vegetation and water bodies, assess their capacity for carbon sequestration, and evaluate their performance in stormwater management and flood mitigation. The project employs spatial analysis and scenario planning to identify optimal locations and configurations for GBI interventions that maximize co-benefits across environmental, social, and economic dimensions. Through case studies in rapidly urbanizing cities facing climate risks, we develop evidence-based guidelines for integrating GBI into urban planning and design processes. This research contributes to creating cooler, carbon-neutral, and water-sensitive cities that enhance quality of life while building resilience to climate change impacts such as urban heat islands, flooding, and water scarcity.",
     },

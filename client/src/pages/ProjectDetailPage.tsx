@@ -17,6 +17,16 @@ export default function ProjectDetailPage() {
       document.title = "Project Not Found | Yun Zhuang";
     }
     window.scrollTo(0, 0);
+
+    // Add noindex meta tag
+    const meta = document.createElement('meta');
+    meta.name = 'robots';
+    meta.content = 'noindex, nofollow';
+    document.head.appendChild(meta);
+
+    return () => {
+      document.head.removeChild(meta);
+    };
   }, [project]);
 
   if (!project) {
@@ -79,7 +89,7 @@ export default function ProjectDetailPage() {
               onCopy={(e) => e.preventDefault()}
               onCut={(e) => e.preventDefault()}
               onContextMenu={(e) => e.preventDefault()}
-              className="select-none whitespace-pre-line"
+              className="select-none whitespace-pre-line text-justify"
             >
               {project.content}
             </div>
