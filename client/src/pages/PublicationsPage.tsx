@@ -20,27 +20,27 @@ export default function PublicationsPage() {
   // Define publication tags/categories
   const tags = [
     {
-      name: "AI Education",
+      name: "Urban Systems",
       color: "rgba(255, 214, 224, 0.5)",
     },
     {
-      name: "AI Literacy",
+      name: "Transportation and Mobility",
       color: "rgba(224, 214, 255, 0.5)",
     },
     {
-      name: "Multimodal AI",
+      name: "Regional Studies",
       color: "rgba(193, 240, 219, 0.5)",
     },
     {
-      name: "Child-AI Interaction",
+      name: "Infrastructure",
       color: "rgba(255, 224, 176, 0.5)",
     },
     {
-      name: "Creative Computing",
+      name: "SDG (Sustainable Development Goals)",
       color: "rgba(176, 224, 255, 0.5)",
     },
     {
-      name: "AI Science",
+      name: "Urban Data Science",
       color: "rgba(255, 224, 176, 0.5)",
     },
   ];

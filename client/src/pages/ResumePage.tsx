@@ -93,7 +93,7 @@ export default function ResumePage() {
 
   const educationContent = [
     {
-      degree: "B.Sc in Data Science and Artificial Intelligence",
+      degree: "B.Sc in Data Science and Artificial Intelligence (Ongoing)",
       institution: "Indian Institute of Technology, Guwahati (IITG)",
       location: "Online",
       field: "Data Science, Programming, Machine Learning, etc.",

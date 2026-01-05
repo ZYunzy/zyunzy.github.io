@@ -83,8 +83,7 @@ export default function Contact() {
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
               <p className="text-lg mb-8">
-                I'm always interested in new research collaborations, speaking
-                opportunities, or discussions about sustainable urban systems, AI for social good.
+                I'm always interested in new research collaborations, or discussions about sustainable urban systems, complex networks, geospatial datasets, AI for social good or anything related.
               </p>
 
               <div className="space-y-6 mb-8">

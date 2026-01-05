@@ -122,14 +122,16 @@ export const content = {
   ],
   publications: [
     {
-      title: "My Research Paper",
-      venue: "Conference",
-      year: "2024",
-      authors: "Zhuang, Y.",
+      title: "Rethink on the Transportation Development of the Guangzhou-Foshan Metropolitan Area from the Perspective of the Guangdong-Hong Kong-Macao Greater Bay Area – Based on GIS & Big Data Analysis",
+      venue: "Journal: South Architecture",
+      year: "2019",
+      authors: "Zhuang Y., Wang C., Gu J., Huang Y.et al.",
       tags: [
-        { name: "AI Research", color: "#E0D6FF" },
+        { name: "Transporation and Mobility", color: "#E0D6FF" },
+        { name: "Regional Studies", color: "#FFD6E0" },
+        { name: "Urban Networks", color: "#C1F0DB" },
       ],
-      abstractLink: "#",
+      abstractLink: "https://kns.cnki.net/kcms2/article/abstract?v=MmR6bzzH81EVBuiydU7B0y9s_VMejCqLYRJLvJ-G4eiMyjwNc3EYwmUMpAh8Tb5mh50_NRyTY0moOloukG0PqTXGGXTT4TcYwzIthP1RP1_OyqKBhMVNVp-tYFkVrsUIa_K3IDjL2pjDc7OHaZ8EsbJ8X4sc850ufsVz7hDeCVCoQoEIkiIFbw&uniplatform=NZKPT&language=CHS&captchaId=3fb5337b-693a-46bb-b700-c3b6872517a6",
       pdfLink: "#",
     },
   ],
