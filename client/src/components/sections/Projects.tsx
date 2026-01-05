@@ -49,7 +49,7 @@ export default function Projects() {
         {!isHomePage && (
           <div className="mb-12">
             <p className="text-xl text-gray-700 max-w-3xl mb-8">
-              My projects explore artificial intelligence applications, sustainable urban systems, and innovative solutions across various domains.
+              My projects explores the human-infrastructure-environment interactions within urban systems from various perspectives and multiple scales.
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-12 pb-2">
               {allTags.map((tag, index) => (
