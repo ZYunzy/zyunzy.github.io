@@ -39,7 +39,7 @@ export default function Gallery() {
         "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767529134/geomarxpng_t7hlmy.png",
         "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767529134/icsc_f5vb5b.png"
       ],
-      link: "https://www.youtube.com/watch?v=74q38nKdkd0",
+      link: "#",
     },
     {
       id: 2,

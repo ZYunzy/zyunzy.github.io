@@ -51,7 +51,7 @@ export const content = {
       {
         title: "My Research Project",
         description:
-          "Research project focused on computaional modelling and spatial statistics to study the human-infrastructure-environment interactions within urban systems..",
+          "Research project focused on computaional modelling and spatial statistics to study the human-infrastructure-environment interactions within urban systems.",
         image:
           "https://images.unsplash.com/photo-1581092921461-7717a5f1ecf9?auto=format&fit=crop&w=600&h=300",
         link: "#",
@@ -60,24 +60,24 @@ export const content = {
   },
   projects: [
     {
-      id: "gemini-extension",
-      title: "Google Home Gemini Extension",
+      id: "informal-settlements",
+      title: "Urban Informal Settlements in the Global South",
       description:
-        "Led the development of Google Home's Gemini Extension, bringing multimodal AI capabilities to smart home devices, enabling users to interact with their homes through natural language and visual inputs.",
+        "Urban informal settlements, often referred to as slums or shantytowns, are home to over one billion people in the Global South, representing one of the most pressing urban challenges of our time. This research project examines the complex dynamics of informal settlements through a multidisciplinary lens, combining spatial analysis, social science, and sustainable development frameworks. By leveraging GIS technologies, remote sensing data, and community-based research methods, we investigate the spatial patterns, infrastructure deficits, and socio-economic characteristics of informal settlements across cities in Africa, Asia, and Latin America. The project aims to identify pathways toward inclusive urbanization that respect the agency of informal settlement residents while addressing critical needs in housing, sanitation, transportation, and access to services. Through comparative analysis and stakeholder engagement, we develop evidence-based recommendations for policy interventions that promote equitable urban development, enhance resilience to climate risks, and advance the Sustainable Development Goals. This research contributes to global efforts in understanding and addressing urban poverty, inequality, and the right to adequate housing in rapidly urbanizing regions of the Global South.",
       image:
         "https://images.unsplash.com/photo-1535572290543-960a8046f5af?auto=format&fit=crop&w=800&h=600",
-      link: "https://support.google.com/googlenest/answer/12494697",
+      link: "#",
       gradient: "from-[#C1F0DB] via-[#FFD6E0] to-[#E0D6FF]",
       tags: [
-        { name: "Gemini AI", color: "#C1F0DB" },
-        { name: "Smart Home", color: "#FFD6E0" },
+        { name: "SDGs (Sustainable Development Goals)", color: "#D2E2FEFF" },
+        { name: "Equality and Wellbeing", color: "#FFD6E0" },
         { name: "Regional Studies", color: "#E0D6FF" },
       ],
-      content: "Detailed information about the Google Home Gemini Extension project. This multimodal AI integration brought advanced conversational capabilities to smart home devices, allowing users to control their homes through natural language and visual inputs. The project involved close collaboration with Google's AI teams and required extensive testing across various smart home ecosystems.",
+      content: "Informal settlements (IS) present a complex system of social, economic, and ecological interactions that arise spontaneously and unplanned in urban areas and require a forward-looking and comprehensive approach to address their socio-ecological interactions. Moreover, an IS is conceptually considered a sub-system within a broader urban system, interacting with and influenced by internal and external factors.",
     },
     {
-      id: "chembuddy",
-      title: "ChemBuddy: Multimodal AI Chemistry Assistant",
+      id: "mobility",
+      title: "Mobility, Infrastructure, and Urban Spatial Structure",
       description:
         "An AI-powered learning companion that combines computer vision, voice interaction, and sensor data to help students understand chemistry concepts through real-time experiment analysis.",
       image:
@@ -85,6 +85,7 @@ export const content = {
       link: "",
       gradient: "from-[#FFD6E0] via-[#E0D6FF] to-[#C1F0DB]",
       tags: [
+        { name: "SDGs (Sustainable Development Goals)", color: "#D2E2FEFF" },
         { name: "Multimodal AI", color: "#FFD6E0" },
         { name: "Computer Vision", color: "#E0D6FF" },
         { name: "Education", color: "#C1F0DB" },
@@ -92,18 +93,18 @@ export const content = {
       content: "ChemBuddy is an innovative AI-powered chemistry learning assistant that integrates multiple sensory inputs. The system uses computer vision to analyze chemical reactions in real-time, voice interaction for natural communication, and sensor data for precise measurements. This multimodal approach helps students better understand complex chemistry concepts through hands-on experimentation.",
     },
     {
-      id: "cognimates",
-      title: "Cognimates",
+      id: "green-blue-infrastructure",
+      title: "Urban Green-Blue Infrastructure in Sustainable and Resilient Cities",
       description:
-        "AI education platform for children to train their own machine learning models. Users can also code smart games using their custom models.",
+        "Urban green-blue infrastructure (GBI) represents a nature-based solution that integrates green spaces (parks, urban forests, green roofs) and blue elements (rivers, wetlands, retention ponds) into urban systems to address multiple sustainability challenges. This research project investigates the role of GBI in enhancing urban resilience through carbon reduction, heat mitigation, and water-sensitive urban design. By combining remote sensing technologies, climate modeling, and hydrological analysis, we quantify the cooling effects of urban vegetation and water bodies, assess their capacity for carbon sequestration, and evaluate their performance in stormwater management and flood mitigation. The project employs spatial analysis and scenario planning to identify optimal locations and configurations for GBI interventions that maximize co-benefits across environmental, social, and economic dimensions. Through case studies in rapidly urbanizing cities facing climate risks, we develop evidence-based guidelines for integrating GBI into urban planning and design processes. This research contributes to creating cooler, carbon-neutral, and water-sensitive cities that enhance quality of life while building resilience to climate change impacts such as urban heat islands, flooding, and water scarcity.",
       image:
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&h=600",
       link: "http://cognimatescopilot.com/",
       gradient: "from-[#E0D6FF] via-[#C1F0DB] to-[#FFD6E0]",
       tags: [
-        { name: "AI Education", color: "#FFD6E0" },
-        { name: "Creative Coding", color: "#E0D6FF" },
-        { name: "Child-Computer Interaction", color: "#C1F0DB" },
+        { name: "SDGs (Sustainable Development Goals)", color: "#D2E2FEFF" },
+        { name: "Ba", color: "#E0D6FF" },
+        { name: "Nature-based Solutions", color: "#C1F0DB" },
       ],
       content: "Cognimates is a pioneering AI education platform designed specifically for children. The platform allows young users to train their own machine learning models through an intuitive interface, then use these models to create interactive games and applications. This hands-on approach makes AI concepts accessible and engaging for the next generation of innovators.",
     },
