@@ -75,7 +75,14 @@ export default function ProjectDetailPage() {
 
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-800 mb-6">{project.description}</p>
-            <div className="whitespace-pre-line">{project.content}</div>
+            <div
+              onCopy={(e) => e.preventDefault()}
+              onCut={(e) => e.preventDefault()}
+              onContextMenu={(e) => e.preventDefault()}
+              className="select-none whitespace-pre-line"
+            >
+              {project.content}
+            </div>
           </div>
         </div>
       </main>
