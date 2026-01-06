@@ -75,16 +75,19 @@ export default function ProjectDetailPage() {
             </div>
           </div>
 
+          <div className="mb-8 bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-xl border-l-4 border-blue-500 shadow-md">
+            <p className="text-lg text-gray-800 font-medium leading-relaxed">{project.description}</p>
+          </div>
+
           <div className="mb-8">
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-64 md:h-96 object-cover rounded-lg"
+              className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
             />
           </div>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-gray-800 mb-6">{project.description}</p>
             <div
               onCopy={(e) => e.preventDefault()}
               onCut={(e) => e.preventDefault()}
