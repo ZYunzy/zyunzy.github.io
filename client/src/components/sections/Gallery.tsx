@@ -11,9 +11,8 @@ export default function Gallery() {
       id: "art-1",
       title: "My Painting Work",
       date: "January 1, 2024",
-      description: "A beautiful painting showcasing my artistic skills.",
-      image: ["https://images.unsplash.com/photo-1541961017774-22349e4a1262?q=80&w=1864&auto=format&fit=crop",
-        "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767700312/%E6%88%AA%E5%B1%8F2026-01-06_13.20.33_mzsrod.png"
+      description: "Some of my paintings.",
+      image: ["https://res.cloudinary.com/dkjpqq37r/image/upload/v1767700312/%E6%88%AA%E5%B1%8F2026-01-06_13.20.33_mzsrod.png"
       ],
       category: "Painting",
       link: "#",
@@ -32,7 +31,7 @@ export default function Gallery() {
       title: "Model Collection",
       date: "2017-2018",
       description: "A series of architectural models.",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1864&auto=format&fit=crop",
+      image: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767700313/%E6%88%AA%E5%B1%8F2026-01-06_13.20.49_nhhv4g.png",
       category: "Architectural Model",
       link: "#",
     },
