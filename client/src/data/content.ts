@@ -81,8 +81,8 @@ export const content = {
           title: "From buildings to communities: Identifying urban informal settlements through spatial network-based approaches",
           text: "Traditional approaches to detecting urban informal settlements mainly focus on remote sensing image interpretation and often neglect explicit morphological traits. Ambiguous boundaries and diverse characteristics also significantly increase annotation complexity and training costs. Therefore, I proposed a novel building-centric framework for identifying urban informal settlements based on open building dataset. In the framework, I developed a self-supervised learning model based on GraphSAGE architecture with Loss function that simulates community detection for large graph partition in generating building groups. By embedding spatial information directly into the model, it facilitates efficient spatial node clustering in large graphs. The methods can quickly identify urban informal settlements in the Global South without large volume of pre-labeled data and high computational resources.",
           images: [
-            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
-            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+            { src: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767717181/uis_morphology_oo0tus.png", caption: "Urban Settlements Morphology" },
+            { src: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767716747/community_s7gonk.png", caption: "Community Detection" }   
           ]
         },
         {
@@ -90,8 +90,8 @@ export const content = {
           title: "Environmental risk assessment of urban informal settlement using GNN-based spatial downscaling",
           text: "By mapping the dynamic evolution of informal settlements across 100+ countries in Global South, we try to interpret multi-source remote sensing imagery to assess their environmental risks, including water and air pollution, localized overheating caused by high density, and increased flood vulnerability. To address the challenge of scale mismatch between environmental data and informal settlement extents, we develope a novel graph neural network (GNN) based downscaling model that integrates spatial dependencies and contextual information to enhance the resolution of environmental datasets at a hyper-local scale. Transcending the limitations of traditional CNNs that treat spatial data as regular grids, our approach models settlements as irregular graph structures composed of superpixels or building clusters. By leveraging the message-passing mechanism of Graph Attention Networks (GATs), we deeply integrate coarse-resolution environmental proxies (e.g., Sentinel-5P, MODIS) with high-resolution morphological features. Furthermore, we incorporate physics-informed constraints—such as energy conservation—directly into the loss function to suppress model 'hallucinations.' This strategy effectively mitigates the 'mixed pixel' effect inherent in traditional remote sensing, enabling precise inference of micro-climate variations, such as localized overheating and pollution hotspots. This research allows for more accurate assessment of localized environmental risks within informal settlements, providing critical insights for targeted interventions and policy-making aimed at improving living conditions and resilience in these vulnerable urban areas.",
           images: [
-            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
-            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+            { src: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767716101/global5_tqfqzb.png", caption: "Global South" },
+            // { src: "https://example.com/image2.jpg", caption: "Caption 2" }
           ]
         },
         // 其他sections...
@@ -163,7 +163,7 @@ export const content = {
       sections: [
         {
           type: "text-gallery",
-          title: "Carbon Stock and Sequestration Estimation of Urban Green Spaces",
+          title: "Carbon Stock and Sequestration Estimation of Urban Greenery",
           text: "The research aims to develop carbon storage and sequestration models that estimate the current amount of carbon stored in a landscape and values the amount of sequestered carbon for large-scale, longitudinal monitoring. We conduct on-site measurements and apply allometric models to monitor carbon sequestration by urban greenery in Singapore. My responsibility is to develop a three-dimensional reconstruction model of urban trees from street-view images to extract detailed plant characteristics. Combining these characteristics with microclimate data, anthropogenic factors, and ground-truth measurements, we train a machine learning model capable of large-scale, longitudinal monitoring of carbon uptake and loss in urban greenery. A pilot study was carried out on the NUS campus.",
           images: [
             { src: "https://d32m1btok6bzqh.cloudfront.net/wp-content/uploads/2024/02/image-2.png", caption: "How to calculate CO2 sequestration" },
@@ -203,8 +203,8 @@ export const content = {
           title: "Unravel the Driving Factor of Competition-cooperation within Metropolitan Urban Network based on Graphic Causal Inference",
           text: "This research applied social network theory and graph representation learning to characterize the status of Shanghai New Town within the metropolitan context from multiple dimensions, including mobility, logistics, and knowledge flow. The study quantified the network externalities and the interrelated drivers shaping the city’s node status, and assessed the intensity of competition and cooperation between the New Town and surrounding cities using ecological niche overlap theory. In addition, a multi-layer heterogeneous GNN model was developed to represent urban network nodes at different spatial scales and to uncover the interrelationships of network nodes across levels using graphical causal models.",
           images: [
-            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
-            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+            // { src: "https://example.com/image1.jpg", caption: "Caption 1" },
+            // { src: "https://example.com/image2.jpg", caption: "Caption 2" }
           ]
         },
         // 其他sections...
