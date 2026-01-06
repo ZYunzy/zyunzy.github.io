@@ -200,17 +200,8 @@ export const content = {
       sections: [
         {
           type: "text-gallery",
-          title: "Carbon Stock and Sequestration Estimation of Urban Green Spaces",
-          text: "We conduct on-site measurements and apply allometric models to monitor carbon sequestration by urban greenery in Singapore. My responsibility is to develop a three-dimensional reconstruction model of urban trees from street-view images to extract detailed plant characteristics. Combining these characteristics with microclimate data, anthropogenic factors, and ground-truth measurements, we train a machine learning model capable of large-scale, longitudinal monitoring of carbon uptake and loss in urban greenery. A pilot study was carried out on the NUS campus.",
-          images: [
-            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
-            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
-          ]
-        },
-        {
-          type: "text-gallery",
-          title: "Water Environment System Optimization and Planning Technology in National New Districts",
-          text: "In this project, I extracted land use changes and the evolution of the urban water network in Guangzhou from remote sensing imagery to examine their significant associations with flooding using spatial econometrics. With other team members, I contributed to the development of a coupled ANN-CA model that integrates hydrodynamic constraints into land-use transition rules. This model simulates the dynamic evolution of urban patterns and, by evaluating hydrological responses under various scenarios, derives the optimal future water-surface ratios to balance flood resilience with urban development.",
+          title: "Unravel the Driving Factor of Competition-cooperation within Metropolitan Urban Network based on Graphic Causal Inference",
+          text: "Based on social network theory with graph representation learning, the research first characterized the node status of Shanghai New Town under the background of Metropolitan from multi-dimensions (mobility, logistics, knowledge flow). Then, quantified the network externalities and the interrelated drivers shaping node city status, and assessed the intensity of competition and cooperation between the New Town and surrounding cities based on ecological niche overlap theory. I also built a multi-layer Heterogeneous GNN model to represent urban network nodes within different spatial scales and discover the inter-correlation of network nodes from different levels based on Graphical Causal Models.",
           images: [
             { src: "https://example.com/image1.jpg", caption: "Caption 1" },
             { src: "https://example.com/image2.jpg", caption: "Caption 2" }

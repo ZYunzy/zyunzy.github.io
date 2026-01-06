@@ -94,49 +94,49 @@ export default function ProjectDetailPage() {
               {project.content}
               </div>
               {project.sections?.map((section, idx) => (
-                <div key={idx} className="mt-6">
+                <div key={idx} className="mt-8 bg-white p-6 rounded-xl shadow-lg">
                   {section.type === 'ongoing-paper' && (
-                    <div className="bg-white p-4 rounded-lg shadow flex gap-4">
-                      {'image' in section && typeof (section as any).image === 'string' && <img src={(section as any).image} className="w-32 h-32 object-cover" />}
-                      <div>
-                        <h4 className="font-bold">{(section as any).title}</h4>
-                        {'authors' in section && typeof (section as any).authors === 'string' && <p className="text-sm text-gray-600">{(section as any).authors}</p>}
-                        {'description' in section && typeof (section as any).description === 'string' && <p className="text-sm">{(section as any).description}</p>}
-                        {'link' in section && typeof (section as any).link === 'string' && <a href={(section as any).link} className="text-blue-600">Read More →</a>}
+                    <div className="flex gap-6">
+                      {'image' in section && typeof (section as any).image === 'string' && <img src={(section as any).image} className="w-40 h-40 object-cover rounded-lg flex-shrink-0" />}
+                      <div className="flex-1">
+                        <h4 className="text-xl font-bold mb-2">{(section as any).title}</h4>
+                        {'authors' in section && typeof (section as any).authors === 'string' && <p className="text-sm text-gray-600 mb-2">{(section as any).authors}</p>}
+                        {'description' in section && typeof (section as any).description === 'string' && <p className="text-gray-700 mb-3">{(section as any).description}</p>}
+                        {'link' in section && typeof (section as any).link === 'string' && <a href={(section as any).link} className="text-blue-600 hover:text-blue-800 font-medium">Read More →</a>}
                       </div>
                     </div>
                   )}
                   {section.type === 'text-gallery' && (
-                    <div className="mt-6">
-                      <h4 className="font-bold mb-4">{section.title}</h4>
-                      <p className="mb-4">{section.text}</p>
-                      <div className="flex overflow-x-auto space-x-4 pb-4">
+                    <div>
+                      <h4 className="text-xl font-bold mb-4">{section.title}</h4>
+                      <p className="text-gray-700 mb-6 whitespace-pre-line text-justify">{section.text}</p>
+                      <div className="flex overflow-x-auto space-x-4 pb-4 -mx-6 px-6">
                         {section.images?.map((img, imgIdx) => (
-                          <div key={imgIdx} className="flex-shrink-0 w-64">
-                            <img src={img.src} alt={img.caption} className="w-full h-48 object-cover rounded" />
-                            <p className="text-sm mt-2">{img.caption}</p>
+                          <div key={imgIdx} className="flex-shrink-0 w-72">
+                            <img src={img.src} alt={img.caption} className="w-full h-52 object-cover rounded-lg shadow-md" />
+                            <p className="text-sm mt-3 text-gray-600">{img.caption}</p>
                           </div>
                         ))}
                       </div>
                     </div>
                   )}
                   {section.type === 'image-text' && (
-                    <div className={`flex gap-4 ${'layout' in section && section.layout === 'right' ? 'flex-row-reverse' : ''}`}>
-                      {'image' in section && typeof (section as any).image === 'string' && <img src={(section as any).image} className="w-1/2" />}
+                    <div className={`flex gap-6 items-start ${'layout' in section && section.layout === 'right' ? 'flex-row-reverse' : ''}`}>
+                      {'image' in section && typeof (section as any).image === 'string' && <img src={(section as any).image} className="w-1/2 rounded-lg shadow-md object-cover" />}
                       <div className="w-1/2">
-                        <h4 className="font-bold mb-2">{section.title}</h4>
-                        {'text' in section && typeof (section as any).text === 'string' && <p>{(section as any).text}</p>}
+                        <h4 className="text-xl font-bold mb-4">{section.title}</h4>
+                        {'text' in section && typeof (section as any).text === 'string' && <p className="text-gray-700 whitespace-pre-line text-justify">{(section as any).text}</p>}
                       </div>
                     </div>
                   )}
                   {section.type === 'gallery' && (
-                    <div className="mt-6">
-                      <h4 className="font-bold mb-4">{section.title}</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="text-xl font-bold mb-4">{section.title}</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {section.images?.map((img, imgIdx) => (
-                          <div key={imgIdx} className="relative">
-                            <img src={img.src} alt={img.caption} className="w-full h-48 object-cover rounded" />
-                            <p className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">{img.caption}</p>
+                          <div key={imgIdx} className="relative group overflow-hidden rounded-lg shadow-md">
+                            <img src={img.src} alt={img.caption} className="w-full h-56 object-cover" />
+                            <p className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent text-white p-3 text-sm">{img.caption}</p>
                           </div>
                         ))}
                       </div>
