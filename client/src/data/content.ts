@@ -164,10 +164,10 @@ export const content = {
         {
           type: "text-gallery",
           title: "Carbon Stock and Sequestration Estimation of Urban Green Spaces",
-          text: "We conduct on-site measurements and apply allometric models to monitor carbon sequestration by urban greenery in Singapore. My responsibility is to develop a three-dimensional reconstruction model of urban trees from street-view images to extract detailed plant characteristics. Combining these characteristics with microclimate data, anthropogenic factors, and ground-truth measurements, we train a machine learning model capable of large-scale, longitudinal monitoring of carbon uptake and loss in urban greenery. A pilot study was carried out on the NUS campus.",
+          text: "The research aim to develop carbon storage and sequestration model that estimates the current amount of carbon stored in a landscape and values the amount of sequestered carbon for large-scale, longitudinal monitoring. We conduct on-site measurements and apply allometric models to monitor carbon sequestration by urban greenery in Singapore. My responsibility is to develop a three-dimensional reconstruction model of urban trees from street-view images to extract detailed plant characteristics. Combining these characteristics with microclimate data, anthropogenic factors, and ground-truth measurements, we train a machine learning model capable of large-scale, longitudinal monitoring of carbon uptake and loss in urban greenery. A pilot study was carried out on the NUS campus.",
           images: [
-            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
-            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+            { src: "https://d32m1btok6bzqh.cloudfront.net/wp-content/uploads/2024/02/image-2.png", caption: "How to calculate CO2 sequestration" },
+            { src: "https://storage.googleapis.com/jnl-up-j-bc-files/journals/1/articles/586/684017a561cbe.png", caption: "How urban green infrastructure contributes to carbon neutrality" }
           ]
         },
         {
