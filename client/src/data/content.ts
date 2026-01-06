@@ -1,7 +1,7 @@
 export const content = {
   about: {
     paragraphs: [
-      "I'm Yun Zhuang, a researcher passionate about sustainable urban systems.",
+      "I'm Yun Zhuang, a researcher passionate about sustainable urban systems. I focus on interdisciplinary approaches to address complex urban challenges through system science, data analysis, and computational modeling. My work explores the interactions between human, infrastructure, and environmental systems to inform resilient and adaptive engineer strategies. My techinical interests are network science, dynamic modeling, and urban informatics.",
     ],
     infoBoxes: [
       {
@@ -74,7 +74,28 @@ export const content = {
         { name: "Regional Studies", color: "#B0E0FF" },
         { name: "Urban Systems", color: "#FFE4B5" },
       ],
-      content: "Urban informal settlements, often referred to as slums or shantytowns, are home to over one billion people in the Global South, representing one of the most pressing urban challenges of our time. This research project examines the complex dynamics of informal settlements through a multidisciplinary lens, combining spatial analysis, social science, and sustainable development frameworks. By leveraging GIS technologies, remote sensing data, and community-based research methods, we investigate the spatial patterns, infrastructure deficits, and socio-economic characteristics of informal settlements across cities in Africa, Asia, and Latin America. The project aims to identify pathways toward inclusive urbanization that respect the agency of informal settlement residents while addressing critical needs in housing, sanitation, transportation, and access to services. Through comparative analysis and stakeholder engagement, we develop evidence-based recommendations for policy interventions that promote equitable urban development, enhance resilience to climate risks, and advance the Sustainable Development Goals. This research contributes to global efforts in understanding and addressing urban poverty, inequality, and the right to adequate housing in rapidly urbanizing regions of the Global South.",
+      content: "Urban informal settlements, often referred to as slums or shantytowns, are home to over one billion people in the Global South, representing one of the most pressing urban challenges of our time. This research project examines the complex dynamics of informal settlements through a multidisciplinary lens, combining spatial analysis, social science, and sustainable development frameworks. By leveraging GIS technologies, remote sensing data, and community-based research methods, we investigate the spatial patterns, infrastructure deficits, and socio-economic characteristics of informal settlements across cities in Africa, Asia, and Latin America. These settlements face heightened environmental risks, including exposure to flooding, air and water pollution, inadequate waste management, and urban heat islands, which disproportionately affect vulnerable populations. The project aims to identify pathways toward inclusive urbanization that respect the agency of informal settlement residents while addressing critical needs in housing, sanitation, transportation, and access to services. Through comparative analysis and stakeholder engagement, we develop evidence-based recommendations for policy interventions that promote equitable urban development, enhance resilience to climate risks, and advance the Sustainable Development Goals. This research contributes to global efforts in understanding and addressing urban poverty, inequality, and the right to adequate housing in rapidly urbanizing regions of the Global South.",
+      sections: [
+        {
+          type: "text-gallery",
+          title: "From buildings to communities: Identifying urban informal settlements through spatial network-based approaches",
+          text: "Traditional approaches to detecting urban informal settlements mainly focus on remote sensing image interpretation and often neglect explicit morphological traits. Ambiguous boundaries and diverse characteristics also significantly increase annotation complexity and training costs. Therefore, I proposed a novel building-centric framework for identifying urban informal settlements based on open building dataset. In the framework, I developed a self-supervised learning model based on GraphSAGE architecture with Loss function that simulates community detection for large graph partition in generating building groups. By embedding spatial information directly into the model, it facilitates efficient spatial node clustering in large graphs. The methods can quickly identify urban informal settlements in the Global South without large volume of pre-labeled data and high computational resources.",
+          images: [
+            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
+            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+          ]
+        },
+        {
+          type: "text-gallery",
+          title: "Environmental risk assessment of urban informal settlement using GNN-based spatial downscaling",
+          text: "By mapping the dynamic evolution of informal settlements across 100+ countries in Global South, I try to interpret multi-source remote sensing imagery to assess their environmental risks, including water and air pollution, localized overheating caused by high density, and increased flood vulnerability. To address the challenge of scale mismatch between environmental data and informal settlement extents, I develope a novel graph neural network (GNN) based downscaling model that integrates spatial dependencies and contextual information to enhance the resolution of environmental datasets at a hyper-local scale. Transcending the limitations of traditional CNNs that treat spatial data as regular grids, our approach models settlements as irregular graph structures composed of superpixels or building clusters. By leveraging the message-passing mechanism of Graph Attention Networks (GATs), we deeply integrate coarse-resolution environmental proxies (e.g., Sentinel-5P, MODIS) with high-resolution morphological features. Furthermore, we incorporate physics-informed constraints—such as energy conservation—directly into the loss function to suppress model 'hallucinations.' This strategy effectively mitigates the 'mixed pixel' effect inherent in traditional remote sensing, enabling precise inference of micro-climate variations, such as localized overheating and pollution hotspots. This research allows for more accurate assessment of localized environmental risks within informal settlements, providing critical insights for targeted interventions and policy-making aimed at improving living conditions and resilience in these vulnerable urban areas.",
+          images: [
+            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
+            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+          ]
+        },
+        // 其他sections...
+      ]
     },
     {
       id: "mobility",
@@ -90,9 +111,38 @@ export const content = {
         { name: "Transportation and mobility", color: "#FFD6E0" },
         { name: "Resilient Infrastructure", color: "#E0D6FF" },
         { name: "Urban Systems", color: "#FFE4B5" },
-        // { name: "Education", color: "#C1F0DB" },
       ],
       content: "This research project examines the intricate relationships between individual mobility behavior, urban street environments, and transportation infrastructure in shaping sustainable and resilient urban spatial structures. By investigating how people's travel patterns interact with the built environment, we analyze the role of emerging transportation modes—such as shared mobility, electric vehicles, and micro-mobility—in advancing transportation decarbonization and reducing urban carbon footprints. The project conceptualizes transportation infrastructure as the 'skeleton' and land use as the 'flesh' of urban systems, exploring how optimizing land use patterns, mixed-use development, transit-oriented design, and spatial connectivity can enhance the sustainability and resilience of transportation networks. Through computational modeling, spatial analysis, and scenario planning, we investigate strategies to improve infrastructure performance under various uncertainties, including climate risks, demographic shifts, and technological disruptions. This research contributes to creating low-carbon, adaptable urban systems that integrate sustainable mobility solutions with resilient spatial planning, ultimately fostering equitable access, environmental sustainability, and urban livability in the face of future challenges.",
+      sections: [
+        {
+          type: "text-gallery",
+          title: "Adaptive Navigation for Cycling Route Recommendation: Integrating Detour Behavior and Environmental Dynamics",
+          text: "By integrating multi-source data, this study presents a novel framework that leverages the VLM model to assess the cycling suitability of road segments. MaxEnt IRL is also used to quantify cyclists’ segment-level preferences based on 5 dimension weighted reward function. By imitating the decision-making process behind cyclists’ detour behaviors, this study introduces a dual-agent based simulation framework for adaptive cycling route recommendation in complex urban environments. The system employs two interacting agents: one that responds to personalized preferences, and a supervisory agent that optimizes for the globally recommended best route under uncertain traffic and environmental conditions.",
+          images: [
+            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
+            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+          ]
+        },
+        {
+          type: "text-gallery",
+          title: "A Hybrid Simulation Framework for Modeling the Carbon Mitigation of Bike-Public Transition",
+          text: "Since the overall travel demand is relatively fixed, different transport modes inevitably exhibit both competitive and complementary relationships. By exploring the modal shift impact of bike usage on traffic emissions, I develop a hybrid simulation framework for assessing carbon mitigation potential. The core idea is to rebalance bike-sharing so that it supplements public transit rather than competing with it, thereby reducing reliance on private cars and taxis. The modeling framework employs \textit{E-fence Planning} and \textit{Agent-Based Fleet Sizing} as two key measures to complete the bike-sharing supply chain and encourage modal shifts from private transport toward bike–transit integration. In this study, agents represent not only traffic users switching between modes but also the placement of bikes and the operation of E-fences, making the model both space-based and transit-oriented. Furthermore, \textit{Multi-Agent Reinforcement Learning} is trained to optimize strategies for multimodal systems until system-wide emissions and modal shares converge toward critical turning points.",
+          images: [
+            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
+            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+          ]
+        },
+        {
+          type: "text-gallery",
+          title: "Modeling the Optimization of Urban Spatial Structures",
+          text: "By abstracting the urban space as spatial networked systems with top-down system and bottom-up agent approach, I try to model the urban structure for daily travel under two scenarios: carbon emission optimization and disaster resilience. These models are implemented within \textit{Multi-Agent Systems}, where agents represent transport network components, such as transit lines or infrastructure segments, and their interactions reflect user flows across the network. Specifically, \textit{Graph Neural Network} combined with \textit{Reinforcement Learning} is to abstract and optimize these interconnected transport systems under two complementary simulation scenarios. The deterministic scenario identifies critical turning points, i.e. structural adjustments or strategic interventions that can shift the trajectory of commuting efficiency and carbon reduction. The second scenario extends this analysis to uncertain contexts, capturing risks from external shocks such as flooding in inundation-prone areas or other disruptive events. This integrated framework enables the systematic exploration of both planned interventions and unanticipated disruptions, and supports adaptive policy-making for resilient and low-carbon urban mobility futures.",
+          images: [
+            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
+            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+          ]
+        },
+        // 其他sections...
+      ]
     },
     {
       id: "green-blue-infrastructure",
@@ -110,6 +160,27 @@ export const content = {
         { name: "Urban Systems", color: "#FFE4B5" },
       ],
       content: "Urban green-blue infrastructure (GBI) represents a nature-based solution that integrates green spaces (parks, urban forests, green roofs) and blue elements (rivers, wetlands, retention ponds) into urban systems to address multiple sustainability challenges. This research project investigates the role of GBI in enhancing urban resilience through carbon reduction, heat mitigation, and water-sensitive urban design. By combining remote sensing technologies, climate modeling, and hydrological analysis, we quantify the cooling effects of urban vegetation and water bodies, assess their capacity for carbon sequestration, and evaluate their performance in stormwater management and flood mitigation. The project employs spatial analysis and scenario planning to identify optimal locations and configurations for GBI interventions that maximize co-benefits across environmental, social, and economic dimensions. Through case studies in rapidly urbanizing cities facing climate risks, we develop evidence-based guidelines for integrating GBI into urban planning and design processes. This research contributes to creating cooler, carbon-neutral, and water-sensitive cities that enhance quality of life while building resilience to climate change impacts such as urban heat islands, flooding, and water scarcity.",
+      sections: [
+        {
+          type: "text-gallery",
+          title: "Carbon Stock and Sequestration Estimation of Urban Green Spaces",
+          text: "We conduct on-site measurements and apply allometric models to monitor carbon sequestration by urban greenery in Singapore. My responsibility is to develop a three-dimensional reconstruction model of urban trees from street-view images to extract detailed plant characteristics. Combining these characteristics with microclimate data, anthropogenic factors, and ground-truth measurements, we train a machine learning model capable of large-scale, longitudinal monitoring of carbon uptake and loss in urban greenery. A pilot study was carried out on the NUS campus.",
+          images: [
+            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
+            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+          ]
+        },
+        {
+          type: "text-gallery",
+          title: "Water Environment System Optimization and Planning Technology in National New Districts",
+          text: "In this project, I first extracted land use changes and the evolution of the urban water network in Guangzhou from remote sensing imagery, and quantified their significant associations with flooding using spatial econometrics. With other interdisciplinary members, we built a modeling framework to identify water-sensitive areas in the city and inferred the suitable upper and lower bounds of the water-surface ratio based on simulation results, providing optimal strategies for urban planning and infrastructure management. Additionally, I contributed to the development of a simulation model, ANN-CA (Artificial Neural Network–Cellular Automata) incorporating hydrodynamics, to predict future optimal water-surface ratios by integrating the dynamic evolution of land use patterns.",
+          images: [
+            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
+            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+          ]
+        },
+        // 其他sections...
+      ]
     },
     {
       id: "urban-networks",
@@ -126,6 +197,27 @@ export const content = {
         { name: "Regional Studies", color: "#B0E0FF" },
       ],
       content:"Metropolitan regions are characterized by complex networks of interconnected cities, towns, and communities that form polycentric urban systems. This research project investigates the structure, dynamics, and evolution of urban networks within metropolitan regions, examining how different types of flows, including economic transactions, population mobility, information exchange, and infrastructure connectivity, shape regional development patterns. By applying network science methods, spatial analysis, and multi-layer network modeling, we analyze the hierarchical relationships, functional complementarities, and competitive dynamics among cities within metropolitan areas. The project explores how network centrality, clustering patterns, and accessibility influence regional economic performance, innovation diffusion, and sustainable development. Through comparative studies of major metropolitan regions globally, we investigate strategies for optimizing network configurations to enhance regional competitiveness, promote balanced development, and improve resilience to economic shocks and environmental challenges. This research contributes to understanding polycentric metropolitan governance, infrastructure planning, and policies that foster collaborative rather than purely competitive relationships among cities, ultimately supporting more integrated, efficient, and equitable regional development.",
+      sections: [
+        {
+          type: "text-gallery",
+          title: "Carbon Stock and Sequestration Estimation of Urban Green Spaces",
+          text: "We conduct on-site measurements and apply allometric models to monitor carbon sequestration by urban greenery in Singapore. My responsibility is to develop a three-dimensional reconstruction model of urban trees from street-view images to extract detailed plant characteristics. Combining these characteristics with microclimate data, anthropogenic factors, and ground-truth measurements, we train a machine learning model capable of large-scale, longitudinal monitoring of carbon uptake and loss in urban greenery. A pilot study was carried out on the NUS campus.",
+          images: [
+            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
+            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+          ]
+        },
+        {
+          type: "text-gallery",
+          title: "Water Environment System Optimization and Planning Technology in National New Districts",
+          text: "In this project, I extracted land use changes and the evolution of the urban water network in Guangzhou from remote sensing imagery to examine their significant associations with flooding using spatial econometrics. With other team members, I contributed to the development of a coupled ANN-CA model that integrates hydrodynamic constraints into land-use transition rules. This model simulates the dynamic evolution of urban patterns and, by evaluating hydrological responses under various scenarios, derives the optimal future water-surface ratios to balance flood resilience with urban development.",
+          images: [
+            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
+            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+          ]
+        },
+        // 其他sections...
+      ]
     },
     {
       id: "net-zero-building",

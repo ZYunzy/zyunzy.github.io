@@ -92,7 +92,58 @@ export default function ProjectDetailPage() {
               className="select-none whitespace-pre-line text-justify"
             >
               {project.content}
-            </div>
+              </div>
+              {project.sections?.map((section, idx) => (
+                <div key={idx} className="mt-6">
+                  {section.type === 'ongoing-paper' && (
+                    <div className="bg-white p-4 rounded-lg shadow flex gap-4">
+                      {'image' in section && typeof (section as any).image === 'string' && <img src={(section as any).image} className="w-32 h-32 object-cover" />}
+                      <div>
+                        <h4 className="font-bold">{(section as any).title}</h4>
+                        {'authors' in section && typeof (section as any).authors === 'string' && <p className="text-sm text-gray-600">{(section as any).authors}</p>}
+                        {'description' in section && typeof (section as any).description === 'string' && <p className="text-sm">{(section as any).description}</p>}
+                        {'link' in section && typeof (section as any).link === 'string' && <a href={(section as any).link} className="text-blue-600">Read More →</a>}
+                      </div>
+                    </div>
+                  )}
+                  {section.type === 'text-gallery' && (
+                    <div className="mt-6">
+                      <h4 className="font-bold mb-4">{section.title}</h4>
+                      <p className="mb-4">{section.text}</p>
+                      <div className="flex overflow-x-auto space-x-4 pb-4">
+                        {section.images?.map((img, imgIdx) => (
+                          <div key={imgIdx} className="flex-shrink-0 w-64">
+                            <img src={img.src} alt={img.caption} className="w-full h-48 object-cover rounded" />
+                            <p className="text-sm mt-2">{img.caption}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {section.type === 'image-text' && (
+                    <div className={`flex gap-4 ${'layout' in section && section.layout === 'right' ? 'flex-row-reverse' : ''}`}>
+                      {'image' in section && typeof (section as any).image === 'string' && <img src={(section as any).image} className="w-1/2" />}
+                      <div className="w-1/2">
+                        <h4 className="font-bold mb-2">{section.title}</h4>
+                        {'text' in section && typeof (section as any).text === 'string' && <p>{(section as any).text}</p>}
+                      </div>
+                    </div>
+                  )}
+                  {section.type === 'gallery' && (
+                    <div className="mt-6">
+                      <h4 className="font-bold mb-4">{section.title}</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {section.images?.map((img, imgIdx) => (
+                          <div key={imgIdx} className="relative">
+                            <img src={img.src} alt={img.caption} className="w-full h-48 object-cover rounded" />
+                            <p className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">{img.caption}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
           </div>
         </div>
       </main>
