@@ -19,6 +19,16 @@ export default function ResumePage() {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Add noindex meta tag
+    const meta = document.createElement('meta');
+    meta.name = 'robots';
+    meta.content = 'noindex, nofollow';
+    document.head.appendChild(meta);
+
+    return () => {
+      document.head.removeChild(meta);
+    };
   }, []);
 
   const sectionVariants = {
@@ -188,7 +198,12 @@ export default function ResumePage() {
       <div className="min-h-screen bg-gray-50 pt-24 pb-16 print:bg-white print:pt-2">
         <div className="container mx-auto px-6 md:px-16 print:px-0">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-white p-8 rounded-xl shadow-sm mb-8 print:shadow-none print:p-0">
+            <div 
+              className="bg-white p-8 rounded-xl shadow-sm mb-8 print:shadow-none print:p-0 select-none"
+              onCopy={(e) => e.preventDefault()}
+              onCut={(e) => e.preventDefault()}
+              onContextMenu={(e) => e.preventDefault()}
+            >
               {/* Top navigation bar with Back and Print buttons */}
               <div className="flex justify-between items-center mb-10 print:hidden">
                 <Link href="/">
