@@ -203,9 +203,19 @@ export const content = {
           title: "Unravel the Driving Factor of Competition-cooperation within Metropolitan Urban Network based on Graphic Causal Inference",
           text: "This research applied social network theory and graph representation learning to characterize the status of Shanghai New Town within the metropolitan context from multiple dimensions, including mobility, logistics, and knowledge flow. The study quantified the network externalities and the interrelated drivers shaping the city’s node status, and assessed the intensity of competition and cooperation between the New Town and surrounding cities using ecological niche overlap theory. In addition, a multi-layer heterogeneous GNN model was developed to represent urban network nodes at different spatial scales and to uncover the interrelationships of network nodes across levels using graphical causal models.",
           images: [
-            // { src: "https://example.com/image1.jpg", caption: "Caption 1" },
-            // { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+            { src: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767781043/IMG_9026_ovd5qp.jpg", caption: "Multi-layer Urban Network" },
+            { src: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767781042/IMG_9027_klh0fh.jpg", caption: "Network Externalities" }
           ]
+        },
+        {
+          type: "ongoing-paper",
+          title: "Rethink on the Transportation Development of the Guangzhou-Foshan Metropolitan Area from the Perspective of the Guangdong-Hong Kong-Macao Greater Bay Area",
+          authors: "Zhuang Y., Wang C., Gu J., Huang Y. et al.",
+          venue: "South Architecture, 2019",
+          year: "2019",
+          image: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767781327/IMG_9028_nkz9ng.jpg",
+          description: "This paper examines the transportation development strategies for the Guangzhou-Foshan metropolitan area within the broader context of the Guangdong-Hong Kong-Macao Greater Bay Area, utilizing GIS and big data analysis to understand regional connectivity and mobility patterns.",
+          link: "https://kns.cnki.net/kcms2/article/abstract?v=MmR6bzzH81EVBuiydU7B0y9s_VMejCqLYRJLvJ-G4eiMyjwNc3EYwmUMpAh8Tb5mh50_NRyTY0moOloukG0PqTXGGXTT4TcYwzIthP1RP1_OyqKBhMVNVp-tYFkVrsUIa_K3IDjL2pjDc7OHaZ8EsbJ8X4sc850ufsVz7hDeCVCoQoEIkiIFbw&uniplatform=NZKPT&language=CHS"
         },
         // 其他sections...
       ]
