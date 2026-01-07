@@ -8,7 +8,7 @@ export default function Projects() {
   const [location] = useLocation();
   const isHomePage = location === "/";
   const allProjects = content.projects;
-  const projects = isHomePage ? allProjects.slice(0, 2) : allProjects; // Show only first 2 on homepage
+  const projects = isHomePage ? [allProjects[0], allProjects[1], allProjects[2], allProjects[4]] : allProjects; // 显示项目1,2,3,5（0-based索引）
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
