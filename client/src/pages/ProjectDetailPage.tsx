@@ -97,7 +97,13 @@ export default function ProjectDetailPage() {
               {project.content}
               </div>
               {project.sections?.map((section, idx) => (
-                <div key={idx} className="mt-8 bg-white p-6 rounded-xl shadow-lg">
+                <div 
+                  key={idx} 
+                  className="mt-8 bg-white p-6 rounded-xl shadow-lg select-none"
+                  onCopy={(e) => e.preventDefault()}
+                  onCut={(e) => e.preventDefault()}
+                  onContextMenu={(e) => e.preventDefault()}
+                >
                   {section.type === 'ongoing-paper' && (
                     <div className="flex gap-6">
                       {'image' in section && typeof (section as any).image === 'string' && <img src={(section as any).image} className="w-40 h-40 object-cover rounded-lg flex-shrink-0" />}
