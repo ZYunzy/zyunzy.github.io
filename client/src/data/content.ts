@@ -119,8 +119,8 @@ export const content = {
           title: "Adaptive Navigation for Cycling Route Recommendation: Integrating Detour Behavior and Environmental Dynamics",
           text: "By integrating multi-source data, this study presents a novel framework that leverages the VLM model to assess the cycling suitability of road segments. MaxEnt IRL is also used to quantify cyclists’ segment-level preferences based on 5 dimension weighted reward function. By imitating the decision-making process behind cyclists’ detour behaviors, this study introduces a dual-agent based simulation framework for adaptive cycling route recommendation in complex urban environments. The system employs two interacting agents: one that responds to personalized preferences, and a supervisory agent that optimizes for the globally recommended best route under uncertain traffic and environmental conditions.",
           images: [
-            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
-            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+            { src: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767773696/project1_giuejd.png", caption: "Research Framework" },
+            // { src: "https://example.com/image2.jpg", caption: "Caption 2" }
           ]
         },
         {
@@ -128,8 +128,8 @@ export const content = {
           title: "A Hybrid Simulation Framework for Modeling the Carbon Mitigation of Bike-Public Transition",
           text: "Since the overall travel demand is relatively fixed, different transport modes inevitably exhibit both competitive and complementary relationships. By exploring the modal shift impact of bike usage on traffic emissions, I develop a hybrid simulation framework for assessing carbon mitigation potential. The core idea is to rebalance bike-sharing so that it supplements public transit rather than competing with it, thereby reducing reliance on private cars and taxis. The modeling framework employs E-fence planning and Agent-Based Fleet Sizing as two key measures to complete the bike-sharing supply chain and encourage modal shifts from private transport toward bike–transit integration. In this study, agents represent not only traffic users switching between modes but also the placement of bikes and the operation of E-fences, making the model both space-based and transit-oriented. Furthermore, multi-agent reinforcement learning is trained to optimize strategies for multimodal systems until system-wide emissions and modal shares converge toward critical turning points.",
           images: [
-            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
-            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+            { src: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767773697/project2_ugzowq.png", caption: "Research Framework" },
+            // { src: "https://example.com/image2.jpg", caption: "Caption 2" }
           ]
         },
         {
@@ -137,8 +137,8 @@ export const content = {
           title: "Modeling the Optimization of Urban Spatial Structures",
           text: "By abstracting the urban space as spatial networked systems with top-down system and bottom-up agent approach, I try to model the urban structure for daily travel under two scenarios: carbon emission optimization and disaster resilience. These models are implemented within Multi-Agent Systems, where agents represent transport network components, such as transit lines or infrastructure segments, and their interactions reflect user flows across the network. Specifically, graph neural network combined with reinforcement learning is to abstract and optimize these interconnected transport systems under two complementary simulation scenarios. The deterministic scenario identifies critical turning points, i.e. structural adjustments or strategic interventions that can shift the trajectory of commuting efficiency and carbon reduction. The second scenario extends this analysis to uncertain contexts, capturing risks from external shocks such as flooding in inundation-prone areas or other disruptive events. This integrated framework enables the systematic exploration of both planned interventions and unanticipated disruptions, and supports adaptive policy-making for resilient and low-carbon urban mobility futures.",
           images: [
-            { src: "https://example.com/image1.jpg", caption: "Caption 1" },
-            { src: "https://example.com/image2.jpg", caption: "Caption 2" }
+            { src: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767773697/project3_jhctdj.png", caption: "Research Framework" },
+            // { src: "https://example.com/image2.jpg", caption: "Caption 2" }
           ]
         },
         // 其他sections...
