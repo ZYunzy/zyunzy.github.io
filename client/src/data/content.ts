@@ -213,7 +213,7 @@ export const content = {
           authors: "Zhuang Y., Wang C., Gu J., Huang Y. et al.",
           venue: "South Architecture, 2019",
           year: "2019",
-          image: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767781327/IMG_9028_nkz9ng.jpg",
+          // image: "https://res.cloudinary.com/dkjpqq37r/image/upload/v1767781327/IMG_9028_nkz9ng.jpg",
           description: "This paper examines the transportation development strategies for the Guangzhou-Foshan metropolitan area within the broader context of the Guangdong-Hong Kong-Macao Greater Bay Area, utilizing GIS and big data analysis to understand regional connectivity and mobility patterns.",
           link: "https://kns.cnki.net/kcms2/article/abstract?v=MmR6bzzH81EVBuiydU7B0y9s_VMejCqLYRJLvJ-G4eiMyjwNc3EYwmUMpAh8Tb5mh50_NRyTY0moOloukG0PqTXGGXTT4TcYwzIthP1RP1_OyqKBhMVNVp-tYFkVrsUIa_K3IDjL2pjDc7OHaZ8EsbJ8X4sc850ufsVz7hDeCVCoQoEIkiIFbw&uniplatform=NZKPT&language=CHS"
         },
