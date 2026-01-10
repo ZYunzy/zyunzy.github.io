@@ -1,7 +1,7 @@
 export const content = {
   about: {
     paragraphs: [
-      "I'm Yun Zhuang, a researcher passionate about sustainable urban systems. I focus on interdisciplinary approaches to address complex urban challenges through system science, data analysis, and computational modeling. My work explores the interactions between human, infrastructure, and environmental systems to inform resilient and adaptive engineer strategies and policy-making. My techinical interests are network science, dynamic modeling, and urban informatics. I am also interested in AI for social good, geospatial data science, and nature-based solutions for urban sustainability.",
+      "I'm Yun Zhuang, a researcher passionate about sustainable urban systems. I focus on interdisciplinary approaches to address complex urban challenges through system science, data analysis, and computational modeling. My work explores the interactions between human, infrastructure, and environmental systems to inform resilient and adaptive engineer strategies and policy-making. My techinical interests are network science, dynamic modeling, and urban informatics. I am also interested in AI for social good, geospatial data science, and nature-based solutions for urban sustainability. Beyond research, I enjoy painting, photography, and exploring the outdoors.",
     ],
     infoBoxes: [
       {
