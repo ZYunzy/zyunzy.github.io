@@ -12,6 +12,8 @@ export const content = {
           "M.Eng in Urban Planning",
           "M.Sc in Geomatics (GIS)",
           "B.Sc in Data Science & AI (ongoing)",
+          "Minor in Mechanical Engineering (HCI)",
+          "Minor in Sustainable Development (Environmental Engineering)",
         ],
       },
       {
